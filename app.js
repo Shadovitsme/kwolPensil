@@ -6,8 +6,8 @@ $(document).ready(function () {
       url: "save_data.php",
       type: "POST",
       data: $(this).serialize(),
-      success: function () {
-        alert("Данные успешно отправлены!");
+      success: function (data) {
+        console.log(data);
       },
     });
   });
