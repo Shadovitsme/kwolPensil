@@ -11,7 +11,6 @@ if ($_POST['funk'] == 'addNamePhone') {
 function addNamePhone()
 {
     global $databaseFile;
-    var_dump(($_POST));
 
     $name = $_POST['name']; // получаем данные из формы
     $phone = $_POST['phone'];
@@ -24,10 +23,14 @@ function addNamePhone()
     }
 
     $sql = "INSERT INTO Customers (FirstName, Phone) VALUES ('$name', '$phone')";
-    echo $sql;
     try {
         $connection->exec($sql);
+
         echo "Data inserted successfully";
+        $a = $connection->query("SELECT id FROM Customers where FirstName = '$name' AND Phone = '$phone'");
+        setcookie('userId', $a->fetchAll()[0][0], time() + 3600);
+        var_dump($_COOKIE['userId']);
+      
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }

@@ -7,4 +7,4 @@
 --     '435345345'
 --   );
 
-SELECT * FROM Customers;
+SELECT * FROM Customers where FirstName = 'wertqqw' AND Phone = '2134'
