@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0c0c0c;
+  --DarkAccent: #111111;
+  --QuietText: #7e7a72;
+  --Accent: #e4a85e;
+  --BrightAccent: #f99d2b;
+  --Text: #f5f2ec;
+}
+
+/* input medium */
+input {
+  background-color: var(--DarkAccent);
+  padding: 20px;
+  height: 68px;
+  border-width: 1px;
+  width: 100%;
+  color: var(--Text);
+  border-radius: 5px;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 700px) {
+    input {
+        height: 58px;
+      }
+
+      .mediumInput::placeholder {
+        font-size: 12px;
+      }
+}
+
+input::placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--QuietText);
+}
+
+input:focus {
+    outline-color: var(--Accent);
+}
+
+input:active {
+  border-color: var(--Accent);
+  outline-color: var(--Accent);
+  border-width: 1px;
+}
+
+input:focus::placeholder { transform: translateY(-20px);
+font-size: 12px;
+line-height: 12px; }
