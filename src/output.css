@@ -554,15 +554,81 @@ video {
   display: none;
 }
 
-:root{
-  --background: #0C0C0C;
+:root {
+  --background: #0c0c0c;
   --DarkAccent: #111111;
-  --QuietText: #7E7A72;
-  --Accent: #E4A85E;
-  --BrightAccent: #F99D2B;
-  --Text: #F5F2EC;
+  --QuietText: #7e7a72;
+  --Accent: #e4a85e;
+  --BrightAccent: #f99d2b;
+  --Text: #f5f2ec;
 }
 
-.mediumInput{
+body{
+  background-color: var(--background);
+  padding-inline: 100px;
+  padding-block: 178.5px;
+}
+
+/* input medium */
+
+.input {
   background-color: var(--DarkAccent);
+  padding: 20px;
+  height: 68px;
+  width: 100%;
+  color: var(--Text);
+  border-radius: 5px;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 700px) {
+  .input {
+    height: 58px;
+  }
+
+  .mediumInput::-moz-placeholder {
+    font-size: 12px;
+  }
+
+  .mediumInput::placeholder {
+    font-size: 12px;
+  }
+}
+
+.input::-moz-placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--QuietText);
+}
+
+.input::placeholder {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--QuietText);
+}
+
+.input:focus {
+  border-color: var(--Accent);
+  outline: none;
+  border-width: 1px;
+}
+
+.input:active {
+  border-color: var(--Accent);
+  outline: none;
+  border-width: 1px;
+}
+
+.input:focus::-moz-placeholder {
+  transform: translateY(-20px);
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.input:focus::placeholder {
+  transform: translateY(-20px);
+  font-size: 12px;
+  line-height: 12px;
 }

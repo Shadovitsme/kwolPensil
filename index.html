@@ -2,21 +2,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./jquery-3.7.1.min.js"></script>
+
     <link rel="stylesheet" href="app.css" />
     <script src="./app.js"></script>
 
     <title>Document</title>
   </head>
-  <body>
-    <h1>body family</h1>
-    <form id="page1">
-      <input
-        type="text"
-        name="name"
-        placeholder="Введите имя"
-      />
-      <input type="phone" name="phone" placeholder="Введите телефон" />
-      <button type="submit">Отправить</button>
-    </form>
+  <body class="max-h-screen max-w-screen">
+    <div class="flex justify-between">
+      <div class="mr-16 w-[851px]">
+        <h1 class="H1 Text">Бриф, подготовленный</h1>
+        <h1 class="H1 Accent">специально для вас</h1>
+        <p class="p3 Text mt-6 mb-16">
+          Заполните бриф, чтобы мы могли сразу сориентировать вас по деталям
+          и стоимости проекта
+        </p>
+        <div class="p-[60px] border-[1px] border-[#E4A85E] rounded-[10px]">
+          <h class="H3 Text"> Основные данные</h>
+
+          <form class="mt-8" id="page1">
+            <input
+              type="text"
+              class="input mb-6"
+              name="name"
+              placeholder="Введите имя"
+            />
+            <input
+              class="input"
+              type="phone"
+              name="phone"
+              placeholder="Введите телефон"
+            />
+            <button class="yellowButton mt-8 w-[318px]" type="submit">Перейти к брифу</button>
+          </form>
+        </div>
+      </div>
+      <div class="flex absolute right-0">
+        <img class="h-[732px]" src="./images/pic.png" />
+        <img class="h-[630px] my-auto ml-5" src="./images/pic1.png" />
+
+      </div>
+    </div>
   </body>
 </html>

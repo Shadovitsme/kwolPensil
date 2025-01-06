@@ -11,12 +11,108 @@
   --Text: #f5f2ec;
 }
 
+body{
+    background-color: var(--background);
+    padding-inline: 100px;
+    padding-block: 178.5px;
+}
+
+.H1{
+font-weight: 300;
+font-size: 60px;
+line-height: 60px;
+}
+
+.H2{
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.H3{
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 32px;
+}
+
+.H4{
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 38.4px;
+}
+
+.H5{
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+}
+
+.H6{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 38px;
+}
+
+.p1{
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+.p2{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.p3{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.p4{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.p5{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12%px;
+}
+
+.Accent{
+    color: var(--Accent);
+
+}
+
+.Text{
+    color: var(--Text);
+
+}
+
+/* button style */
+.yellowButton{
+    border-radius: 5px;
+    background-color: var(--Accent);
+    padding-top: 18px;
+    padding-bottom: 22px;
+    width: 100%;
+    color: var(--background);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+
+
 /* input medium */
-input {
+.input {
   background-color: var(--DarkAccent);
   padding: 20px;
   height: 68px;
-  border-width: 1px;
   width: 100%;
   color: var(--Text);
   border-radius: 5px;
@@ -24,32 +120,43 @@ input {
 }
 
 @media screen and (max-width: 700px) {
-    input {
+    .input {
         height: 58px;
       }
 
-      .mediumInput::placeholder {
+      .input::placeholder {
         font-size: 12px;
       }
+      .yellowButton{
+        padding-top: 10px;
+        padding-bottom: 14px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+      } 
 }
 
-input::placeholder {
+.input::placeholder {
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
   color: var(--QuietText);
 }
 
-input:focus {
-    outline-color: var(--Accent);
+.input:focus {
+    border-color: var(--Accent);
+    outline: none;
+    border-width: 1px;
+
+
 }
 
-input:active {
+.input:active {
   border-color: var(--Accent);
-  outline-color: var(--Accent);
+  outline: none;
   border-width: 1px;
 }
 
-input:focus::placeholder { transform: translateY(-20px);
+.input:focus::placeholder { transform: translateY(-20px);
 font-size: 12px;
 line-height: 12px; }
