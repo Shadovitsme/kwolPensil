@@ -126,6 +126,22 @@ body {
   line-height: 20px;
 }
 
+.yellowButton:hover{
+    background-color: var(--BrightAccent);
+}
+
+.yellowButton:active{
+    background-color: var(--BrightAccent);
+}
+
+.labelWrapper{
+    border-width: 1px;
+    border-color: var(--Accent);
+    border-radius: 5px;
+    padding-block: 12px;
+    padding-inline: 16px;
+}
+
 /* input medium */
 .input {
   background-color: var(--DarkAccent);
@@ -221,35 +237,6 @@ body {
     border: 8px solid var(--Accent)
 }
 
-@font-face {
-  font-family: "Corsa Grotesk Regular";
-  src: url("./corsagrotesk-regular-webfont.woff2") format("woff2"),
-    url("./corsagrotesk-regular-webfont.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Corsa Grotesk Thin";
-  src: url("./corsagrotesk-thin-webfont.woff2") format("woff2"),
-    url("./corsagrotesk-thin-webfont.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-/* Подключение шрифта Corsa Grotesk */
-@font-face {
-  font-family: "Corsa Grotesk";
-  src: url("./Corsa Grotesk Regular.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Corsa Grotesk";
-  src: url("./Corsa Grotesk Thin.otf") format("opentype");
-  font-weight: 300;
-  font-style: normal;
-}
 
 /* Подключение шрифта Cruinn */
 @font-face {

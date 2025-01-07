@@ -7,4 +7,4 @@
 -- REFERENCES Customers (id) 
 -- )
 
--- SELECT * FROM Customers WHERE Id ==2
+SELECT * FROM Customers

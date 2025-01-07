@@ -1,5 +1,6 @@
 // Ваш скрипт на JavaScript
 $(document).ready(function () {
+  // ajax page 1
   $("form#page1").on("submit", function (e) {
     e.preventDefault();
     $.ajax({
@@ -16,6 +17,7 @@ $(document).ready(function () {
       },
     });
   });
+  // ajax page2
   $("form#page2").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
     let familyMembers = $(this)[0][0].value; // предотвращаем стандартное поведение формы
@@ -61,4 +63,19 @@ $(document).ready(function () {
 
     window.location.replace("./thirdPage.html");
   });
+  $("#plusButton").click(function (e) {
+    var $input = $(this).parent().find("input");
+    $input.val(parseInt($input.val()) + 1);
+    $input.change();
+    return false;
+  });
+  $("#minusButton").click(function () {
+    var $input = $(this).parent().find("input");
+    var count = parseInt($input.val()) - 1;
+    count = count <= 0 ? 0 : count;
+    $input.val(count);
+    $input.change();
+    return false;
+  });
 });
+
