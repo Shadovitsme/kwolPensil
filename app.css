@@ -11,103 +11,120 @@
   --Text: #f5f2ec;
 }
 
-body{
-    background-color: var(--background);
-    padding-inline: 100px;
-    padding-block: 178.5px;
-    max-height: screen;
+body {
+  background-color: var(--background);
+  padding-inline: 100px;
+  padding-block: 178.5px;
+  max-height: screen;
 }
 
-.H1{
-font-weight: 300;
-font-size: 60px;
-line-height: 60px;
+.H1 {
+  font-family: Cruinn;
+  font-weight: 300;
+  font-size: 60px;
+  line-height: 60px;
 }
 
-.H2{
-    font-weight: 400;
-    font-size: 40px;
-    line-height: 40px;
+.H2 {
+  font-family: Cruinn;
+
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 40px;
 }
 
-.H3{
-    font-weight: 400;
-    font-size: 28px;
-    line-height: 32px;
+.H3 {
+  font-family: Cruinn;
+
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 32px;
 }
 
-.H4{
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 38.4px;
+.H4 {
+  font-family: Cruinn;
+
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38.4px;
 }
 
-.H5{
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 24px;
+.H5 {
+  font-family: Cruinn;
+
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
 }
 
-.H6{
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 38px;
+.H6 {
+  font-family: Cruinn;
+
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 38px;
 }
 
-.p1{
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 36px;
+.p1 {
+  font-family: "Corsa Grotesk Regular";
+
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 36px;
 }
 
-.p2{
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 24px;
+.p2 {
+  font-family: "Corsa Grotesk Regular";
+
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
-.p3{
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
+.p3 {
+  font-family: "Corsa Grotesk Regular";
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
-.p4{
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
+.p4 {
+  font-family: "Corsa Grotesk Regular";
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
 }
 
-.p5{
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 12%px;
+.p5 {
+  font-family: "Corsa Grotesk Regular";
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12%px;
 }
 
-.Accent{
-    color: var(--Accent);
-
+.Accent {
+  color: var(--Accent);
 }
 
-.Text{
-    color: var(--Text);
-
+.Text {
+  color: var(--Text);
 }
 
 /* button style */
-.yellowButton{
-    border-radius: 5px;
-    background-color: var(--Accent);
-    padding-top: 18px;
-    padding-bottom: 22px;
-    width: 100%;
-    color: var(--background);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 20px;
+.yellowButton {
+  border-radius: 5px;
+  background-color: var(--Accent);
+  padding-top: 18px;
+  padding-bottom: 22px;
+  width: 100%;
+  color: var(--background);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
 }
-
-
 
 /* input medium */
 .input {
@@ -121,20 +138,20 @@ line-height: 60px;
 }
 
 @media screen and (max-width: 700px) {
-    .input {
-        height: 58px;
-      }
+  .input {
+    height: 58px;
+  }
 
-      .input::placeholder {
-        font-size: 12px;
-      }
-      .yellowButton{
-        padding-top: 10px;
-        padding-bottom: 14px;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 20px;
-      } 
+  .input::placeholder {
+    font-size: 12px;
+  }
+  .yellowButton {
+    padding-top: 10px;
+    padding-bottom: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+  }
 }
 
 .input::placeholder {
@@ -145,11 +162,9 @@ line-height: 60px;
 }
 
 .input:focus {
-    border-color: var(--Accent);
-    outline: none;
-    border-width: 1px;
-
-
+  border-color: var(--Accent);
+  outline: none;
+  border-width: 1px;
 }
 
 .input:active {
@@ -158,6 +173,95 @@ line-height: 60px;
   border-width: 1px;
 }
 
-.input:focus::placeholder { transform: translateY(-20px);
-font-size: 12px;
-line-height: 12px; }
+.input:focus::placeholder {
+  transform: translateY(-20px);
+  font-size: 12px;
+  line-height: 12px;
+}
+
+@font-face {
+  font-family: "Corsa Grotesk Regular";
+  src: url("./corsagrotesk-regular-webfont.woff2") format("woff2"),
+    url("./corsagrotesk-regular-webfont.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Corsa Grotesk Thin";
+  src: url("./corsagrotesk-thin-webfont.woff2") format("woff2"),
+    url("./corsagrotesk-thin-webfont.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+/* Подключение шрифта Corsa Grotesk */
+@font-face {
+  font-family: "Corsa Grotesk";
+  src: url("./Corsa Grotesk Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Corsa Grotesk";
+  src: url("./Corsa Grotesk Thin.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Подключение шрифта Cruinn */
+@font-face {
+  font-family: "Cruinn";
+  src: url("./Cruinn Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cruinn";
+  src: url("./Cruinn Thin.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cruinn";
+  src: url("./Cruinn Light.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cruinn";
+  src: url("./Cruinn Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cruinn";
+  src: url("./Cruinn Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cruinn";
+  src: url("./Cruinn Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nexa";
+  src: url("./ofont.ru_Nexa Script.ttf") format("truetype");
+
+  font-style: normal;
+}
+
+.speciall {
+  color: var(--Accent);
+  font-family: Nexa;
+  font-weight: 400;
+  font-size: 104px;
+  line-height: 72px;
+}
