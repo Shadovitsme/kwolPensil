@@ -5,37 +5,87 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./jquery-3.7.1.min.js"></script>
 
+    <link rel="stylesheet" href="app.css" />
     <script src="./app.js"></script>
     <title>Document</title>
   </head>
-  <body>
-    <div>
-      <form id="page2">
-        <h1>
-          Какое количество членов семьи собирается проживать в квартире или
-          доме?
-        </h1>
-        <h1>
-          Какое количество домашних животных и комнатных растений находится в
-          наличии?
-        </h1>
-        <input type="text" />
+  <body class="body max-h-screen">
+    <h1 class="H1 Text mb-10">Укажите необходимые данные</h1>
+    <form class="flex justify-between w-full" id="page2">
+      <div class="mr-16 w-[828px]">
+        <p class="p4 Text mb-2">
+          Какое количество членов семьи собирается проживать?
+        </p>
+        <textarea class="input mb-16" type="text" ></textarea>/>
+        <p class="p4 Accent mb-2">
+          Какое количество домашних животных и комнатных растений?
+        </p>
+        <textarea class="input mb-16" type="text"></textarea> />
 
-        <h1>Необходимость звукоизоляции</h1>
-        <input type="checkbox" />
-        <h1>Есть ли у вас мебель? Укажите ее размеры</h1>
-        <input type="text" />
-        <h1>
-          Наличие хобби, предполагающих размещение дополнительных инструментов
-        </h1>
-        <input type="text" />
-        <h1>Требуется ли перепланировка?</h1>
-        <input type="checkbox" />
-        <h1>Как часто к вам приходят гости?</h1>
-        <input type="text" />
-        <button type="submit">Отправить</button>
-        <a href="/">back</a>
-      </form>
-    </div>
+        <p class="h6 Accent">Есть необходимость звукоизоляции?</p>
+        <div class="flex mt-4 mb-16">
+          <div class="mr-5">
+            <input type="radio" name="soundless" value="1" />
+            <label class="p3 Text">Звукоизоляция нужна</label>
+          </div>
+          <div>
+            <input type="radio" name="soundless" value="0" />
+            <label class="p3 Text">Звукоизоляция не нужна</label>
+          </div>
+        </div>
+
+        <p class="h6 Accent">Есть ли у вас мебель?</p>
+        <div class="flex mt-4 mb-16">
+          <div class="mr-5">
+            <input type="radio" name="furniture" value="1" />
+            <label class="p3 Text">Да</label>
+          </div>
+          <div>
+            <input type="radio" name="furniture" value="0" />
+            <label class="p3 Text">Нет</label>
+          </div>
+        </div>
+      </div>
+      <div class="w-[828px]">
+        <p class="p4 Text mb-2">
+          Наличие хобби, предполагающих размещение доп. инструментов
+        </p>
+        <textarea type="text" class="input h-[140px] mb-2"></textarea>
+        <div class="mb-16">
+          <input type="checkbox" /><label class="p3 Text ml-2">Хобби нет</label>
+        </div>
+        <p class="h6 Accent mb-2">Требуется ли перепланировка?</p>
+        <div class="flex mt-4 mb-16">
+          <div class="mr-5">
+            <input type="radio" name="replane" value="1" />
+            <label class="p3 Text">Да</label>
+          </div>
+          <div>
+            <input type="radio" name="replane" value="0" />
+            <label class="p3 Text">Нет</label>
+          </div>
+        </div>
+        <p class="h6 Accent mb-2">Как часто к вам приходят гости?</p>
+        <div class="flex mt-4 mb-16">
+          <div class="mr-5">
+            <input type="radio" name="howMuchVisitors" value="0" />
+            <label class="p3 Text">Несколько раз в неделю</label>
+          </div>
+          <div class="mr-5">
+            <input type="radio" name="howMuchVisitors" value="1" />
+            <label class="p3 Text">Несколько раз в месяц</label>
+          </div>
+          <div>
+            <input type="radio" name="howMuchVisitors" value="2" />
+            <label class="p3 Text">Несколько раз в год</label>
+          </div>
+        </div>
+        <p class="p4 Text mb-2">Общий бюджет для всех помещений</p>
+        <input class="input h-17" />
+        <div class="w-full flex justify-end">
+          <button class="yellowButton w-[212px]" type="submit">Далее</button>
+        </div>
+      </div>
+    </form>
   </body>
 </html>

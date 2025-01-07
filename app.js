@@ -13,13 +13,12 @@ $(document).ready(function () {
       },
 
       success: function (data) {
-        console.log(data);
-        // window.location.replace("./secondPage.html");
+        window.location.replace("./secondPage.html");
       },
     });
   });
   $("form#page2").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
-    // window.location.replace("./thirdPage.html");
+    window.location.replace("./thirdPage.html");
   });
 });

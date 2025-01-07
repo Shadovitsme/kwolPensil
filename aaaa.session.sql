@@ -1,5 +1,5 @@
 -- DROP TABLE Customers;
--- CREATE TABLE Customers ( Id INTEGER PRIMARY KEY AUTOINCREMENT, FirstName VARCHAR(20), Phone VARCHAR(20));
+-- CREATE TABLE Customers ( Id INTEGER PRIMARY KEY AUTOINCREMENT, FirstName VARCHAR(20), Phone VARCHAR(20),familyMembers Text(500),Pets text(500), soundless boolean, furniture boolean, hobbyDescription text(500), replan boolean, visitors VARCHAR(200), budget decimal(100,2));
 
 -- INSERT INTO Customers (FirstName, Phone)
 -- VALUES (
@@ -7,4 +7,4 @@
 --     '435345345'
 --   );
 
-SELECT * FROM Customers where FirstName = 'wertqqw' AND Phone = '2134'
+SELECT * FROM Customers
