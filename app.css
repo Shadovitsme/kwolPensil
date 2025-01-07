@@ -13,9 +13,9 @@
 
 body {
   background-color: var(--background);
-  padding-inline: 100px;
-  padding-block: 178.5px;
   max-height: screen;
+  padding: 100px;
+
 }
 
 .H1 {

@@ -100,8 +100,7 @@ $(document).ready(function () {
       },
 
       success: function (data) {
-        console.log(data);
-        // window.location.replace("./secondPage.html");
+        window.location.replace("./wishesPage.html");
       },
     });
   });
