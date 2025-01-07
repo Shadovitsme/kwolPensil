@@ -6,5 +6,11 @@
 -- FOREIGN KEY (userId) 
 -- REFERENCES Customers (id) 
 -- )
+-- DROP TABLE rooms;
+-- CREATE TABLE rooms (userId INTEGER, room VARCHAR(100), count INTEGER, other text(500), CONSTRAINT fk_userId 
+-- FOREIGN KEY (userId) 
+-- REFERENCES Customers (id) );
 
-SELECT * FROM Customers
+SELECT * FROM rooms
+
+-- SELECT * FROM Customers

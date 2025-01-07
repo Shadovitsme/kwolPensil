@@ -57,12 +57,55 @@ $(document).ready(function () {
       },
 
       success: function (data) {
-        window.location.replace("./secondPage.html");
+        window.location.replace("./thirdPage.html");
       },
     });
-
-    window.location.replace("./thirdPage.html");
   });
+
+  // ajax page3
+  $("form#page3").on("submit", function (e) {
+    e.preventDefault(); // предотвращаем стандартное поведение формы
+    let hallway = $(this)[0][1].value;
+    let childRoom = $(this)[0][4].value;
+    let kitchen = $(this)[0][7].value;
+    let welcomeroom = $(this)[0][10].value;
+    let bedroom = $(this)[0][13].value;
+    let clotheRoom = $(this)[0][16].value;
+    let balcone = $(this)[0][19].value;
+    let dinnerRoom = $(this)[0][22].value;
+    let storageRoom = $(this)[0][25].value;
+    let bathroom = $(this)[0][28].value;
+    let cabinet = $(this)[0][31].value;
+    let workPlace = $(this)[0][34].value;
+    let welcomeBathroom = $(this)[0][37].value;
+    $.ajax({
+      url: "save_data.php",
+      type: "POST",
+      data: {
+        funk: "addRoomCount",
+        прихожая: hallway,
+        детская: childRoom,
+        кухня: kitchen,
+        гостиная: welcomeroom,
+        спальня: bedroom,
+        гардеробная: clotheRoom,
+        балкон: balcone,
+        столовая: dinnerRoom,
+        кладовая: storageRoom,
+        ванная: bathroom,
+        кабинет: cabinet,
+        рабочее_место: workPlace,
+        гостевой_санузел: welcomeBathroom,
+        другое: $(this)[0][39].value,
+      },
+
+      success: function (data) {
+        console.log(data);
+        // window.location.replace("./secondPage.html");
+      },
+    });
+  });
+
   $("button[name='plusButton']").click(function (e) {
     var $input = $(this).parent().find("input");
     $input.val(parseInt($input.val()) + 1);
