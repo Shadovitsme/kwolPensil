@@ -179,6 +179,48 @@ body {
   line-height: 12px;
 }
 
+.check{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  
+    border-radius: 4px;
+    width: 16px;
+    height: 16px;
+  
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 4px;
+  
+}
+
+.check:checked{
+    border-color: var(--Accent);
+    background-color: var(--Accent);
+    
+}
+
+.radio {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  outline: none;
+  margin-right: 4px;
+
+}
+
+.radio:checked {
+    border: 8px solid var(--Accent)
+}
+
 @font-face {
   font-family: "Corsa Grotesk Regular";
   src: url("./corsagrotesk-regular-webfont.woff2") format("woff2"),
