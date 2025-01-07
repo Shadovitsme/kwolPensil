@@ -63,13 +63,13 @@ $(document).ready(function () {
 
     window.location.replace("./thirdPage.html");
   });
-  $("#plusButton").click(function (e) {
+  $("button[name='plusButton']").click(function (e) {
     var $input = $(this).parent().find("input");
     $input.val(parseInt($input.val()) + 1);
     $input.change();
     return false;
   });
-  $("#minusButton").click(function () {
+  $("button[name='minusButton']").click(function () {
     var $input = $(this).parent().find("input");
     var count = parseInt($input.val()) - 1;
     count = count <= 0 ? 0 : count;
