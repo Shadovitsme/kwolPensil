@@ -11,6 +11,8 @@
 -- FOREIGN KEY (userId) 
 -- REFERENCES Customers (id) );
 
-SELECT * FROM wishes
+-- CREATE TABLE detailRoom (userId INTEGER, room VARCHAR(100), property text(500), CONSTRAINT fk_userId 
+-- FOREIGN KEY (userId) 
+-- REFERENCES Customers (id) );
 
 -- SELECT * FROM Customers

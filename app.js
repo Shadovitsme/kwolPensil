@@ -144,6 +144,8 @@ $(document).ready(function () {
     });
   });
 
+  
+
   $("button[name='plusButton']").click(function (e) {
     var $input = $(this).parent().find("input");
     $input.val(parseInt($input.val()) + 1);

@@ -140,6 +140,7 @@ body {
     border-radius: 5px;
     padding-block: 12px;
     padding-inline: 16px;
+    height: 48px;
 }
 
 /* input medium */
