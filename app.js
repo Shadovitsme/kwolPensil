@@ -28,7 +28,6 @@ $(document).ready(function () {
     } else {
       hobby = "0";
     }
-    console.log(hobby);
     let replane = $(this)[0][8].checked;
     let visitors;
     if ($(this)[0][10].checked) {
@@ -56,11 +55,10 @@ $(document).ready(function () {
       },
 
       success: function (data) {
-        console.log(data);
-        // window.location.replace("./secondPage.html");
+        window.location.replace("./secondPage.html");
       },
     });
 
-    // window.location.replace("./thirdPage.html");
+    window.location.replace("./thirdPage.html");
   });
 });
