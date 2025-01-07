@@ -105,6 +105,45 @@ $(document).ready(function () {
     });
   });
 
+  $("form#wishPage").on("submit", function (e) {
+    e.preventDefault(); // предотвращаем стандартное поведение формы
+    let light = $(this)[0][0].value;
+    let condicioner = $(this)[0][1].value;
+    let warmFloor = $(this)[0][2].value;
+    let style = $(this)[0][3].value;
+    let ceiling = $(this)[0][4].value;
+    let wannaSee = $(this)[0][5].value;
+    let floor = $(this)[0][6].value;
+    let dontWannaSee = $(this)[0][7].value;
+    let budget = $(this)[0][8].value;
+    let additional = $(this)[0][9].value;
+    let deadline = $(this)[0][10].value;
+
+    $.ajax({
+      url: "save_data.php",
+      type: "POST",
+      data: {
+        funk: "addWishes",
+        light: light,
+        condicioner: condicioner,
+        warmFloor: warmFloor,
+        style: style,
+        ceiling: ceiling,
+        wannaSee: wannaSee,
+        budget: budget,
+        additional: additional,
+        deadline: deadline,
+        floor: floor,
+        dontWannaSee: dontWannaSee,
+      },
+
+      success: function (data) {
+        console.log(data);
+        // window.location.replace("./wishesPage.html");
+      },
+    });
+  });
+
   $("button[name='plusButton']").click(function (e) {
     var $input = $(this).parent().find("input");
     $input.val(parseInt($input.val()) + 1);
