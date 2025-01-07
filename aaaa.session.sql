@@ -7,4 +7,4 @@
 --     '435345345'
 --   );
 
-SELECT * FROM Customers
+SELECT * FROM Customers WHERE Id ==2

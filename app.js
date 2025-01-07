@@ -23,11 +23,12 @@ $(document).ready(function () {
     let soundless = $(this)[0][2].checked;
     let furniture = $(this)[0][4].checked;
     let hobby;
-    if ($(this)[0][6].value) {
+    if (!$(this)[0][7].checked) {
       hobby = $(this)[0][6].value;
     } else {
-      hobby = 0;
+      hobby = "0";
     }
+    console.log(hobby);
     let replane = $(this)[0][8].checked;
     let visitors;
     if ($(this)[0][10].checked) {
@@ -44,6 +45,14 @@ $(document).ready(function () {
       type: "POST",
       data: {
         funk: "addCommonData",
+        familyMembers: familyMembers,
+        pets: pets,
+        soundless: soundless,
+        furniture: furniture,
+        hobby: hobby,
+        replane: replane,
+        visitors: visitors,
+        budget: budget,
       },
 
       success: function (data) {
