@@ -16,4 +16,4 @@
 -- REFERENCES Customers (id) );
 
 -- delete FROM detailRoom
--- SELECT * FROM detailRoom
+SELECT * FROM detailRoom

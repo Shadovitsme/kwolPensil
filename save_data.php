@@ -159,29 +159,33 @@ function addDetailRoom()
 {
     global $databaseFile;
     $id = $_COOKIE['userId'];
-    $$i = 0;
-    $room = $_POST['room'];
-    echo $_POST;
-    // foreach ($_POST as $prop => $description) {
-    //     if ($i > 0) {
-    //         if ($description) {
-    //             try {
-    //                 $connection = new PDO("sqlite:$databaseFile");
-    //                 $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //                 echo "Connected successfully";
-    //             } catch (PDOException $e) {
-    //                 die("Connection failed: " . $e->getMessage());
-    //             }
-    //             $sql = "INSERT INTO detailRoom (userId, room, property,description) VALUES ('$id', '$room', '$prop','$description')";
-    //             try {
-    //                 $connection->exec($sql);
+    foreach ($_POST['arr'] as $item) {
+        $i = 0;
+        $room = $item[0];
+        foreach ($item as $prop) {
+            if ($i > 0) {
+                if ($prop[1] && $prop[0]) {
+                    $thing = $prop[0];
+                    $description = $prop[1];
+                    echo $thing;
+                    try {
+                        $connection = new PDO("sqlite:$databaseFile");
+                        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                        echo "Connected successfully";
+                    } catch (PDOException $e) {
+                        die("Connection failed: " . $e->getMessage());
+                    }
+                    $sql = "INSERT INTO detailRoom (userId, room, property,description) VALUES ('$id', '$room', '$thing','$description')";
+                    try {
+                        $connection->exec($sql);
 
-    //                 echo "Data inserted successfully";
-    //             } catch (PDOException $e) {
-    //                 echo "Error: " . $e->getMessage();
-    //             }
-    //         }
-    //     }
-    //     $i++;
-    // }
+                        echo "Data inserted successfully";
+                    } catch (PDOException $e) {
+                        echo "Error: " . $e->getMessage();
+                    }
+                }
+            }
+            $i++;
+        }
+    }
 }

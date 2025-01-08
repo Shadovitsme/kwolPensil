@@ -157,34 +157,51 @@ $(document).ready(function () {
     let walls = $(this)[0][22].value;
     let seiling = $(this)[0][23].value;
     let other = $(this)[0][24].value;
+    $m = 26;
+
     let arr = [];
-    for (let i = 1; i < getCookie("прихожая"); i++) {
-      wodrop = $(this)[0][1 * i].value;
-      warmFloor = $(this)[0][4 * i].value;
-      mirror = $(this)[0][7 * i].value;
-      sitting = $(this)[0][10 * i].value;
-      shoes = $(this)[0][13 * i].value;
-      shelf = $(this)[0][16 * i].value;
-      condicioner = $(this)[0][19 * i].value;
-      floor = $(this)[0][21 * i].value;
-      walls = $(this)[0][22 * i].value;
-      seiling = $(this)[0][23 * i].value;
-      other = $(this)[0][24 * i].value;
-      arr.push(
-        ` room: "прихожая${i}",
-  шкаф_для_одежды${i}: wodrop,
-  теплый_пол${i}: warmFloor,
-  зеркало${i}: mirror,
-  сиденье${i}: sitting,
-  обувница${i}: shoes,
-  полки${i}: shelf,
-  кондиционер${i}: condicioner,
-  полы${i}: floor,
-  стены: walls,
-  потолки${i}: seiling,
-  другое${i}: other,`
-      );
+    for (let i = 0; i < getCookie("прихожая"); i++) {
+      arr.push([
+        `прихожая${i}`,
+        ["шкаф_для_одежды", wodrop],
+        ["теплый_пол", warmFloor],
+        ["зеркало", mirror],
+        ["сиденье", sitting],
+        ["обувница", shoes],
+        ["полки", shelf],
+        ["кондиционер", condicioner],
+        ["полы", floor],
+        ["стены", walls],
+        ["потолки", seiling],
+        ["другое", other],
+      ]);
+      if (i == getCookie("прихожая") - 1) {
+        break;
+      }
+      wodrop = $(this)[0][$m].value;
+      $m += 3;
+      warmFloor = $(this)[0][$m].value;
+      $m += 3;
+      mirror = $(this)[0][$m].value;
+      $m += 3;
+      sitting = $(this)[0][$m].value;
+      $m += 3;
+      shoes = $(this)[0][$m].value;
+      $m += 3;
+      shelf = $(this)[0][$m].value;
+      $m += 3;
+      condicioner = $(this)[0][$m].value;
+      $m += 2;
+      floor = $(this)[0][$m].value;
+      $m++;
+      walls = $(this)[0][$m].value;
+      $m++;
+      seiling = $(this)[0][$m].value;
+      $m++;
+      other = $(this)[0][$m].value;
+      $m += 2;
     }
+    console.log(arr);
     $.ajax({
       url: "save_data.php",
       type: "POST",
