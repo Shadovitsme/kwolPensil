@@ -16,6 +16,9 @@ switch ($_POST['funk']) {
     case 'addWishes':
         addWishes();
         break;
+    case 'addDetailRoom':
+        addDetailRoom();
+        break;
 }
 
 
@@ -92,6 +95,7 @@ function addRoomCount()
     $i = 0;
     foreach ($_POST as $room => $count) {
         if ($i > 0) {
+            if ($count) {
             try {
                 $connection = new PDO("sqlite:$databaseFile");
                 $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -102,10 +106,12 @@ function addRoomCount()
             $sql = "INSERT INTO rooms (userId, room, count) VALUES ('$id', '$room', '$count')";
             try {
                 $connection->exec($sql);
+                    setcookie($room, $count, time() + 3600);
 
                 echo "Data inserted successfully";
             } catch (PDOException $e) {
                 echo "Error: " . $e->getMessage();
+            }
             }
         }
         $i++;
@@ -147,4 +153,35 @@ function addWishes()
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
+}
+
+function addDetailRoom()
+{
+    global $databaseFile;
+    $id = $_COOKIE['userId'];
+    $$i = 0;
+    $room = $_POST['room'];
+    echo $_POST;
+    // foreach ($_POST as $prop => $description) {
+    //     if ($i > 0) {
+    //         if ($description) {
+    //             try {
+    //                 $connection = new PDO("sqlite:$databaseFile");
+    //                 $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //                 echo "Connected successfully";
+    //             } catch (PDOException $e) {
+    //                 die("Connection failed: " . $e->getMessage());
+    //             }
+    //             $sql = "INSERT INTO detailRoom (userId, room, property,description) VALUES ('$id', '$room', '$prop','$description')";
+    //             try {
+    //                 $connection->exec($sql);
+
+    //                 echo "Data inserted successfully";
+    //             } catch (PDOException $e) {
+    //                 echo "Error: " . $e->getMessage();
+    //             }
+    //         }
+    //     }
+    //     $i++;
+    // }
 }

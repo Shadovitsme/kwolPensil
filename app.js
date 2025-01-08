@@ -144,7 +144,72 @@ $(document).ready(function () {
     });
   });
 
-  
+  $("form#hallway").on("submit", function (e) {
+    e.preventDefault(); // предотвращаем стандартное поведение формы
+    let wodrop = $(this)[0][1].value;
+    let warmFloor = $(this)[0][4].value;
+    let mirror = $(this)[0][7].value;
+    let sitting = $(this)[0][10].value;
+    let shoes = $(this)[0][13].value;
+    let shelf = $(this)[0][16].value;
+    let condicioner = $(this)[0][19].value;
+    let floor = $(this)[0][21].value;
+    let walls = $(this)[0][22].value;
+    let seiling = $(this)[0][23].value;
+    let other = $(this)[0][24].value;
+    let arr = [];
+    for (let i = 1; i < getCookie("прихожая"); i++) {
+      wodrop = $(this)[0][1 * i].value;
+      warmFloor = $(this)[0][4 * i].value;
+      mirror = $(this)[0][7 * i].value;
+      sitting = $(this)[0][10 * i].value;
+      shoes = $(this)[0][13 * i].value;
+      shelf = $(this)[0][16 * i].value;
+      condicioner = $(this)[0][19 * i].value;
+      floor = $(this)[0][21 * i].value;
+      walls = $(this)[0][22 * i].value;
+      seiling = $(this)[0][23 * i].value;
+      other = $(this)[0][24 * i].value;
+      arr.push(
+        ` room: "прихожая${i}",
+  шкаф_для_одежды${i}: wodrop,
+  теплый_пол${i}: warmFloor,
+  зеркало${i}: mirror,
+  сиденье${i}: sitting,
+  обувница${i}: shoes,
+  полки${i}: shelf,
+  кондиционер${i}: condicioner,
+  полы${i}: floor,
+  стены: walls,
+  потолки${i}: seiling,
+  другое${i}: other,`
+      );
+    }
+    $.ajax({
+      url: "save_data.php",
+      type: "POST",
+      data: {
+        funk: "addDetailRoom",
+        arr,
+      },
+
+      success: function (data) {
+        console.log(data);
+        // window.location.replace("./wishesPage.html");
+      },
+    });
+  });
+
+  function getCookie(name) {
+    let matches = document.cookie.match(
+      new RegExp(
+        "(?:^|; )" +
+          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
+          "=([^;]*)"
+      )
+    );
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
 
   $("button[name='plusButton']").click(function (e) {
     var $input = $(this).parent().find("input");
@@ -161,4 +226,3 @@ $(document).ready(function () {
     return false;
   });
 });
-

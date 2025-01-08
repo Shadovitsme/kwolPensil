@@ -5,166 +5,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./jquery-3.7.1.min.js"></script>
     <link rel="stylesheet" href="app.css" />
+    <script src="./pages.js"></script>
+
     <script src="./app.js"></script>
+
     <title>Document</title>
   </head>
   <body class="body">
     <h1 class="h1 Text mb-10 uppercase">Прихожая</h1>
-    <form id="hallWay" class="flex w-full">
-      <div class="w-[652px] mr-[64px]">
-        <div class="flex h-[58px] mb-[32px]">
-          <div class="labelWrapper mr-8 w-[460px] flex my-auto">
-            <p class="p3 Text my-auto">Шкаф для одежды</p>
-          </div>
-          <button
-            name="minusButton"
-            type="button"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundminus.png" />
-          </button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
-          <button
-            type="button"
-            name="plusButton"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundPlus.png" />
-          </button>
-        </div>
-        <div class="flex h-[58px] mb-[32px]">
-            <div class="labelWrapper mr-5 w-[460px] flex my-auto">
-                <p class="p3 Text my-auto">Теплый пол</p>
-          </div>
-          <button
-            name="minusButton"
-            type="button"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundminus.png" />
-          </button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
-          <button
-            type="button"
-            name="plusButton"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundPlus.png" />
-          </button>
-        </div>
-        <div class="flex h-[58px] mb-[32px]">
-            <div class="labelWrapper mr-8 w-[460px] flex my-auto">
-                <p class="p3 Text my-auto">Зеркало</p>
-          </div>
-          <button
-            name="minusButton"
-            type="button"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundminus.png" />
-          </button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
-          <button
-            type="button"
-            name="plusButton"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundPlus.png" />
-          </button>
-        </div>
-        <div class="flex h-[58px] mb-[32px]">
-            <div class="labelWrapper mr-8 w-[460px] flex my-auto">
-                <p class="p3 Text my-auto">Место для сидения (скамья или пуфик)</p>
-          </div>
-          <button
-            name="minusButton"
-            type="button"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundminus.png" />
-          </button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
-          <button
-            type="button"
-            name="plusButton"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundPlus.png" />
-          </button>
-        </div>
-        <div class="flex h-[58px] mb-[32px]">
-            <div class="labelWrapper mr-8 w-[460px] flex my-auto">
-                <p class="p3 Text my-auto">Организация места для хранения обуви</p>
-          </div>
-          <button
-            name="minusButton"
-            type="button"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundminus.png" />
-          </button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
-          <button
-            type="button"
-            name="plusButton"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundPlus.png" />
-          </button>
-        </div>
-        <div class="flex h-[58px] mb-[32px]">
-            <div class="labelWrapper mr-8 w-[460px] flex my-auto">
-                <p class="p3 Text my-auto">Полки для аксессуаров (ключи, зонты)</p>
-          </div>
-          <button
-            name="minusButton"
-            type="button"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundminus.png" />
-          </button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
-          <button
-            type="button"
-            name="plusButton"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundPlus.png" />
-          </button>
-        </div>
-        <div class="flex h-[58px] mb-[32px]">
-            <div class="labelWrapper mr-8 w-[460px] flex my-auto">
-                <p class="p3 Text my-auto">Кондиционирование</p>
-          </div>
-          <button
-            name="minusButton"
-            type="button"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundminus.png" />
-          </button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
-          <button
-            type="button"
-            name="plusButton"
-            class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
-          >
-            <img src="./images/roundPlus.png" />
-          </button>
-        </div>
-      </div>
-      <div class="w-[1004px]">
-        <p class="p4 Text mb-2">Пожелания по напольному покрытию</p>
-        <textarea class="input mb-3 h-[140px]" placeholder="Укажите тип покрытия для пола (плитка, ламинат и т. д.) "></textarea>
-        <p class="p4 Text mb-2">Пожелания по отделке стен</p>
-        <textarea class="input mb-3 h-[140px]" placeholder="Укажите предпочтения по материалам и цвету. Если нужен декоративный элемент, уточните."></textarea>
-        <p class="p4 Text mb-2">Пожелания по отделке потолков</p>
-        <textarea class="input mb-3 h-[140px]" placeholder="Опишите предпочтения по отделке потолков (натяжной, подвесной, многоуровневый, или просто окрашенный.) Укажите предпочтения по материалам и цвету. Если нужен декоративный элемент (карнизы, лепнина, балки), уточните."></textarea>
-        <p class="p4 Text mb-2">Другое</p>
-        <textarea class="input mb-3 h-[140px]" placeholder="Если есть другие пожелания, опишите их здесь"></textarea>
-        <div class="w-full flex justify-end">
-          <button class="yellowButton w-[212px]" type="submit">Далее</button>
-        </div>
+    <form id="hallWay" class="w-full">
+      <div id="hallWay">
+
+
+    </div>
+      <div class="w-full flex justify-end mt-10">
+        <button class="yellowButton h-[50px] w-[212px]" type="submit">
+          Далее
+        </button>
       </div>
     </form>
   </body>
