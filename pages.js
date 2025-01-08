@@ -23,7 +23,7 @@ $(document).ready(function () {
                 type="button"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundminus.png" />
+                <img src="../images/roundminus.png" />
               </button>
               <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
               <button
@@ -31,7 +31,7 @@ $(document).ready(function () {
                 name="plusButton"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundPlus.png" />
+                <img src="../images/roundPlus.png" />
               </button>
             </div>
             <div class="flex h-[58px] mb-[32px]">
@@ -43,7 +43,7 @@ $(document).ready(function () {
                 type="button"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundminus.png" />
+                <img src="../images/roundminus.png" />
               </button>
               <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
               <button
@@ -51,7 +51,7 @@ $(document).ready(function () {
                 name="plusButton"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundPlus.png" />
+                <img src="../images/roundPlus.png" />
               </button>
             </div>
             <div class="flex h-[58px] mb-[32px]">
@@ -63,7 +63,7 @@ $(document).ready(function () {
                 type="button"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundminus.png" />
+                <img src="../images/roundminus.png" />
               </button>
               <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
               <button
@@ -71,7 +71,7 @@ $(document).ready(function () {
                 name="plusButton"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundPlus.png" />
+                <img src="../images/roundPlus.png" />
               </button>
             </div>
             <div class="flex h-[58px] mb-[32px]">
@@ -85,7 +85,7 @@ $(document).ready(function () {
                 type="button"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundminus.png" />
+                <img src="../images/roundminus.png" />
               </button>
               <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
               <button
@@ -93,7 +93,7 @@ $(document).ready(function () {
                 name="plusButton"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundPlus.png" />
+                <img src="../images/roundPlus.png" />
               </button>
             </div>
             <div class="flex h-[58px] mb-[32px]">
@@ -107,7 +107,7 @@ $(document).ready(function () {
                 type="button"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundminus.png" />
+                <img src="../images/roundminus.png" />
               </button>
               <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
               <button
@@ -115,7 +115,7 @@ $(document).ready(function () {
                 name="plusButton"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundPlus.png" />
+                <img src="../images/roundPlus.png" />
               </button>
             </div>
             <div class="flex h-[58px] mb-[32px]">
@@ -129,7 +129,7 @@ $(document).ready(function () {
                 type="button"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundminus.png" />
+                <img src="../images/roundminus.png" />
               </button>
               <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
               <button
@@ -137,7 +137,7 @@ $(document).ready(function () {
                 name="plusButton"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundPlus.png" />
+                <img src="../images/roundPlus.png" />
               </button>
             </div>
             <div class="flex h-[58px] mb-[32px]">
@@ -149,7 +149,7 @@ $(document).ready(function () {
                 type="button"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundminus.png" />
+                <img src="../images/roundminus.png" />
               </button>
               <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
               <button
@@ -157,7 +157,7 @@ $(document).ready(function () {
                 name="plusButton"
                 class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
               >
-                <img src="./images/roundPlus.png" />
+                <img src="../images/roundPlus.png" />
               </button>
             </div>
           </div>

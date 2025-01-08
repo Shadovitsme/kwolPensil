@@ -1,5 +1,17 @@
 // Ваш скрипт на JavaScript
 $(document).ready(function () {
+
+  function getCookie(name) {
+    let matches = document.cookie.match(
+      new RegExp(
+        "(?:^|; )" +
+          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
+          "=([^;]*)"
+      )
+    );
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+  }
+
   // ajax page 1
   $("form#page1").on("submit", function (e) {
     e.preventDefault();
@@ -76,7 +88,6 @@ $(document).ready(function () {
     let storageRoom = $(this)[0][25].value;
     let bathroom = $(this)[0][28].value;
     let cabinet = $(this)[0][31].value;
-    let workPlace = $(this)[0][34].value;
     let welcomeBathroom = $(this)[0][37].value;
     $.ajax({
       url: "save_data.php",
@@ -94,7 +105,6 @@ $(document).ready(function () {
         кладовая: storageRoom,
         ванная: bathroom,
         кабинет: cabinet,
-        рабочее_место: workPlace,
         гостевой_санузел: welcomeBathroom,
         другое: $(this)[0][39].value,
       },
@@ -138,95 +148,47 @@ $(document).ready(function () {
       },
 
       success: function (data) {
-        console.log(data);
-        // window.location.replace("./wishesPage.html");
+        if (getCookie("прихожая") > 0) {
+          window.location.replace("./rooms/hallWay.html");
+        }
+        if (getCookie("детская") > 0) {
+          window.location.replace("./rooms/childRoom.html");
+        }
+        if (getCookie("кухня") > 0) {
+          window.location.replace("./rooms/kitchen.html");
+        }
+        if (getCookie("гостиная") > 0) {
+          window.location.replace("./rooms/welcomeRoom.html");
+        }
+        if (getCookie("спальня") > 0) {
+          window.location.replace("./rooms/bedroom.html");
+        }
+        if (getCookie("гардеробная") > 0) {
+          window.location.replace("./rooms/dressingRoom.html");
+        }
+        if (getCookie("балкон") > 0) {
+          window.location.replace("./rooms/balcony.html");
+        }
+        if (getCookie("столовая") > 0) {
+          window.location.replace("./rooms/eatingRoom.html");
+        }
+        if (getCookie("кладовая") > 0) {
+          window.location.replace("./rooms/sclad.html");
+        }
+        if (getCookie("ванная") > 0) {
+          window.location.replace("./rooms/bathroom.html");
+        }
+        if (getCookie("кабинет") > 0) {
+          window.location.replace("./rooms/office.html");
+        }
+
+        if (getCookie("гостевой_санузел") > 0) {
+          window.location.replace("./rooms/welcomeBath.html");
+        }
       },
     });
   });
 
-  $("form#hallway").on("submit", function (e) {
-    e.preventDefault(); // предотвращаем стандартное поведение формы
-    let wodrop = $(this)[0][1].value;
-    let warmFloor = $(this)[0][4].value;
-    let mirror = $(this)[0][7].value;
-    let sitting = $(this)[0][10].value;
-    let shoes = $(this)[0][13].value;
-    let shelf = $(this)[0][16].value;
-    let condicioner = $(this)[0][19].value;
-    let floor = $(this)[0][21].value;
-    let walls = $(this)[0][22].value;
-    let seiling = $(this)[0][23].value;
-    let other = $(this)[0][24].value;
-    $m = 26;
-
-    let arr = [];
-    for (let i = 0; i < getCookie("прихожая"); i++) {
-      arr.push([
-        `прихожая${i}`,
-        ["шкаф_для_одежды", wodrop],
-        ["теплый_пол", warmFloor],
-        ["зеркало", mirror],
-        ["сиденье", sitting],
-        ["обувница", shoes],
-        ["полки", shelf],
-        ["кондиционер", condicioner],
-        ["полы", floor],
-        ["стены", walls],
-        ["потолки", seiling],
-        ["другое", other],
-      ]);
-      if (i == getCookie("прихожая") - 1) {
-        break;
-      }
-      wodrop = $(this)[0][$m].value;
-      $m += 3;
-      warmFloor = $(this)[0][$m].value;
-      $m += 3;
-      mirror = $(this)[0][$m].value;
-      $m += 3;
-      sitting = $(this)[0][$m].value;
-      $m += 3;
-      shoes = $(this)[0][$m].value;
-      $m += 3;
-      shelf = $(this)[0][$m].value;
-      $m += 3;
-      condicioner = $(this)[0][$m].value;
-      $m += 2;
-      floor = $(this)[0][$m].value;
-      $m++;
-      walls = $(this)[0][$m].value;
-      $m++;
-      seiling = $(this)[0][$m].value;
-      $m++;
-      other = $(this)[0][$m].value;
-      $m += 2;
-    }
-    console.log(arr);
-    $.ajax({
-      url: "save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        console.log(data);
-        // window.location.replace("./wishesPage.html");
-      },
-    });
-  });
-
-  function getCookie(name) {
-    let matches = document.cookie.match(
-      new RegExp(
-        "(?:^|; )" +
-          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-          "=([^;]*)"
-      )
-    );
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
 
   $("button[name='plusButton']").click(function (e) {
     var $input = $(this).parent().find("input");
