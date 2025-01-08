@@ -88,7 +88,7 @@ $(document).ready(function () {
     let storageRoom = $(this)[0][25].value;
     let bathroom = $(this)[0][28].value;
     let cabinet = $(this)[0][31].value;
-    let welcomeBathroom = $(this)[0][37].value;
+    let welcomeBathroom = $(this)[0][35].value;
     $.ajax({
       url: "save_data.php",
       type: "POST",
@@ -177,13 +177,13 @@ $(document).ready(function () {
     });
   });
 
-
   $("button[name='plusButton']").click(function (e) {
     var $input = $(this).parent().find("input");
     $input.val(parseInt($input.val()) + 1);
     $input.change();
     return false;
   });
+
   $("button[name='minusButton']").click(function () {
     var $input = $(this).parent().find("input");
     var count = parseInt($input.val()) - 1;

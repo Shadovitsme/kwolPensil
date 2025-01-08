@@ -565,7 +565,6 @@ $(document).ready(function () {
           </div>   
       </div>
       <hr class="bg-white my-5"   />
- 
 `);
 
   // childRoom
