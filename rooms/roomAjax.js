@@ -69,7 +69,7 @@ $(document).ready(function () {
           window.location.replace("./childRoom.html");
         }
         if (getCookie("кухня") > 0) {
-          window.location.replace("./kitchen.html");
+          window.location.replace("./rooms/kitchen.html");
         }
         if (getCookie("гостиная") > 0) {
           window.location.replace("./welcomeRoom.html");
@@ -95,7 +95,6 @@ $(document).ready(function () {
         if (getCookie("кабинет") > 0) {
           window.location.replace("./office.html");
         }
-
         if (getCookie("гостевой_санузел") > 0) {
           window.location.replace("./welcomeBath.html");
         }
