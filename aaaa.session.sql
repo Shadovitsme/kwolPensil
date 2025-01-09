@@ -20,4 +20,4 @@
 -- REFERENCES Customers (id) );
 
 
-SELECT * from wishes
+SELECT * from detailRoom

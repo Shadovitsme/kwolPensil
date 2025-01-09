@@ -88,4 +88,54 @@ $(document).ready(function () {
       });
     },
   });
+  $.ajax({
+    url: "roomResult.php",
+    type: "GET",
+    success: function (data) {
+      let arr = Object.values(JSON.parse(data));
+
+      arr.forEach((element) => {
+        $("tbody#room").append(
+          "<tr><td>" +
+            element.userId +
+            "</td>" +
+            "<td>" +
+            element.room +
+            "</td>" +
+            "<td>" +
+            element.count +
+            "</td>" +
+            "<td>" +
+            element.other +
+            "</td>" +
+            "</tr>"
+        );
+      });
+    },
+  });
+  $.ajax({
+    url: "detailRoomResult.php",
+    type: "GET",
+    success: function (data) {
+      let arr = Object.values(JSON.parse(data));
+
+      arr.forEach((element) => {
+        $("tbody#detailRoom").append(
+          "<tr><td>" +
+            element.userId +
+            "</td>" +
+            "<td>" +
+            element.room +
+            "</td>" +
+            "<td>" +
+            element.property +
+            "</td>" +
+            "<td>" +
+            element.description +
+            "</td>" +
+            "</tr>"
+        );
+      });
+    },
+  });
 });
