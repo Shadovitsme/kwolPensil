@@ -88,7 +88,8 @@ $(document).ready(function () {
     let storageRoom = $(this)[0][25].value;
     let bathroom = $(this)[0][28].value;
     let cabinet = $(this)[0][31].value;
-    let welcomeBathroom = $(this)[0][35].value;
+    let welcomeBathroom = $(this)[0][34].value;
+    let otherRooms = $(this)[0][36].value;
     $.ajax({
       url: "save_data.php",
       type: "POST",
@@ -106,7 +107,7 @@ $(document).ready(function () {
         ванная: bathroom,
         кабинет: cabinet,
         гостевой_санузел: welcomeBathroom,
-        другое: $(this)[0][39].value,
+        другое: otherRooms,
       },
 
       success: function (data) {

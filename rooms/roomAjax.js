@@ -257,12 +257,18 @@ $(document).ready(function () {
   $("form#office").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
 
+console.log(getCookie("гостевой_санузел"));
+
     if (getCookie("гостевой_санузел") > 0) {
       window.location.replace("./welcomeBath.html");
     }
   });
 
-  $("form#welcomeBath").on("submit", function (e) {});
+  $("form#welcomeBath").on("submit", function (e) {
+    e.preventDefault();
+
+    window.location.replace("/index.html");
+  });
 
   function getCookie(name) {
     let matches = document.cookie.match(

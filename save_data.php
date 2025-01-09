@@ -96,22 +96,22 @@ function addRoomCount()
     foreach ($_POST as $room => $count) {
         if ($i > 0) {
             if ($count) {
-            try {
-                $connection = new PDO("sqlite:$databaseFile");
-                $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Connected successfully";
-            } catch (PDOException $e) {
-                die("Connection failed: " . $e->getMessage());
-            }
-            $sql = "INSERT INTO rooms (userId, room, count) VALUES ('$id', '$room', '$count')";
-            try {
-                $connection->exec($sql);
+                try {
+                    $connection = new PDO("sqlite:$databaseFile");
+                    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    echo "Connected successfully";
+                } catch (PDOException $e) {
+                    die("Connection failed: " . $e->getMessage());
+                }
+                $sql = "INSERT INTO rooms (userId, room, count) VALUES ('$id', '$room', '$count')";
+                try {
+                    $connection->exec($sql);
                     setcookie($room, $count, time() + 3600);
 
-                echo "Data inserted successfully";
-            } catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
+                    echo "Data inserted successfully";
+                } catch (PDOException $e) {
+                    echo "Error: " . $e->getMessage();
+                }
             }
         }
         $i++;
