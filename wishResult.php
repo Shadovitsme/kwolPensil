@@ -10,15 +10,9 @@ try {
   die("Connection failed: " . $e->getMessage());
 }
 try {
-  $a = $connection->query("SELECT * FROM Customers");
-  $l = ($a->fetch(PDO::FETCH_ASSOC));
-  $result = '<tr>';
-  foreach ($l as $item) {
-    $result .= "<td>$item</td>";
-  }
-  $result .= '</tr>';
-  $result .= '<tr>';
-  echo $result;
+  $a = $connection->query("SELECT * FROM wishes");
+  $l = ($a->fetchAll());
+  echo json_encode($l);
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage();
 }
