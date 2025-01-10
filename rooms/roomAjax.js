@@ -87,6 +87,8 @@ $(document).ready(function () {
           window.location.replace("./office.html");
         } else if (getCookie("гостевой_санузел")) {
           window.location.replace("./welcomeBath.html");
+        } else {
+          window.location.replace("/index.html");
         }
       },
     });
@@ -115,6 +117,8 @@ $(document).ready(function () {
       window.location.replace("./office.html");
     } else if (getCookie("гостевой_санузел")) {
       window.location.replace("./welcomeBath.html");
+    } else {
+      window.location.replace("/index.html");
     }
   });
 
@@ -139,6 +143,8 @@ $(document).ready(function () {
       window.location.replace("./office.html");
     } else if (getCookie("гостевой_санузел")) {
       window.location.replace("./welcomeBath.html");
+    } else {
+      window.location.replace("/index.html");
     }
   });
 
@@ -161,6 +167,8 @@ $(document).ready(function () {
       window.location.replace("./office.html");
     } else if (getCookie("гостевой_санузел")) {
       window.location.replace("./welcomeBath.html");
+    } else {
+      window.location.replace("/index.html");
     }
   });
 
@@ -181,6 +189,8 @@ $(document).ready(function () {
       window.location.replace("./office.html");
     } else if (getCookie("гостевой_санузел")) {
       window.location.replace("./welcomeBath.html");
+    } else {
+      window.location.replace("/index.html");
     }
   });
 
@@ -199,6 +209,8 @@ $(document).ready(function () {
       window.location.replace("./office.html");
     } else if (getCookie("гостевой_санузел")) {
       window.location.replace("./welcomeBath.html");
+    } else {
+      window.location.replace("/index.html");
     }
   });
 
@@ -215,6 +227,8 @@ $(document).ready(function () {
       window.location.replace("./office.html");
     } else if (getCookie("гостевой_санузел")) {
       window.location.replace("./welcomeBath.html");
+    } else {
+      window.location.replace("/index.html");
     }
   });
 
@@ -229,6 +243,8 @@ $(document).ready(function () {
       window.location.replace("./office.html");
     } else if (getCookie("гостевой_санузел")) {
       window.location.replace("./welcomeBath.html");
+    } else {
+      window.location.replace("/index.html");
     }
   });
 
@@ -241,6 +257,8 @@ $(document).ready(function () {
       window.location.replace("./office.html");
     } else if (getCookie("гостевой_санузел")) {
       window.location.replace("./welcomeBath.html");
+    }    else {
+      window.location.replace("/index.html");
     }
   });
 
@@ -251,6 +269,8 @@ $(document).ready(function () {
       window.location.replace("./office.html");
     } else if (getCookie("гостевой_санузел")) {
       window.location.replace("./welcomeBath.html");
+    } else {
+      window.location.replace("/index.html");
     }
   });
 
