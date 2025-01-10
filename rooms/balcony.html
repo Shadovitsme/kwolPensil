@@ -15,18 +15,31 @@
 </head>
 
 <body class="w-[360px] md:w-screen flex">
-  <div class="mx-auto">
-    <h1 class="H1 Text mb-10 uppercase">Кабинет</h1>
+  <div class="mx-auto w-[1720px] h-full">
+    <h1 class="H1 Text mb-10 uppercase">Балкон</h1>
   <form id="balcony" class="w-full">
     <div id="balcony">
-
-
+      <p class="h6 Accent mb-2">Выберите тип балкона</p>
+      <div class="flex mt-4 mb-10">
+        <div class="mr-5">
+          <input class="radio" type="radio" name="howMuchVisitors" value="Несколько раз в неделю" checked="true" />
+          <label class="p3 Text">Остекленный полностью</label>
+        </div>
+        <div class="mr-5">
+          <input class="radio" type="radio" name="howMuchVisitors" value="Несколько раз в месяц" />
+          <label class="p3 Text">Открытый</label>
+        </div>
+        <div>
+          <input class="radio" type="radio" name="howMuchVisitors" value="Несколько раз в год" />
+          <label class="p3 Text">Устройство зимнего сада</label>
+        </div>
+      </div>
+      <p class="p4 Text mb-2">Другое</p>
+      <textarea class="input h-[140px] w-[772px]" placeholder="Если есть другие пожелания, опишите их здесь"></textarea>
     </div>
-    <div class="w-full flex justify-end mt-10">
-      <button class="yellowButton h-[50px] w-[212px]" type="submit">
+      <button class="yellowButton h-[50px] w-[212px] fixed bottom-[51px] right-[51px]" type="submit">
         Далее
       </button>
-    </div>
   </form>
   </div>
 </body>
