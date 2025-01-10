@@ -13,20 +13,19 @@
   <title>Document</title>
 </head>
 
-<body class="max-h-screen max-w-screen">
-  <div class="flex justify-between">
-    <div class="mr-16 w-[851px]">
-      <div class="w-[828px]">
-        <h1 class="H1 Text text-center">Бриф, подготовленный</h1>
-        <h1 class="speciall text-center">специально для вас</h1>
+<body class=" w-[360px] md:w-screen flex">
+  
+  <div class="flex md:justify-between mx-auto w-[1600px]">
+    <div class=" md:mr-16 w-[360px] md:w-[851px]">
+      <div class="mt-10 md:w-[828px] ml-5">
+        <h1 class="H1 Text uppercase text-justify ">Бриф, подготовленный</h1>
+        <h1 class="speciall text-justify">специально для вас</h1>
       </div>
-
-      <p class="p3 Text mt-6 mb-16">
-        Заполните бриф, чтобы мы могли сразу сориентировать вас по деталям
-        и стоимости проекта
+      <p class="p2 h-12 Text mt-4 mb-[62px] ml-5 tracking-tighter">
+        Заполните бриф, чтобы мы могли сразу сориентировать вас по деталям и стоимости проекта
       </p>
-      <div class="p-[60px] border-[1px] border-[#E4A85E] rounded-[10px]">
-        <h class="H3 Text"> Основные данные</h>
+      <div class="px-[60px] pt-[57px] pb-[60px] ml-1 border-[1px] border-[#E4A85E] rounded-[10px]">
+        <h class="H3 Text uppercase"> Основные данные</h>
 
         <form class="mt-8" id="page1">
           <input type="text" class="input mb-6" name="name" placeholder="Введите имя" />
@@ -35,7 +34,7 @@
         </form>
       </div>
     </div>
-    <div class="flex absolute right-0">
+    <div class="md:flex hidden md:visible">
       <img class="h-[732px]" src="./images/pic.png" />
       <img class="h-[630px] my-auto ml-5" src="./images/pic1.png" />
 
