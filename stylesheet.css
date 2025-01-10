@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Corsa Grotesk';
+    src: url('CorsaGrotesk-Thin.eot');
+    src: local('Corsa Grotesk Thin'), local('CorsaGrotesk-Thin'),
+        url('CorsaGrotesk-Thin.eot?#iefix') format('embedded-opentype'),
+        url('CorsaGrotesk-Thin.woff2') format('woff2'),
+        url('CorsaGrotesk-Thin.woff') format('woff'),
+        url('CorsaGrotesk-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Corsa Grotesk';
+    src: url('CorsaGrotesk-Regular.eot');
+    src: local('Corsa Grotesk Regular'), local('CorsaGrotesk-Regular'),
+        url('CorsaGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+        url('CorsaGrotesk-Regular.woff2') format('woff2'),
+        url('CorsaGrotesk-Regular.woff') format('woff'),
+        url('CorsaGrotesk-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

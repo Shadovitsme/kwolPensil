@@ -12,20 +12,21 @@
   <title>Document</title>
 </head>
 
-<body class="body max-h-screen">
-  <h1 class="H1 Text mb-10">Укажите необходимые данные</h1>
+<body class=" w-[360px] md:w-screen flex">
+  <div class=" mx-auto w-[1600px] z-20">
+  <h1 class="H1 Text mb-10 uppercase">Укажите необходимые данные</h1>
   <form class="flex justify-between w-full" id="page2">
     <div class="mr-16 w-[828px]">
       <p class="p4 Text mb-2">
         Какое количество членов семьи собирается проживать?
       </p>
-      <textarea class="input mb-16" type="text"></textarea>/>
-      <p class="p4 Accent mb-2">
+      <input class="input mb-4" type="text"></input>/>
+      <p class="p4 Text mb-2">
         Какое количество домашних животных и комнатных растений?
       </p>
-      <textarea class="input mb-16" type="text"></textarea> />
+      <input class="input mb-3" type="text"></input> />
 
-      <p class="h6 Accent">Есть необходимость звукоизоляции?</p>
+      <p class="H6 Accent">Есть необходимость звукоизоляции?</p>
       <div class="flex mt-4 mb-16">
         <div class="mr-5">
           <input class="radio" type="radio" name="soundless" value="1" checked="true" />
@@ -37,7 +38,7 @@
         </div>
       </div>
 
-      <p class="h6 Accent">Есть ли у вас мебель?</p>
+      <p class="H6 Accent">Есть ли у вас мебель?</p>
       <div class="flex mt-4 mb-16">
         <div class="mr-5">
           <input class="radio" type="radio" name="furniture" value="1" checked="true" />
@@ -57,7 +58,7 @@
       <div class="mb-16">
         <input class="check" type="checkbox" checked="true" /><label class="p3 Text ml-2">Хобби нет</label>
       </div>
-      <p class="h6 Accent mb-2">Требуется ли перепланировка?</p>
+      <p class="H6 Accent mb-2">Требуется ли перепланировка?</p>
       <div class="flex mt-4 mb-16">
         <div class="mr-5">
           <input class="radio" type="radio" name="replane" value="1" checked="true" />
@@ -68,7 +69,7 @@
           <label class="p3 Text">Нет</label>
         </div>
       </div>
-      <p class="h6 Accent mb-2">Как часто к вам приходят гости?</p>
+      <p class="H6 Accent mb-2">Как часто к вам приходят гости?</p>
       <div class="flex mt-4 mb-16">
         <div class="mr-5">
           <input class="radio" type="radio" name="howMuchVisitors" value="Несколько раз в неделю" checked="true" />
@@ -90,6 +91,9 @@
       </div>
     </div>
   </form>
+</div>
+<div class="stars absolute z-0 top-0 bottom-0 left-0 right-0"></div>
+
 </body>
 
 </html>
