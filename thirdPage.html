@@ -1,156 +1,287 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="app.css" />
+    <script src="./app.js"></script>
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./jquery-3.7.1.min.js"></script>
-  <link rel="stylesheet" href="app.css" />
-  <script src="./app.js"></script>
-  <title>Document</title>
-</head>
+  <body class="md:w-screen flex">
+    <div class="mx-auto w-[1720px] z-20">
+      <form id="page3" class="w-full h-full">
+        <h1 class="H1 Text pb-10 uppercase">Выберите комнаты</h1>
 
-<body>
-  <form id="page3" class="w-full h-full">
-    <h1 class="H1 Text pb-10">Выберите комнаты</h1>
-
-    <div class="flex w-full h-full">
-      <div class="w-[876px] mr-16 grid grid-cols-2 gap-y-8 gap-x-[52px]">
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Прихожая</p>
+        <div class="flex w-full h-full">
+          <div class="w-[876px] mr-16 grid grid-cols-2 gap-y-1 gap-x-[52px]">
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Прихожая</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Детская</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Кухня</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Гостиная</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Спальня</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Гардеробная</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Балкон</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Столовая</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Кладовая</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Ванная</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Кабинет</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
+            <div class="flex h-[56px]">
+              <div class="labelWrapper mr-5 w-[220px] flex my-auto">
+                <p class="p3 Text my-auto">Гостевой санузел</p>
+              </div>
+              <button
+                name="minusButton"
+                type="button"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundminus.png" />
+              </button>
+              <input class="input h-14 my-auto w-[52px] mx-3" value="0" />
+              <button
+                type="button"
+                name="plusButton"
+                class="disabled:opacity-50 h-[48px] w-[48px] my-auto"
+              >
+                <img src="./images/roundPlus.png" />
+              </button>
+            </div>
           </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
-        </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Детская</p>
+          <div class="w-[780px]">
+            <p class="p4 Text pb-2">Другое</p>
+            <textarea
+              class="textarea h-[140px] w-full mb-3"
+              placeholder="Если нужны другие комнаты, опишите их здесь"
+            ></textarea>
+            <div>
+              <input type="checkbox" checked="true" class="check" /><label
+                class="p3 Text"
+                >Другие комнаты не нужны</label
+              >
+            </div>
           </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
         </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Кухня</p>
-          </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
+        <div class="w-full flex justify-end mt-12">
+          <button class="yellowButton w-[212px] h-[60px] flex" type="submit">
+            <div class="flex mx-auto my-auto">
+              <p class="">Далее</p>
+              <div class="rightArrow h-6 w-6 ml-6"></div>
+            </div>
+          </button>
         </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Гостиная</p>
-          </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
-        </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Спальня</p>
-          </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
-        </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Гардеробная</p>
-          </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
-        </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Балкон</p>
-          </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
-        </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Столовая</p>
-          </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
-        </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Кладовая</p>
-          </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
-        </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Ванная</p>
-          </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
-        </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Кабинет</p>
-          </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
-        </div>
-        <div class="flex h-[56px]">
-          <div class="labelWrapper mr-5 w-[220px] flex my-auto">
-            <p class="p3 Text my-auto">Гостевой санузел</p>
-          </div>
-          <button name="minusButton" type="button" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundminus.png"></button>
-          <input class="input h-14 my-auto w-[52px] mx-3" value="0">
-          <button type="button" name="plusButton" class="disabled:opacity-50 h-[48px] w-[48px] my-auto"><img
-              src="./images/roundPlus.png" /></button>
-        </div>
-      </div>
-      <div class="w-[780px]">
-        <p class="p4 Text pb-2">Другое</p>
-        <textarea class="textarea h-[140px] w-full mb-3"
-          placeholder="Если нужны другие комнаты, опишите их здесь"></textarea>
-        <div>
-          <input type="checkbox" checked="true" class="check" /><label class="p3 Text">Другие комнаты не нужны</label>
-        </div>
-      </div>
+      </form>
     </div>
-    <div class="w-full flex justify-end mt-[18px]">
-      <button class="yellowButton w-[212px]" type="submit">Отправить</button>
-    </div>
-  </form>
-</body>
-
+    <div class="stars absolute z-0 top-0 bottom-0 left-0 right-0"></div>
+  </body>
 </html>
