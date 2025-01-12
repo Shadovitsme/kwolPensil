@@ -39,10 +39,10 @@ function addNamePhone()
     $sql = "INSERT INTO Customers (FirstName, Phone) VALUES ('$name', '$phone')";
     try {
         $connection->exec($sql);
-
-        echo "Data inserted successfully";
         $a = $connection->query("SELECT id FROM Customers where FirstName = '$name' AND Phone = '$phone'");
         setcookie('userId', $a->fetchAll()[0][0], time() + 3600);
+        echo "Data inserted successfully";
+
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -107,7 +107,6 @@ function addRoomCount()
                 try {
                     $connection->exec($sql);
                     setcookie($room, $count, time() + 3600);
-
                     echo "Data inserted successfully";
                 } catch (PDOException $e) {
                     echo "Error: " . $e->getMessage();
