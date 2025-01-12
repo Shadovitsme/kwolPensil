@@ -12,22 +12,22 @@
   <title>Document</title>
 </head>
 
-<body class=" w-[360px] md:w-screen flex">
-  <div class=" mx-auto w-[1600px] z-20">
+<body class=" md:w-screen flex">
+  <div class=" mx-auto w-[1720px] z-20">
   <h1 class="H1 Text mb-10 uppercase">Укажите необходимые данные</h1>
   <form class="flex justify-between w-full" id="page2">
     <div class="mr-16 w-[828px]">
       <p class="p4 Text mb-2">
         Какое количество членов семьи собирается проживать?
       </p>
-      <input class="input mb-4" type="text"></input>/>
+      <input class="input mb-10" type="number" placeholder="Укажите число"></input>
       <p class="p4 Text mb-2">
         Какое количество домашних животных и комнатных растений?
       </p>
-      <input class="input mb-3" type="text"></input> />
+      <input class="input mb-9" type="number" placeholder="Укажите число"></input>
 
       <p class="H6 Accent">Есть необходимость звукоизоляции?</p>
-      <div class="flex mt-4 mb-16">
+      <div class="flex mt-1 mb-8">
         <div class="mr-5">
           <input class="radio" type="radio" name="soundless" value="1" checked="true" />
           <label class="p3 Text">Звукоизоляция нужна</label>
@@ -39,7 +39,7 @@
       </div>
 
       <p class="H6 Accent">Есть ли у вас мебель?</p>
-      <div class="flex mt-4 mb-16">
+      <div class="flex mt-2 mb-16">
         <div class="mr-5">
           <input class="radio" type="radio" name="furniture" value="1" checked="true" />
           <label class="p3 Text">Да</label>
@@ -54,12 +54,12 @@
       <p class="p4 Text mb-2">
         Наличие хобби, предполагающих размещение доп. инструментов
       </p>
-      <textarea type="text" class="input h-[140px] mb-2"></textarea>
-      <div class="mb-16">
+      <textarea type="text" class="input h-[140px] mb-0.5" placeholder="Перечислите хобби"></textarea>
+      <div class="mb-9">
         <input class="check" type="checkbox" checked="true" /><label class="p3 Text ml-2">Хобби нет</label>
       </div>
-      <p class="H6 Accent mb-2">Требуется ли перепланировка?</p>
-      <div class="flex mt-4 mb-16">
+      <p class="H6 Accent">Требуется ли перепланировка?</p>
+      <div class="flex mt-1.5 mb-8">
         <div class="mr-5">
           <input class="radio" type="radio" name="replane" value="1" checked="true" />
           <label class="p3 Text">Да</label>
@@ -69,8 +69,8 @@
           <label class="p3 Text">Нет</label>
         </div>
       </div>
-      <p class="H6 Accent mb-2">Как часто к вам приходят гости?</p>
-      <div class="flex mt-4 mb-16">
+      <p class="H6 Accent">Как часто к вам приходят гости?</p>
+      <div class="flex mt-1 mb-9">
         <div class="mr-5">
           <input class="radio" type="radio" name="howMuchVisitors" value="Несколько раз в неделю" checked="true" />
           <label class="p3 Text">Несколько раз в неделю</label>
@@ -85,9 +85,14 @@
         </div>
       </div>
       <p class="p4 Text mb-2">Общий бюджет для всех помещений</p>
-      <input class="input h-17" type="number" />
-      <div class="w-full flex justify-end">
-        <button class="yellowButton w-[212px]" type="submit">Далее</button>
+      <input class="input h-17" type="number" placeholder="Укажите в рублях" />
+      <div class="w-full mt-[75px] flex justify-end">
+        
+        <button class="yellowButton w-[212px] h-[60px] flex" type="submit">
+          <div class="flex mx-auto my-auto">
+            <p class="">Далее</p>
+            <div class="rightArrow h-6 w-6 ml-6 "></div>
+          </div></button>
       </div>
     </div>
   </form>
