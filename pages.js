@@ -77,11 +77,10 @@ $(document).ready(function () {
       .append(divider.clone());
 
   // bedroom
-  // TODO понять почему на размножается
   for (var i = 1; i < bedroomCount; i++)
     bedroomTemplate
       .parent()
-      .append(welcomeRoomTemplate.clone().attr("id", `bedroom${i}`))
+      .append(bedroomTemplate.clone().attr("id", `bedroom${i}`))
       .append(divider.clone());
 
   // dressingRoom

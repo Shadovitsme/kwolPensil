@@ -12,13 +12,19 @@
 }
 
 
-
 body {
   background-color: var(--background);
 padding-top: 100px;
 }
 
 .stars{
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: sticky;
+  right: 0;
+  left: 0;
+  top: 0;
   background: repeat url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTY5OCIgaGVpZ2h0PSIxMDgxIiB2aWV3Qm94PSIwIDAgMTY5OCAxMDgxIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNNjIuNDgxNyAyNzAuMzQ1QzU3LjYyOTcgMjIyLjEyNCAxOS4zMTQ5IDE4My43OTYgLTI4Ljg0NTkgMTc5LjAyOEMxOS40Mzk0IDE3NC4yNDcgNTcuODI4MyAxMzUuNzMzIDYyLjUxODIgODcuMzM1N0M2Ny4zNjk5IDEzNS41NTYgMTA1LjY4NSAxNzMuODgzIDE1My44NDYgMTc4LjY1MkMxMDUuNTYgMTgzLjQzMyA2Ny4xNzEzIDIyMS45NDcgNjIuNDgxNyAyNzAuMzQ1WiIgc3Ryb2tlPSIjRTRBODVFIiBzdHJva2Utb3BhY2l0eT0iMC40Ii8+CjxwYXRoIGQ9Ik0xMjE2Ljk4IDQ3NC44NUMxMjExLjg0IDQyMS4yMzYgMTE2OS4yMSAzNzguNTkzIDExMTUuNjcgMzczLjU0N0MxMTY5LjM1IDM2OC40ODkgMTIxMi4wNiAzMjUuNjM4IDEyMTcuMDIgMjcxLjgzMUMxMjIyLjE2IDMyNS40NDQgMTI2NC43OSAzNjguMDg3IDEzMTguMzMgMzczLjEzMkMxMjY0LjY1IDM3OC4xOTEgMTIyMS45NCA0MjEuMDQyIDEyMTYuOTggNDc0Ljg1WiIgc3Ryb2tlPSIjRTRBODVFIiBzdHJva2Utb3BhY2l0eT0iMC40Ii8+CjxwYXRoIGQ9Ik0xNTMwLjk4IDI4My41ODRDMTUyNC41MSAyMDEuNDYzIDE0NTkuMDQgMTM1Ljk3IDEzNzcuMDMgMTI5LjY0OUMxNDU5LjI1IDEyMy4zMTMgMTUyNC44NCA1Ny41MDU3IDE1MzEuMDIgLTI0LjkwMjhDMTUzNy40OSA1Ny4yMTcxIDE2MDIuOTYgMTIyLjcxIDE2ODQuOTcgMTI5LjAzQzE2MDIuNzUgMTM1LjM2NyAxNTM3LjE2IDIwMS4xNzUgMTUzMC45OCAyODMuNTg0WiIgc3Ryb2tlPSIjRTRBODVFIiBzdHJva2Utb3BhY2l0eT0iMC40Ii8+CjxwYXRoIGQ9Ik05MTEuNDggMTEyMC4yOUM5MDYuMDE3IDEwNjAuMjMgODU4LjIyOCAxMDEyLjQzIDc5OC4yNDcgMTAwNy4wN0M4NTguMzgxIDEwMDEuNyA5MDYuMjYxIDk1My42NjMgOTExLjUyIDg5My4zODlDOTE2Ljk4MyA5NTMuNDQ3IDk2NC43NzIgMTAwMS4yNSAxMDI0Ljc1IDEwMDYuNjFDOTY0LjYxOCAxMDExLjk4IDkxNi43MzkgMTA2MC4wMiA5MTEuNDggMTEyMC4yOVoiIHN0cm9rZT0iI0U0QTg1RSIgc3Ryb2tlLW9wYWNpdHk9IjAuNCIvPgo8L3N2Zz4K');
 }
 
@@ -67,7 +73,6 @@ padding-top: 100px;
 
 .H5 {
   font-family: Cruinn;
-
   font-weight: 400;
   font-size: 24px;
   line-height: 24px;
@@ -99,7 +104,6 @@ padding-top: 100px;
 
 .p3 {
   font-family: "Corsa Grotesk Regular";
-
   font-size: 20px;
   font-weight: 400;
   line-height: 24px;
@@ -107,7 +111,6 @@ padding-top: 100px;
 
 .p4 {
   font-family: "Corsa Grotesk Regular";
-
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
@@ -138,6 +141,10 @@ padding-top: 100px;
   width: 100%;
   color: var(--background);
   font-size: 20px;
+  font-weight: 400;
+  line-height: 20px;
+  font-family: "Corsa Grotesk Regular";
+  font-size: 16px;
   font-weight: 400;
   line-height: 20px;
 }
@@ -199,29 +206,12 @@ padding-top: 100px;
   border-width: 1px;
 }
 
-@media screen and (max-width: 1280px) {
-  .input {
-    height: 58px;
-  }
-
-.textarea{
-  height: 120px;
-}
-
-  .input::placeholder {
-    font-size: 12px;
-  }
-  .yellowButton {
-    padding-top: 10px;
-    padding-bottom: 14px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-  }
-
-  body{
-    padding: 22px;
-  }
+.speciall {
+  color: var(--Accent);
+  font-family: Nexa;
+  font-weight: 400;
+  font-size: 104px;
+  line-height: 72px;
 }
 
 .input::placeholder {
@@ -229,6 +219,7 @@ padding-top: 100px;
   font-weight: 400;
   line-height: 24px;
   color: var(--QuietText);
+  
 }
 
 .input:focus {
@@ -372,10 +363,43 @@ padding-top: 100px;
 }
 
 
-.speciall {
-  color: var(--Accent);
-  font-family: Nexa;
-  font-weight: 400;
-  font-size: 104px;
-  line-height: 72px;
+@media screen and (max-width: 1024px) {
+  .speciall {
+    font-size: 40px;
+    line-height: 28px;
+  }
+
+  .input {
+    height: 58px;
+  }
+
+.textarea{
+  height: 120px;
+}
+
+  .input::placeholder {
+    font-size: 16px;
+  }
+
+  .yellowButton {
+    padding-top: 10px;
+    padding-bottom: 14px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .H1{
+    font-family: Cruinn;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .p2{
+    font-family: "Corsa Grotesk Regular";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+  }
 }
