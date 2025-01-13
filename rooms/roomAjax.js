@@ -548,8 +548,63 @@ $(document).ready(function () {
 
   $("form#sclad").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
+    let shelf = $(this)[0][1].value;
+    let storage = $(this)[0][4].value;
+    let airAway = $(this)[0][7].value;
+    let condicioner = $(this)[0][10].value;
+    let floor = $(this)[0][12].value;
+    let walls = $(this)[0][13].value;
+    let seiling = $(this)[0][14].value;
+    let other = $(this)[0][15].value;
+    $m = 17;
 
-    navigate(8);
+    let arr = [];
+
+    for (let i = 0; i < getCookie("кладовая"); i++) {
+      arr.push([
+        `кладовая${i}`,
+        ["полки", shelf],
+        ["хранение", storage],
+        ["вентиляция", airAway],
+        ["кондиционирование", condicioner],
+        ["полы", floor],
+        ["стены", walls],
+        ["потолки", seiling],
+        ["другое", other],
+      ]);
+      if (i == getCookie("кладовая") - 1) {
+        break;
+      }
+      shelf = $(this)[0][$m].value;
+      $m += 3;
+      storage = $(this)[0][$m].value;
+      $m += 3;
+      airAway = $(this)[0][$m].value;
+      $m += 3;
+      condicioner = $(this)[0][$m].value;
+      $m += 2;
+      floor = $(this)[0][$m].value;
+      $m++;
+      walls = $(this)[0][$m].value;
+      $m++;
+      seiling = $(this)[0][$m].value;
+      $m++;
+      other = $(this)[0][$m].value;
+      $m += 2;
+    }
+    $.ajax({
+      url: "../save_data.php",
+      type: "POST",
+      data: {
+        funk: "addDetailRoom",
+        arr,
+      },
+
+      success: function (data) {
+        console.log(data);
+        navigate(8);
+      },
+    });
   });
 
   $("form#bathroom").on("submit", function (e) {
@@ -713,7 +768,7 @@ $(document).ready(function () {
 
       success: function (data) {
         console.log(data);
-        // navigate(10);
+        navigate(10);
       },
     });
   });
@@ -758,6 +813,7 @@ $(document).ready(function () {
         window.location.replace(pathArray[index]);
         break;
       }
+      window.location.replace("/");
     }
   }
   function getCookie(name) {
