@@ -91,8 +91,75 @@ $(document).ready(function () {
 
   $("form#bedroom").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
+    let pedestal = $(this)[0][1].value;
+    let wardrobe = $(this)[0][4].value;
+    let mirror = $(this)[0][7].value;
+    let topLight = $(this)[0][10].value;
+    let nightLight = $(this)[0][13].value;
+    let warmFloor = $(this)[0][16].value;
+    let condicioner = $(this)[0][19].value;
+    let floor = $(this)[0][21].value;
+    let walls = $(this)[0][22].value;
+    let seiling = $(this)[0][23].value;
+    let other = $(this)[0][24].value;
+    $m = 26;
 
-    navigate(4);
+    let arr = [];
+
+    for (let i = 0; i < getCookie("спальня"); i++) {
+      arr.push([
+        `cпальня${i}`,
+        ["тумбочки", pedestal],
+        ["гардероб или шкаф", wardrobe],
+        ["зеркало", mirror],
+        ["центральное освещение", topLight],
+        ["ночники", nightLight],
+        ["теплый пол", warmFloor],
+        ["кондиционер", condicioner],
+        ["полы", floor],
+        ["стены", walls],
+        ["потолки", seiling],
+        ["другое", other],
+      ]);
+      if (i == getCookie("спальня") - 1) {
+        break;
+      }
+      pedestal = $(this)[0][$m].value;
+      $m += 3;
+      wardrobe = $(this)[0][$m].value;
+      $m += 3;
+      mirror = $(this)[0][$m].value;
+      $m += 3;
+      topLight = $(this)[0][$m].value;
+      $m += 3;
+      nightLight = $(this)[0][$m].value;
+      $m += 3;
+      warmFloor = $(this)[0][$m].value;
+      $m += 3;
+      condicioner = $(this)[0][$m].value;
+      $m += 2;
+      floor = $(this)[0][$m].value;
+      $m++;
+      walls = $(this)[0][$m].value;
+      $m++;
+      seiling = $(this)[0][$m].value;
+      $m++;
+      other = $(this)[0][$m].value;
+      $m += 2;
+    }
+    $.ajax({
+      url: "../save_data.php",
+      type: "POST",
+      data: {
+        funk: "addDetailRoom",
+        arr,
+      },
+
+      success: function (data) {
+        console.log(data);
+        // navigate(0);
+      },
+    });
   });
 
   $("form#dressingRoom").on("submit", function (e) {
