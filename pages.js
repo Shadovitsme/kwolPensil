@@ -91,11 +91,21 @@ $(document).ready(function () {
       .append(divider.clone());
 
   // balcone
-  for (var i = 1; i < balconyCount; i++)
-    balconyTemplate
-      .parent()
-      .append(balconyTemplate.clone().attr("id", `balcony${i}`))
-      .append(divider.clone());
+  for (var i = 1; i < balconyCount; i++) {
+    balcony = balconyTemplate.clone().attr("id", `balcony${i}`);
+    let arr = [];
+    arr.push(
+      balcony
+        .children($("div#radioBalcony0").attr("id", `radioBalcony${i}`))
+        .children()
+        .children($("input.radio"))
+    );
+    arr.forEach((element) => {
+      console.log(element[0]);
+      element.attr("name", `howMuchVisitors${i}`);
+    });
+    balconyTemplate.parent().append(balcony).append(divider.clone());
+  }
 
   // eatingRoom
   for (var i = 1; i < eatingRoomCount; i++)
