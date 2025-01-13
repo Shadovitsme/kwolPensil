@@ -148,8 +148,107 @@ $(document).ready(function () {
 
   $("form#kitchen").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
+    let waterHotter = $(this)[0][1].value;
+    let dishWasher = $(this)[0][4].value;
+    let filter = $(this)[0][7].value;
+    let smallBar = $(this)[0][10].value;
+    let multiboiler = $(this)[0][13].value;
+    let oven = $(this)[0][16].value;
+    let refrigerator = $(this)[0][19].value;
+    let trashSreder = $(this)[0][22].value;
+    let lighter = $(this)[0][25].value;
+    let steamboiler = $(this)[0][28].value;
+    let sink = $(this)[0][31].value;
+    let microwave = $(this)[0][34].value;
+    let defenser = $(this)[0][37].value;
+    let airAway = $(this)[0][40].value;
+    let warmFloor = $(this)[0][43].value;
 
-    navigate(2);
+    let floor = $(this)[0][45].value;
+    let walls = $(this)[0][46].value;
+    let seiling = $(this)[0][47].value;
+    let other = $(this)[0][48].value;
+    $m = 50;
+    let arr = [];
+
+    for (let i = 0; i < getCookie("кухня"); i++) {
+      arr.push([
+        `кухня${i}`,
+        ["водонагреватель", waterHotter],
+        ["посудомойка", dishWasher],
+        ["фильтр", filter],
+        ["мини бар", smallBar],
+        ["мультиварка", multiboiler],
+        ["духовка", oven],
+        ["холодильник", refrigerator],
+        ["измельчитель отходов", trashSreder],
+        ["подсветка", lighter],
+        ["пароварка", steamboiler],
+        ["мойка", sink],
+        ["микроволновка", microwave],
+        ["защита от протечек", defenser],
+        ["вытяжка", airAway],
+        ["теплый_пол", warmFloor],
+        ["полы", floor],
+        ["стены", walls],
+        ["потолки", seiling],
+        ["другое", other],
+      ]);
+      if (i == getCookie("кухня") - 1) {
+        break;
+      }
+      waterHotter = $(this)[0][$m].value;
+      $m += 3;
+      dishWasher = $(this)[0][$m].value;
+      $m += 3;
+      filter = $(this)[0][$m].value;
+      $m += 3;
+      smallBar = $(this)[0][$m].value;
+      $m += 3;
+      multiboiler = $(this)[0][$m].value;
+      $m += 3;
+      oven = $(this)[0][$m].value;
+      $m += 3;
+      refrigerator = $(this)[0][$m].value;
+      $m += 3;
+      trashSreder = $(this)[0][$m].value;
+      $m += 3;
+      lighter = $(this)[0][$m].value;
+      $m += 3;
+      steamboiler = $(this)[0][$m].value;
+      $m += 3;
+      sink = $(this)[0][$m].value;
+      $m += 3;
+      microwave = $(this)[0][$m].value;
+      $m += 3;
+      defenser = $(this)[0][$m].value;
+      $m += 3;
+      airAway = $(this)[0][$m].value;
+      $m += 3;
+      warmFloor = $(this)[0][$m].value;
+      $m += 2;
+      floor = $(this)[0][$m].value;
+      $m++;
+      walls = $(this)[0][$m].value;
+      $m++;
+      seiling = $(this)[0][$m].value;
+      $m++;
+      other = $(this)[0][$m].value;
+      $m += 2;
+    }
+    $.ajax({
+      url: "../save_data.php",
+      type: "POST",
+      data: {
+        funk: "addDetailRoom",
+        arr,
+      },
+
+      success: function (data) {
+        console.log(data);
+        // navigate(2);
+      },
+    });
   });
 
   $("form#welcomeRoom").on("submit", function (e) {
@@ -296,7 +395,7 @@ $(document).ready(function () {
 
       success: function (data) {
         console.log(data);
-        // navigate(5);
+        navigate(5);
       },
     });
   });
@@ -442,7 +541,7 @@ $(document).ready(function () {
 
       success: function (data) {
         console.log(data);
-        // navigate(7);
+        navigate(7);
       },
     });
   });
@@ -476,12 +575,12 @@ $(document).ready(function () {
     $m = 44;
     let arr = [];
 
-    for (let i = 0; i < getCookie("прихожая"); i++) {
+    for (let i = 0; i < getCookie("ванная"); i++) {
       arr.push([
         `ванная${i}`,
         ["Унитаз", pooper],
         ["вытяжка", airAway],
-        ["биду", poopWasher],
+        ["биде", poopWasher],
         ["стиральная машина", clothWasher],
         ["душевая", shower],
         ["раковина", sink],
@@ -497,7 +596,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("прихожая") - 1) {
+      if (i == getCookie("ванная") - 1) {
         break;
       }
       pooper = $(this)[0][$m].value;
@@ -552,8 +651,71 @@ $(document).ready(function () {
 
   $("form#office").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
+    let table = $(this)[0][1].value;
+    let chair = $(this)[0][4].value;
+    let bookShielf = $(this)[0][7].value;
+    let docsShielf = $(this)[0][10].value;
+    let light = $(this)[0][13].value;
+    let topLight = $(this)[0][16].value;
+    let floor = $(this)[0][18].value;
+    let walls = $(this)[0][19].value;
+    let seiling = $(this)[0][20].value;
+    let other = $(this)[0][21].value;
+    $m = 23;
 
-    navigate(10);
+    let arr = [];
+
+    for (let i = 0; i < getCookie("кабинет"); i++) {
+      arr.push([
+        `кабинет${i}`,
+        ["Рабочик стол", table],
+        ["кресло", chair],
+        ["книжные полки", bookShielf],
+        ["полки для документов", docsShielf],
+        ["лампа", light],
+        ["центральный свет", topLight],
+        ["полы", floor],
+        ["стены", walls],
+        ["потолки", seiling],
+        ["другое", other],
+      ]);
+      if (i == getCookie("кабинет") - 1) {
+        break;
+      }
+      table = $(this)[0][$m].value;
+      $m += 3;
+      chair = $(this)[0][$m].value;
+      $m += 3;
+      bookShielf = $(this)[0][$m].value;
+      $m += 3;
+      docsShielf = $(this)[0][$m].value;
+      $m += 3;
+      light = $(this)[0][$m].value;
+      $m += 3;
+      topLight = $(this)[0][$m].value;
+      $m += 2;
+      floor = $(this)[0][$m].value;
+      $m++;
+      walls = $(this)[0][$m].value;
+      $m++;
+      seiling = $(this)[0][$m].value;
+      $m++;
+      other = $(this)[0][$m].value;
+      $m += 2;
+    }
+    $.ajax({
+      url: "../save_data.php",
+      type: "POST",
+      data: {
+        funk: "addDetailRoom",
+        arr,
+      },
+
+      success: function (data) {
+        console.log(data);
+        // navigate(10);
+      },
+    });
   });
 
   $("form#welcomeBath").on("submit", function (e) {
