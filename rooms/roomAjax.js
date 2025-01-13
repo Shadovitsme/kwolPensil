@@ -376,8 +376,75 @@ $(document).ready(function () {
 
   $("form#eatingRoom").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
+    let table = $(this)[0][1].value;
+    let chairs = $(this)[0][4].value;
+    let topLight = $(this)[0][7].value;
+    let tableLight = $(this)[0][10].value;
+    let barTable = $(this)[0][13].value;
+    let warmFloor = $(this)[0][16].value;
+    let condicioner = $(this)[0][19].value;
+    let floor = $(this)[0][21].value;
+    let walls = $(this)[0][22].value;
+    let seiling = $(this)[0][23].value;
+    let other = $(this)[0][24].value;
+    $m = 26;
 
-    navigate(7);
+    let arr = [];
+
+    for (let i = 0; i < getCookie("столовая"); i++) {
+      arr.push([
+        `столовая${i}`,
+        ["стол", table],
+        ["стулья", chairs],
+        ["центральное освещение", topLight],
+        ["подсветка стола", tableLight],
+        ["барная стойка", barTable],
+        ["теплый пол", warmFloor],
+        ["кондиционер", condicioner],
+        ["полы", floor],
+        ["стены", walls],
+        ["потолки", seiling],
+        ["другое", other],
+      ]);
+      if (i == getCookie("спальня") - 1) {
+        break;
+      }
+      table = $(this)[0][$m].value;
+      $m += 3;
+      chairs = $(this)[0][$m].value;
+      $m += 3;
+      topLight = $(this)[0][$m].value;
+      $m += 3;
+      topLight = $(this)[0][$m].value;
+      $m += 3;
+      barTable = $(this)[0][$m].value;
+      $m += 3;
+      warmFloor = $(this)[0][$m].value;
+      $m += 3;
+      condicioner = $(this)[0][$m].value;
+      $m += 2;
+      floor = $(this)[0][$m].value;
+      $m++;
+      walls = $(this)[0][$m].value;
+      $m++;
+      seiling = $(this)[0][$m].value;
+      $m++;
+      other = $(this)[0][$m].value;
+      $m += 2;
+    }
+    $.ajax({
+      url: "../save_data.php",
+      type: "POST",
+      data: {
+        funk: "addDetailRoom",
+        arr,
+      },
+
+      success: function (data) {
+        console.log(data);
+        // navigate(7);
+      },
+    });
   });
 
   $("form#sclad").on("submit", function (e) {
