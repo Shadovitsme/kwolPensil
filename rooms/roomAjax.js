@@ -15,6 +15,7 @@ $(document).ready(function () {
     $m = 26;
 
     let arr = [];
+
     for (let i = 0; i < getCookie("прихожая"); i++) {
       arr.push([
         `прихожая${i}`,
@@ -65,31 +66,7 @@ $(document).ready(function () {
       },
 
       success: function (data) {
-        if (getCookie("детская")) {
-          window.location.replace("./childRoom.html");
-        } else if (getCookie("кухня")) {
-          window.location.replace("./kitchen.html");
-        } else if (getCookie("гостиная")) {
-          window.location.replace("./welcomeRoom.html");
-        } else if (getCookie("спальня")) {
-          window.location.replace("./bedroom.html");
-        } else if (getCookie("гардеробная")) {
-          window.location.replace("./dressingRoom.html");
-        } else if (getCookie("балкон")) {
-          window.location.replace("./balcony.html");
-        } else if (getCookie("столовая")) {
-          window.location.replace("./eatingRoom.html");
-        } else if (getCookie("кладовая")) {
-          window.location.replace("./sclad.html");
-        } else if (getCookie("ванная")) {
-          window.location.replace("./bathroom.html");
-        } else if (getCookie("кабинет")) {
-          window.location.replace("./office.html");
-        } else if (getCookie("гостевой_санузел")) {
-          window.location.replace("./welcomeBath.html");
-        } else {
-          window.location.replace("/index.html");
-        }
+        navigate(0);
       },
     });
   });
@@ -97,121 +74,31 @@ $(document).ready(function () {
   $("form#childRoom").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
 
-    if (getCookie("кухня")) {
-      window.location.replace("./kitchen.html");
-    } else if (getCookie("гостиная")) {
-      window.location.replace("./welcomeRoom.html");
-    } else if (getCookie("спальня")) {
-      window.location.replace("./bedroom.html");
-    } else if (getCookie("гардеробная")) {
-      window.location.replace("./dressingRoom.html");
-    } else if (getCookie("балкон")) {
-      window.location.replace("./balcony.html");
-    } else if (getCookie("столовая")) {
-      window.location.replace("./eatingRoom.html");
-    } else if (getCookie("кладовая")) {
-      window.location.replace("./sclad.html");
-    } else if (getCookie("ванная")) {
-      window.location.replace("./bathroom.html");
-    } else if (getCookie("кабинет")) {
-      window.location.replace("./office.html");
-    } else if (getCookie("гостевой_санузел")) {
-      window.location.replace("./welcomeBath.html");
-    } else {
-      window.location.replace("/index.html");
-    }
+    navigate(1);
   });
 
   $("form#kitchen").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
 
-    if (getCookie("гостиная")) {
-      window.location.replace("./welcomeRoom.html");
-    } else if (getCookie("спальня")) {
-      window.location.replace("./bedroom.html");
-    } else if (getCookie("гардеробная")) {
-      window.location.replace("./dressingRoom.html");
-    } else if (getCookie("балкон")) {
-      window.location.replace("./balcony.html");
-    } else if (getCookie("столовая")) {
-      window.location.replace("./eatingRoom.html");
-    } else if (getCookie("кладовая")) {
-      window.location.replace("./sclad.html");
-    } else if (getCookie("ванная")) {
-      window.location.replace("./bathroom.html");
-    } else if (getCookie("кабинет")) {
-      window.location.replace("./office.html");
-    } else if (getCookie("гостевой_санузел")) {
-      window.location.replace("./welcomeBath.html");
-    } else {
-      window.location.replace("/index.html");
-    }
+    navigate(2);
   });
 
   $("form#welcomeRoom").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
 
-    if (getCookie("спальня")) {
-      window.location.replace("./bedroom.html");
-    } else if (getCookie("гардеробная")) {
-      window.location.replace("./dressingRoom.html");
-    } else if (getCookie("балкон")) {
-      window.location.replace("./balcony.html");
-    } else if (getCookie("столовая")) {
-      window.location.replace("./eatingRoom.html");
-    } else if (getCookie("кладовая")) {
-      window.location.replace("./sclad.html");
-    } else if (getCookie("ванная")) {
-      window.location.replace("./bathroom.html");
-    } else if (getCookie("кабинет")) {
-      window.location.replace("./office.html");
-    } else if (getCookie("гостевой_санузел")) {
-      window.location.replace("./welcomeBath.html");
-    } else {
-      window.location.replace("/index.html");
-    }
+    navigate(3);
   });
 
   $("form#bedroom").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
 
-    if (getCookie("гардеробная")) {
-      window.location.replace("./dressingRoom.html");
-    } else if (getCookie("балкон")) {
-      window.location.replace("./balcony.html");
-    } else if (getCookie("столовая")) {
-      window.location.replace("./eatingRoom.html");
-    } else if (getCookie("кладовая")) {
-      window.location.replace("./sclad.html");
-    } else if (getCookie("ванная")) {
-      window.location.replace("./bathroom.html");
-    } else if (getCookie("кабинет")) {
-      window.location.replace("./office.html");
-    } else if (getCookie("гостевой_санузел")) {
-      window.location.replace("./welcomeBath.html");
-    } else {
-      window.location.replace("/index.html");
-    }
+    navigate(4);
   });
 
   $("form#dressingRoom").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
 
-    if (getCookie("балкон")) {
-      window.location.replace("./balcony.html");
-    } else if (getCookie("столовая")) {
-      window.location.replace("./eatingRoom.html");
-    } else if (getCookie("кладовая")) {
-      window.location.replace("./sclad.html");
-    } else if (getCookie("ванная")) {
-      window.location.replace("./bathroom.html");
-    } else if (getCookie("кабинет")) {
-      window.location.replace("./office.html");
-    } else if (getCookie("гостевой_санузел")) {
-      window.location.replace("./welcomeBath.html");
-    } else {
-      window.location.replace("/index.html");
-    }
+    navigate(5);
   });
 
   $("form#balcony").on("submit", function (e) {
@@ -282,74 +169,33 @@ $(document).ready(function () {
       },
 
       success: function (data) {
-        console.log(data);
+        navigate(6);
       },
     });
-    // if (getCookie("столовая")) {
-    //   window.location.replace("./eatingRoom.html");
-    // } else if (getCookie("кладовая")) {
-    //   window.location.replace("./sclad.html");
-    // } else if (getCookie("ванная")) {
-    //   window.location.replace("./bathroom.html");
-    // } else if (getCookie("кабинет")) {
-    //   window.location.replace("./office.html");
-    // } else if (getCookie("гостевой_санузел")) {
-    //   window.location.replace("./welcomeBath.html");
-    // } else {
-    //   window.location.replace("/index.html");
-    // }
   });
 
   $("form#eatingRoom").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
 
-    if (getCookie("кладовая")) {
-      window.location.replace("./sclad.html");
-    } else if (getCookie("ванная")) {
-      window.location.replace("./bathroom.html");
-    } else if (getCookie("кабинет")) {
-      window.location.replace("./office.html");
-    } else if (getCookie("гостевой_санузел")) {
-      window.location.replace("./welcomeBath.html");
-    } else {
-      window.location.replace("/index.html");
-    }
+    navigate(7);
   });
 
   $("form#sclad").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
 
-    if (getCookie("ванная")) {
-      window.location.replace("./bathroom.html");
-    } else if (getCookie("кабинет")) {
-      window.location.replace("./office.html");
-    } else if (getCookie("гостевой_санузел")) {
-      window.location.replace("./welcomeBath.html");
-    } else {
-      window.location.replace("/index.html");
-    }
+    navigate(8);
   });
 
   $("form#bathroom").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
 
-    if (getCookie("кабинет")) {
-      window.location.replace("./office.html");
-    } else if (getCookie("гостевой_санузел")) {
-      window.location.replace("./welcomeBath.html");
-    } else {
-      window.location.replace("/index.html");
-    }
+    navigate(9);
   });
 
   $("form#office").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
 
-    console.log(getCookie("гостевой_санузел"));
-
-    if (getCookie("гостевой_санузел") > 0) {
-      window.location.replace("./welcomeBath.html");
-    }
+    navigate(10);
   });
 
   $("form#welcomeBath").on("submit", function (e) {
@@ -357,7 +203,42 @@ $(document).ready(function () {
 
     window.location.replace("/index.html");
   });
+  function navigate(num) {
+    let arrRooms = [
+      "детская",
+      "кухня",
+      "гостиная",
+      "спальня",
+      "гардеробная",
+      "балкон",
+      "столовая",
+      "кладовая",
+      "ванная",
+      "кабинет",
+      "гостевой_санузел",
+    ];
+    let pathArray = [
+      "./childRoom.html",
+      "./kitchen.html",
+      "./welcomeRoom.html",
+      "./bedroom.html",
+      "./dressingRoom.html",
+      "./balcony.html",
+      "./eatingRoom.html",
+      "./sclad.html",
+      "./bathroom.html",
+      "./office.html",
+      "./welcomeBath.html",
+    ];
 
+    let len = arrRooms.length + 1;
+    for (let index = num; index < len; index++) {
+      if (getCookie(arrRooms[index])) {
+        window.location.replace(pathArray[index]);
+        break;
+      }
+    }
+  }
   function getCookie(name) {
     let matches = document.cookie.match(
       new RegExp(
