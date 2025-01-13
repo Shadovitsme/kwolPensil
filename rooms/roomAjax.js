@@ -188,8 +188,99 @@ $(document).ready(function () {
 
   $("form#bathroom").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
+    let pooper = $(this)[0][1].value;
+    let airAway = $(this)[0][4].value;
+    let poopWasher = $(this)[0][7].value;
+    let clothWasher = $(this)[0][10].value;
+    let shower = $(this)[0][13].value;
+    let sink = $(this)[0][16].value;
+    let filter = $(this)[0][19].value;
+    let bath = $(this)[0][22].value;
+    let waterHotter = $(this)[0][25].value;
+    let poopShower = $(this)[0][28].value;
+    let defender = $(this)[0][31].value;
+    let condicioner = $(this)[0][34].value;
+    let warmFloor = $(this)[0][37].value;
 
-    navigate(9);
+    let floor = $(this)[0][39].value;
+    let walls = $(this)[0][40].value;
+    let seiling = $(this)[0][41].value;
+    let other = $(this)[0][42].value;
+    $m = 44;
+    let arr = [];
+
+    for (let i = 0; i < getCookie("прихожая"); i++) {
+      arr.push([
+        `ванная${i}`,
+        ["Унитаз", pooper],
+        ["вытяжка", airAway],
+        ["биду", poopWasher],
+        ["стиральная машина", clothWasher],
+        ["душевая", shower],
+        ["раковина", sink],
+        ["фильтр для воды", filter],
+        ["ванна", bath],
+        ["водонагреватель", waterHotter],
+        ["гигиенический душ", poopShower],
+        ["система защины", defender],
+        ["кондиционер", condicioner],
+        ["теплый_пол", warmFloor],
+        ["полы", floor],
+        ["стены", walls],
+        ["потолки", seiling],
+        ["другое", other],
+      ]);
+      if (i == getCookie("прихожая") - 1) {
+        break;
+      }
+      pooper = $(this)[0][$m].value;
+      $m += 3;
+      airAway = $(this)[0][$m].value;
+      $m += 3;
+      poopWasher = $(this)[0][$m].value;
+      $m += 3;
+      clothWasher = $(this)[0][$m].value;
+      $m += 3;
+      shower = $(this)[0][$m].value;
+      $m += 3;
+      sink = $(this)[0][$m].value;
+      $m += 3;
+      filter = $(this)[0][$m].value;
+      $m += 3;
+      bath = $(this)[0][$m].value;
+      $m += 3;
+      waterHotter = $(this)[0][$m].value;
+      $m += 3;
+      poopShower = $(this)[0][$m].value;
+      $m += 3;
+      defender = $(this)[0][$m].value;
+      $m += 3;
+      condicioner = $(this)[0][$m].value;
+      $m += 3;
+      warmFloor = $(this)[0][$m].value;
+      $m += 2;
+      floor = $(this)[0][$m].value;
+      $m++;
+      walls = $(this)[0][$m].value;
+      $m++;
+      seiling = $(this)[0][$m].value;
+      $m++;
+      other = $(this)[0][$m].value;
+      $m += 2;
+    }
+    $.ajax({
+      url: "../save_data.php",
+      type: "POST",
+      data: {
+        funk: "addDetailRoom",
+        arr,
+      },
+
+      success: function (data) {
+        console.log(data);
+        navigate(9);
+      },
+    });
   });
 
   $("form#office").on("submit", function (e) {
@@ -203,6 +294,7 @@ $(document).ready(function () {
 
     window.location.replace("/index.html");
   });
+
   function navigate(num) {
     let arrRooms = [
       "детская",
