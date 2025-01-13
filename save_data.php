@@ -166,7 +166,6 @@ function addDetailRoom()
                 if ($prop[1] && $prop[0]) {
                     $thing = $prop[0];
                     $description = $prop[1];
-                    echo $thing;
                     try {
                         $connection = new PDO("sqlite:$databaseFile");
                         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
