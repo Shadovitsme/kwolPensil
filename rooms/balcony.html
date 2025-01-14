@@ -13,13 +13,14 @@
     <title>Document</title>
   </head>
 
-  <body class="w-[360px] md:w-screen flex">
-    <div class="mx-auto w-[1720px] z-10 h-full">
-      <h1 class="H1 Text mb-10 uppercase">Балкон</h1>
+  <body class="flex px-[22px] md:px-[100px]">
+  <div class="md:mx-auto w-full max-w-[1920px]">
+      <h1 class="H1 Text mb-[50px] md:mb-10 uppercase">Балкон</h1>
       <form id="balcony" class="w-full">
+        <div id="balcony">
         <div id="balcony0">
           <p class="H6 Accent mb-2">Выберите тип балкона</p>
-          <div id="radioBalcony0" class=" flex mb-10">
+          <div id="radioBalcony0" class=" md:flex mb-10">
             <div class="mr-5">
               <input
                 class="radio"
@@ -51,21 +52,19 @@
           </div>
           <p class="p4 Text mb-2">Другое</p>
           <textarea
-            class="textarea h-[140px] w-[772px]"
+            class="textarea h-[140px] md:w-[772px]"
             placeholder="Если есть другие пожелания, опишите их здесь"
           ></textarea>
         </div>
         <hr class="bg-white my-5" />
-        <!-- TODO починить радиоботтом(добавить в их названия цифры) -->
-        <button
-          class="yellowButton h-[50px] w-[212px] fixed bottom-[51px] right-[51px] flex"
-          type="submit"
-        >
-          <div class="flex mx-auto my-auto">
-            <p class="">Далее</p>
-            <div class="rightArrow h-6 w-6 ml-6"></div>
-          </div>
-        </button>
+      </div>
+        <div class="w-full md:mt-[75px] flex md:justify-end">
+          <button class="yellowButton md:w-[212px] md:mt-[165px] h-10 md:h-[60px] flex" type="submit">
+            <div class="flex mx-auto my-auto">
+              <p class="p3">Далее</p>
+              <div class="rightArrow h-6 w-6 ml-6 md:visible hidden md:block"></div>
+            </div></button>
+        </div>
       </form>
     </div>
   </body>
