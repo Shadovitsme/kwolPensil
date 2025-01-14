@@ -44,7 +44,7 @@ $(document).ready(function () {
   officeCount = getCookie("кабинет");
 
   welcomeBathTemplate = $("div#welcomeBath0");
-  welcomeBathCount = getCookie("ванная");
+  welcomeBathCount = getCookie("гостевой_санузел");
 
   divider = $("<hr>", { class: "bg-white my-5" });
 
