@@ -20,4 +20,4 @@
 -- REFERENCES Customers (id) );
 
 
-SELECT * from Customers
+-- SELECT * from Customers
