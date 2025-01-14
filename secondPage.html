@@ -12,10 +12,10 @@
   <title>Document</title>
 </head>
 
-<body class=" md:w-screen flex">
-  <div class=" mx-auto w-[1720px] z-20">
-  <h1 class="H1 Text mb-10 uppercase">Укажите необходимые данные</h1>
-  <form class="flex justify-between w-full" id="page2">
+  <body class="flex px-[22px] md:px-[100px]">
+  <div class="md:mx-auto max-w-[1920px]">
+  <h1 class="H1 Text mb-10 md:mb-9 uppercase">Укажите необходимые данные</h1>
+  <form class="md:flex justify-between max-w-[1920px]" id="page2">
     <div class="mr-16 w-[828px]">
       <p class="p4 Text mb-2">
         Какое количество членов семьи собирается проживать?
@@ -24,7 +24,7 @@
       <p class="p4 Text mb-2">
         Какое количество домашних животных и комнатных растений?
       </p>
-      <input class="input mb-9" type="number" placeholder="Укажите число"></input>
+      <input class="input mb-10" type="number" placeholder="Укажите число"></input>
 
       <p class="H6 Accent">Есть необходимость звукоизоляции?</p>
       <div class="flex mt-1 mb-8">
@@ -54,10 +54,7 @@
       <p class="p4 Text mb-2">
         Наличие хобби, предполагающих размещение доп. инструментов
       </p>
-      <textarea type="text" class="input h-[140px] mb-0.5" placeholder="Перечислите хобби"></textarea>
-      <div class="mb-9">
-        <input class="check" type="checkbox" checked="true" /><label class="p3 Text ml-2">Хобби нет</label>
-      </div>
+      <textarea type="text" class="textarea mb-10" placeholder="Перечислите хобби"></textarea>
       <p class="H6 Accent">Требуется ли перепланировка?</p>
       <div class="flex mt-1.5 mb-8">
         <div class="mr-5">
@@ -84,20 +81,17 @@
           <label class="p3 Text">Несколько раз в год</label>
         </div>
       </div>
-      <p class="p4 Text mb-2">Общий бюджет для всех помещений</p>
-      <input class="input h-17" type="number" placeholder="Укажите в рублях" />
       <div class="w-full mt-[75px] flex justify-end">
         
-        <button class="yellowButton w-[212px] h-[60px] flex" type="submit">
+        <button class="yellowButton w-[212px] mt-[165px] h-[60px] flex" type="submit">
           <div class="flex mx-auto my-auto">
-            <p class="">Далее</p>
+            <p class="p4">Далее</p>
             <div class="rightArrow h-6 w-6 ml-6 "></div>
           </div></button>
       </div>
     </div>
   </form>
 </div>
-<div class="stars absolute z-0 top-0 bottom-0 left-0 right-0"></div>
 
 </body>
 
