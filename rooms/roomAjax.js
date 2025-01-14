@@ -246,7 +246,7 @@ $(document).ready(function () {
 
       success: function (data) {
         console.log(data);
-        // navigate(2);
+        navigate(2);
       },
     });
   });
@@ -505,7 +505,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("спальня") - 1) {
+      if (i == getCookie("столовая") - 1) {
         break;
       }
       table = $(this)[0][$m].value;
