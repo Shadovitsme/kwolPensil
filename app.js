@@ -22,9 +22,10 @@ $(document).ready(function () {
         funk: "addNamePhone",
         name: $(this)[0][0].value,
         phone: $(this)[0][1].value,
+        town: $(this)[0][2].value,
       },
-
       success: function (data) {
+        console.log(data);
         window.location.replace("./secondPage.html");
       },
     });
@@ -51,7 +52,6 @@ $(document).ready(function () {
     } else {
       visitors = $(this)[0][12].value;
     }
-    let budget = $(this)[0][13].value;
 
     $.ajax({
       url: "save_data.php",
@@ -65,10 +65,10 @@ $(document).ready(function () {
         hobby: hobby,
         replane: replane,
         visitors: visitors,
-        budget: budget,
       },
 
       success: function (data) {
+        console.log(data);
         window.location.replace("./thirdPage.html");
       },
     });

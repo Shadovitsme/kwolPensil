@@ -28,6 +28,7 @@ function addNamePhone()
 
     $name = $_POST['name']; // получаем данные из формы
     $phone = $_POST['phone'];
+    $town = $_POST['town'];
     try {
         $connection = new PDO("sqlite:$databaseFile");
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -36,7 +37,7 @@ function addNamePhone()
         die("Connection failed: " . $e->getMessage());
     }
 
-    $sql = "INSERT INTO Customers (FirstName, Phone) VALUES ('$name', '$phone')";
+    $sql = "INSERT INTO Customers (FirstName, Phone, Town) VALUES ('$name', '$phone','$town')";
     try {
         $connection->exec($sql);
         $a = $connection->query("SELECT id FROM Customers where FirstName = '$name' AND Phone = '$phone'");
@@ -59,7 +60,6 @@ function addCommonData()
     $hobby = $_POST['hobby'];
     $replane = $_POST['replane'];
     $visitors = $_POST['visitors'];
-    $budget = $_POST['budget'];
     $sql = "UPDATE Customers
         SET familyMembers = '$familyMembers',
         Pets = '$pets',
@@ -67,8 +67,7 @@ function addCommonData()
         furniture = '$furniture',
         hobbyDescription = '$hobby',
         replan = '$replane',
-        visitors = '$visitors',
-        budget = $budget
+        visitors = '$visitors'
         WHERE Id = '$id'";
 
     try {
