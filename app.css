@@ -150,6 +150,7 @@ body {
 }
 
 .labelWrapper {
+  background-color: var(--DarkAccent);
   border-width: 1px;
   border-color: var(--Accent);
   border-radius: 5px;
