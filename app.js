@@ -1,6 +1,5 @@
 // Ваш скрипт на JavaScript
 $(document).ready(function () {
-
   function getCookie(name) {
     let matches = document.cookie.match(
       new RegExp(
@@ -180,7 +179,9 @@ $(document).ready(function () {
 
   $("button[name='plusButton']").click(function (e) {
     var $input = $(this).parent().find("input");
-    $input.val(parseInt($input.val()) + 1);
+    var count = parseInt($input.val()) + 1;
+    count = count >= 5 ? 5 : count;
+    $input.val(count);
     $input.change();
     return false;
   });
