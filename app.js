@@ -130,9 +130,8 @@ $(document).ready(function () {
     let wannaSee = $(this)[0][5].value;
     let floor = $(this)[0][6].value;
     let dontWannaSee = $(this)[0][7].value;
-    let budget = $(this)[0][8].value;
-    let additional = $(this)[0][9].value;
-    let deadline = $(this)[0][10].value;
+    let additional = $(this)[0][8].value;
+    let deadline = $(this)[0][9].value;
 
     $.ajax({
       url: "save_data.php",
@@ -145,7 +144,6 @@ $(document).ready(function () {
         style: style,
         ceiling: ceiling,
         wannaSee: wannaSee,
-        budget: budget,
         additional: additional,
         deadline: deadline,
         floor: floor,
