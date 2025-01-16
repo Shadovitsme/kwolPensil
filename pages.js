@@ -52,43 +52,45 @@ $(document).ready(function () {
   for (var i = 1; i < kitchenCount; i++)
     kitchenTemplate
       .parent()
-      .append(kitchenTemplate.clone().attr("id", `kitchen${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+
+      .append(kitchenTemplate.clone().attr("id", `kitchen${i}`));
 
   // hallway
   for (var i = 1; i < hallwayCount; i++)
     hallwayTemplate
       .parent()
-      .append(hallwayTemplate.clone().attr("id", `hallway${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+
+      .append(hallwayTemplate.clone().attr("id", `hallway${i}`));
 
   // childRoom
   for (var i = 1; i < childRoomCount; i++)
     childRoomTemplate
       .parent()
-      .append(childRoomTemplate.clone().attr("id", `childRoom${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+      .append(childRoomTemplate.clone().attr("id", `childRoom${i}`));
 
   // welcomeRoom
   for (var i = 1; i < welcomeRoomCount; i++)
     welcomeRoomTemplate
       .parent()
-      .append(welcomeRoomTemplate.clone().attr("id", `welcomeRoom${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+      .append(welcomeRoomTemplate.clone().attr("id", `welcomeRoom${i}`));
 
   // bedroom
   for (var i = 1; i < bedroomCount; i++)
     bedroomTemplate
       .parent()
-      .append(bedroomTemplate.clone().attr("id", `bedroom${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+      .append(bedroomTemplate.clone().attr("id", `bedroom${i}`));
 
   // dressingRoom
   for (var i = 1; i < dressingRoomCount; i++)
     dressingRoomTemplate
       .parent()
-      .append(dressingRoomTemplate.clone().attr("id", `dressingRoom${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+      .append(dressingRoomTemplate.clone().attr("id", `dressingRoom${i}`));
 
   // balcone
   for (var i = 1; i < balconyCount; i++) {
@@ -104,42 +106,42 @@ $(document).ready(function () {
       console.log(element[0]);
       element.attr("name", `howMuchVisitors${i}`);
     });
-    balconyTemplate.parent().append(balcony).append(divider.clone());
+    balconyTemplate.parent().append(divider.clone()).append(balcony);
   }
 
   // eatingRoom
   for (var i = 1; i < eatingRoomCount; i++)
     eatingRoomTemplate
       .parent()
-      .append(eatingRoomTemplate.clone().attr("id", `eatingRoom${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+      .append(eatingRoomTemplate.clone().attr("id", `eatingRoom${i}`));
 
   // sklad
   for (var i = 1; i < scladCount; i++)
     scladTemplate
       .parent()
-      .append(scladTemplate.clone().attr("id", `sclad${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+      .append(scladTemplate.clone().attr("id", `sclad${i}`));
 
   // TODO переделать это в функцию
   // bathroom
   for (var i = 1; i < bathroomCount; i++)
     bathroomTemplate
       .parent()
-      .append(bathroomTemplate.clone().attr("id", `bathroom${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+      .append(bathroomTemplate.clone().attr("id", `bathroom${i}`));
 
   // office
   for (var i = 1; i < officeCount; i++)
     officeTemplate
       .parent()
-      .append(officeTemplate.clone().attr("id", `office${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+      .append(officeTemplate.clone().attr("id", `office${i}`));
 
   // welcomeBath
   for (var i = 1; i < welcomeBathCount; i++)
     welcomeBathTemplate
       .parent()
-      .append(welcomeBathTemplate.clone().attr("id", `welcomeBath${i}`))
-      .append(divider.clone());
+      .append(divider.clone())
+      .append(welcomeBathTemplate.clone().attr("id", `welcomeBath${i}`));
 });

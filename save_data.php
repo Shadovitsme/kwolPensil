@@ -1,4 +1,7 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 $databaseFile = './test.db.';  // Заменяется именем файла базы данных SQLite
 
@@ -25,7 +28,6 @@ switch ($_POST['funk']) {
 function addNamePhone()
 {
     global $databaseFile;
-
     $name = $_POST['name']; // получаем данные из формы
     $phone = $_POST['phone'];
     $town = $_POST['town'];

@@ -14,20 +14,25 @@ $(document).ready(function () {
   // ajax page 1
   $("form#page1").on("submit", function (e) {
     e.preventDefault();
-    $.ajax({
-      url: "save_data.php",
-      type: "POST",
-      data: {
-        funk: "addNamePhone",
-        name: $(this)[0][0].value,
-        phone: $(this)[0][1].value,
-        town: $(this)[0][2].value,
-      },
-      success: function (data) {
-        console.log(data);
-        window.location.replace("./secondPage.html");
-      },
-    });
+    let name = $(this)[0][0].value;
+    let phone = $(this)[0][1].value;
+    let town = $(this)[0][2].value;
+    if ((name, phone, town)) {
+      $.ajax({
+        url: "save_data.php",
+        type: "POST",
+        data: {
+          funk: "addNamePhone",
+          name: name,
+          phone: phone,
+          town: town,
+        },
+        success: function (data) {
+          console.log(data);
+          window.location.replace("./secondPage.html");
+        },
+      });
+    } else alert("Не все поля заполнены!!!");
   });
   // ajax page2
   $("form#page2").on("submit", function (e) {
@@ -172,6 +177,8 @@ $(document).ready(function () {
           window.location.replace("./rooms/office.html");
         } else if (getCookie("гостевой_санузел")) {
           window.location.replace("./rooms/welcomeBath.html");
+        } else {
+          window.location.replace("/");
         }
       },
     });
