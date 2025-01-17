@@ -94,30 +94,86 @@ $(document).ready(function () {
     let cabinet = $(this)[0][31].value;
     let welcomeBathroom = $(this)[0][34].value;
     let otherRooms = $(this)[0][36].value;
-    $.ajax({
-      url: "save_data.php",
-      type: "POST",
-      data: {
-        funk: "addRoomCount",
-        прихожая: hallway,
-        детская: childRoom,
-        кухня: kitchen,
-        гостиная: welcomeroom,
-        спальня: bedroom,
-        гардеробная: clotheRoom,
-        балкон: balcone,
-        столовая: dinnerRoom,
-        кладовая: storageRoom,
-        ванная: bathroom,
-        кабинет: cabinet,
-        гостевой_санузел: welcomeBathroom,
-        другое: otherRooms,
-      },
-
-      success: function (data) {
-        window.location.replace("./wishesPage.html");
-      },
-    });
+    if (
+      (hallway !== null &&
+        hallway !== undefined &&
+        hallway !== "" &&
+        hallway !== "0") ||
+      (childRoom !== null &&
+        childRoom !== undefined &&
+        childRoom !== "" &&
+        childRoom !== "0") ||
+      (kitchen !== null &&
+        kitchen !== undefined &&
+        kitchen !== "" &&
+        kitchen !== "0") ||
+      (welcomeroom !== null &&
+        welcomeroom !== undefined &&
+        welcomeroom !== "" &&
+        welcomeroom !== "0") ||
+      (bedroom !== null &&
+        bedroom !== undefined &&
+        bedroom !== "" &&
+        bedroom !== "0") ||
+      (clotheRoom !== null &&
+        clotheRoom !== undefined &&
+        clotheRoom !== "" &&
+        clotheRoom !== "0") ||
+      (balcone !== null &&
+        balcone !== undefined &&
+        balcone !== "" &&
+        balcone !== "0") ||
+      (dinnerRoom !== null &&
+        dinnerRoom !== undefined &&
+        dinnerRoom !== "" &&
+        dinnerRoom !== "0") ||
+      (storageRoom !== null &&
+        storageRoom !== undefined &&
+        storageRoom !== "" &&
+        storageRoom !== "0") ||
+      (bathroom !== null &&
+        bathroom !== undefined &&
+        bathroom !== "" &&
+        bathroom !== "0") ||
+      (cabinet !== null &&
+        cabinet !== undefined &&
+        cabinet !== "" &&
+        cabinet !== "0") ||
+      (welcomeBathroom !== null &&
+        welcomeBathroom !== undefined &&
+        welcomeBathroom !== "" &&
+        welcomeBathroom !== "0") ||
+      (otherRooms !== null &&
+        otherRooms !== undefined &&
+        otherRooms !== "" &&
+        otherRooms !== "0")
+    ) {
+      $.ajax({
+        url: "save_data.php",
+        type: "POST",
+        data: {
+          funk: "addRoomCount",
+          прихожая: hallway,
+          детская: childRoom,
+          кухня: kitchen,
+          гостиная: welcomeroom,
+          спальня: bedroom,
+          гардеробная: clotheRoom,
+          балкон: balcone,
+          столовая: dinnerRoom,
+          кладовая: storageRoom,
+          ванная: bathroom,
+          кабинет: cabinet,
+          гостевой_санузел: welcomeBathroom,
+          другое: otherRooms,
+        },
+        success: function (data) {
+          window.location.replace("./wishesPage.html");
+        },
+      });
+    } else {
+      alert("fuck go back and choose room cause i have no error example");
+    }
   });
 
   $("form#wishPage").on("submit", function (e) {
