@@ -46,7 +46,7 @@ $(document).ready(function () {
   welcomeBathTemplate = $("div#welcomeBath0");
   welcomeBathCount = getCookie("гостевой_санузел");
 
-  divider = $("<hr>", { class: "bg-white my-5" });
+  divider = $("<hr>", { class: "bg-white my-5 max-w-[1920px]" });
 
   // kitchen
   for (var i = 1; i < kitchenCount; i++)

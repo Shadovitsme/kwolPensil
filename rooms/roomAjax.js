@@ -971,7 +971,9 @@ $(document).ready(function () {
         window.location.replace(pathArray[index]);
         break;
       }
-      window.location.replace("/");
+      window.location.replace(
+        "https://karandash.pro/brief_com/linkDescribePage"
+      );
     }
   }
   function getCookie(name) {
