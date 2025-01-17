@@ -21,7 +21,7 @@ body {
 
 .rightArrow {
   background: no-repeat
-    url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTgiIHZpZXdCb3g9IjAgMCAxMCAxOCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEuNDUxMTcgMC45MTg0NTdMNy45NzExNyA3LjQzODQ2QzguNzQxMTcgOC4yMDg0NiA4Ljc0MTE3IDkuNDY4NDYgNy45NzExNyAxMC4yMzg1TDEuNDUxMTcgMTYuNzU4NSIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==");
+    url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOCIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDggMTUiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xLjA0Mjk3IDAuODE1NDNMNi40NzYzIDYuMjQ4NzZDNy4xMTc5NyA2Ljg5MDQzIDcuMTE3OTcgNy45NDA0MyA2LjQ3NjMgOC41ODIxTDEuMDQyOTcgMTQuMDE1NCIgc3Ryb2tlPSIjMTExMTExIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+");
 }
 
 .plusButton {
@@ -128,8 +128,8 @@ body {
 .yellowButton {
   border-radius: 5px;
   background-color: var(--Accent);
-  padding-top: 18px;
-  padding-bottom: 22px;
+  padding-top: 16px;
+  padding-bottom: 20px;
   width: 100%;
   color: var(--background);
   font-size: 20px;
