@@ -848,90 +848,90 @@ $(document).ready(function () {
     let shower = $(this)[0][10].value;
     let clothWasher = $(this)[0][13].value;
     let sink = $(this)[0][16].value;
-     let furniture = $(this)[0][19].value;
-     let bath = $(this)[0][22].value;
-     let filter = $(this)[0][25].value;
-     let poopShower = $(this)[0][28].value;
-     let waterHotter = $(this)[0][31].value;
-     let warmFloor = $(this)[0][34].value;
+    let furniture = $(this)[0][19].value;
+    let bath = $(this)[0][22].value;
+    let filter = $(this)[0][25].value;
+    let poopShower = $(this)[0][28].value;
+    let waterHotter = $(this)[0][31].value;
+    let warmFloor = $(this)[0][34].value;
 
-     let floor = $(this)[0][36].value;
-     let walls = $(this)[0][37].value;
-     let seiling = $(this)[0][38].value;
-     let other = $(this)[0][39].value;
-     $m = 41;
-     let arr = [];
-     // TODO отладить тут запись в бд
-     for (let i = 0; i < getCookie("гостевой_санузел"); i++) {
-       arr.push([
-         `гостевой_санузел${i}`,
-         ["Унитаз", pooper],
-         ["полотенцесушитель", airAway],
-         ["биде", poopWasher],
-         ["душевая", shower],
-         ["стиральная машина", clothWasher],
-         ["раковина", sink],
-         ["мебель", furniture],
-         ["ванна", bath],
-         ["фильтр для воды", filter],
-         ["гигиенический душ", poopShower],
-         ["водонагреватель", waterHotter],
-         ["теплый_пол", warmFloor],
-         ["полы", floor],
-         ["стены", walls],
-         ["потолки", seiling],
-         ["другое", other],
-       ]);
-       if (i == getCookie("гостевой_санузел") - 1) {
-         break;
-       }
-       pooper = $(this)[0][$m].value;
-       $m += 3;
-       airAway = $(this)[0][$m].value;
-       $m += 3;
-       poopWasher = $(this)[0][$m].value;
-       $m += 3;
-       shower = $(this)[0][$m].value;
-       $m += 3;
-       clothWasher = $(this)[0][$m].value;
-       $m += 3;
-       sink = $(this)[0][$m].value;
-       $m += 3;
-       furniture = $(this)[0][$m].value;
-       $m += 3;
-       bath = $(this)[0][$m].value;
-       $m += 3;
-       filter = $(this)[0][$m].value;
-       $m += 3;
-       poopShower = $(this)[0][$m].value;
-       $m += 3;
-       waterHotter = $(this)[0][$m].value;
-       $m += 3;
+    let floor = $(this)[0][36].value;
+    let walls = $(this)[0][37].value;
+    let seiling = $(this)[0][38].value;
+    let other = $(this)[0][39].value;
+    $m = 41;
+    let arr = [];
+    // TODO отладить тут запись в бд
+    for (let i = 0; i < getCookie("гостевой_санузел"); i++) {
+      arr.push([
+        `гостевой_санузел${i}`,
+        ["Унитаз", pooper],
+        ["полотенцесушитель", airAway],
+        ["биде", poopWasher],
+        ["душевая", shower],
+        ["стиральная машина", clothWasher],
+        ["раковина", sink],
+        ["мебель", furniture],
+        ["ванна", bath],
+        ["фильтр для воды", filter],
+        ["гигиенический душ", poopShower],
+        ["водонагреватель", waterHotter],
+        ["теплый_пол", warmFloor],
+        ["полы", floor],
+        ["стены", walls],
+        ["потолки", seiling],
+        ["другое", other],
+      ]);
+      if (i == getCookie("гостевой_санузел") - 1) {
+        break;
+      }
+      pooper = $(this)[0][$m].value;
+      $m += 3;
+      airAway = $(this)[0][$m].value;
+      $m += 3;
+      poopWasher = $(this)[0][$m].value;
+      $m += 3;
+      shower = $(this)[0][$m].value;
+      $m += 3;
+      clothWasher = $(this)[0][$m].value;
+      $m += 3;
+      sink = $(this)[0][$m].value;
+      $m += 3;
+      furniture = $(this)[0][$m].value;
+      $m += 3;
+      bath = $(this)[0][$m].value;
+      $m += 3;
+      filter = $(this)[0][$m].value;
+      $m += 3;
+      poopShower = $(this)[0][$m].value;
+      $m += 3;
+      waterHotter = $(this)[0][$m].value;
+      $m += 3;
 
-       warmFloor = $(this)[0][$m].value;
-       $m += 2;
-       floor = $(this)[0][$m].value;
-       $m++;
-       walls = $(this)[0][$m].value;
-       $m++;
-       seiling = $(this)[0][$m].value;
-       $m++;
-       other = $(this)[0][$m].value;
-       $m += 2;
-     }
-     $.ajax({
-       url: "../save_data.php",
-       type: "POST",
-       data: {
-         funk: "addDetailRoom",
-         arr,
-       },
+      warmFloor = $(this)[0][$m].value;
+      $m += 2;
+      floor = $(this)[0][$m].value;
+      $m++;
+      walls = $(this)[0][$m].value;
+      $m++;
+      seiling = $(this)[0][$m].value;
+      $m++;
+      other = $(this)[0][$m].value;
+      $m += 2;
+    }
+    $.ajax({
+      url: "../save_data.php",
+      type: "POST",
+      data: {
+        funk: "addDetailRoom",
+        arr,
+      },
 
-       success: function (data) {
-         console.log(data);
-         ("https://karandash.pro/brief_com/linkDescribePage");
-       },
-     });
+      success: function (data) {
+        console.log(data);
+        window.location.replace("https://karandash.pro/referencePage");
+      },
+    });
   });
 
   function navigate(num) {
@@ -968,9 +968,7 @@ $(document).ready(function () {
         window.location.replace(pathArray[index]);
         break;
       }
-      window.location.replace(
-        "https://karandash.pro/brief_com/linkDescribePage"
-      );
+      window.location.replace("https://karandash.pro/referencePage");
     }
   }
   function getCookie(name) {
