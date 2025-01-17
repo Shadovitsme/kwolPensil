@@ -123,7 +123,6 @@ $(document).ready(function () {
       .append(divider.clone())
       .append(scladTemplate.clone().attr("id", `sclad${i}`));
 
-  // TODO переделать это в функцию
   // bathroom
   for (var i = 1; i < bathroomCount; i++)
     bathroomTemplate

@@ -849,18 +849,17 @@ $(document).ready(function () {
     let clothWasher = $(this)[0][13].value;
     let sink = $(this)[0][16].value;
      let furniture = $(this)[0][19].value;
-     let filter = $(this)[0][22].value;
-     let waterHotter = $(this)[0][25].value;
-     let bath = $(this)[0][28].value;
-     let poopShower = $(this)[0][31].value;
-     let defender = $(this)[0][34].value;
-     let warmFloor = $(this)[0][37].value;
+     let bath = $(this)[0][22].value;
+     let filter = $(this)[0][25].value;
+     let poopShower = $(this)[0][28].value;
+     let waterHotter = $(this)[0][31].value;
+     let warmFloor = $(this)[0][34].value;
 
-     let floor = $(this)[0][39].value;
-     let walls = $(this)[0][40].value;
-     let seiling = $(this)[0][41].value;
-     let other = $(this)[0][42].value;
-     $m = 44;
+     let floor = $(this)[0][36].value;
+     let walls = $(this)[0][37].value;
+     let seiling = $(this)[0][38].value;
+     let other = $(this)[0][39].value;
+     $m = 41;
      let arr = [];
      // TODO отладить тут запись в бд
      for (let i = 0; i < getCookie("гостевой_санузел"); i++) {
@@ -892,23 +891,21 @@ $(document).ready(function () {
        $m += 3;
        poopWasher = $(this)[0][$m].value;
        $m += 3;
-       clothWasher = $(this)[0][$m].value;
-       $m += 3;
        shower = $(this)[0][$m].value;
+       $m += 3;
+       clothWasher = $(this)[0][$m].value;
        $m += 3;
        sink = $(this)[0][$m].value;
        $m += 3;
        furniture = $(this)[0][$m].value;
        $m += 3;
-       filter = $(this)[0][$m].value;
-       $m += 3;
        bath = $(this)[0][$m].value;
        $m += 3;
-       waterHotter = $(this)[0][$m].value;
+       filter = $(this)[0][$m].value;
        $m += 3;
        poopShower = $(this)[0][$m].value;
        $m += 3;
-       defender = $(this)[0][$m].value;
+       waterHotter = $(this)[0][$m].value;
        $m += 3;
 
        warmFloor = $(this)[0][$m].value;
@@ -922,19 +919,19 @@ $(document).ready(function () {
        other = $(this)[0][$m].value;
        $m += 2;
      }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
+     $.ajax({
+       url: "../save_data.php",
+       type: "POST",
+       data: {
+         funk: "addDetailRoom",
+         arr,
+       },
 
-      success: function (data) {
-        console.log(data);
-        window.location.replace("/");
-      },
-    });
+       success: function (data) {
+         console.log(data);
+         ("https://karandash.pro/brief_com/linkDescribePage");
+       },
+     });
   });
 
   function navigate(num) {

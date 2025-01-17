@@ -169,11 +169,11 @@ body {
   border-radius: 5px;
   vertical-align: top;
 }
-
 .textarea {
   background-color: var(--DarkAccent);
   padding: 20px;
   height: 140px;
+  max-height: 140px;
   width: 100%;
   color: var(--Text);
   border-radius: 5px;
