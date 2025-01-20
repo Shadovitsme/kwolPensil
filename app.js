@@ -17,8 +17,8 @@ $(document).ready(function () {
     let name = $(this)[0][0].value;
     let phone = $(this)[0][1].value;
     let town = $(this)[0][2].value;
-    const phoneRegex =
-      /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
+    const phoneRegex = /^[789]\d{10}$/;
+
     if ((name, phone, town)) {
       if (phoneRegex.test(phone)) {
         $.ajax({
