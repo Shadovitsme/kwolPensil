@@ -11,7 +11,22 @@
   </head>
 
   <body class="flex px-[22px] md:px-[100px]">
-  <div class="md:mx-auto w-full max-w-[1920px]">
+    <div class="md:mx-auto w-full max-w-[1920px] relative">
+      <div
+        id="errorMessage"
+        class="hidden bg-[#111111] border-[1px] border-[#C63F3F] absolute bottom-[84px] right-0 rounded-[5px] w-[635px] pl-7 py-8"
+      >
+        <div class="flex">
+          <div class="alert w-[42px] h-[42px] my-auto "></div>
+
+          <div class="w-[497px] ml-10">
+            <p class="Text p3 pb-2">Вы не выбрали ни одной комнаты.</p>
+            <p class="Text p3 ">
+              Пожалуйста, выберите комнаты, для которых нужен дизайн.
+            </p>
+          </div>
+        </div>
+      </div>
       <form id="page3" class="w-full h-full">
         <h1 class="H1 Text pb-10 uppercase">Выберите комнаты</h1>
         <div class="md:flex w-full">
@@ -44,7 +59,7 @@
               </div>
             </div>
 
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -69,7 +84,7 @@
                 ></button>
               </div>
             </div>
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -94,7 +109,7 @@
                 ></button>
               </div>
             </div>
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -119,7 +134,7 @@
                 ></button>
               </div>
             </div>
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -144,7 +159,7 @@
                 ></button>
               </div>
             </div>
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -169,7 +184,7 @@
                 ></button>
               </div>
             </div>
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -194,7 +209,7 @@
                 ></button>
               </div>
             </div>
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -219,7 +234,7 @@
                 ></button>
               </div>
             </div>
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -244,7 +259,7 @@
                 ></button>
               </div>
             </div>
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -269,7 +284,7 @@
                 ></button>
               </div>
             </div>
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -294,7 +309,7 @@
                 ></button>
               </div>
             </div>
- <div class="md:flex md:h-[56px] md:static relative h-[143px]">
+            <div class="md:flex md:h-[56px] md:static relative h-[143px]">
               <div
                 class="labelWrapper md:mr-5 w-full md:w-[220px] absolute md:static top-0 z-20 flex my-auto"
               >
@@ -327,21 +342,32 @@
               placeholder="Если нужны другие комнаты, опишите их здесь"
             ></textarea>
             <div>
-              <input type="checkbox" class="check" /><label
-                class="p3 Text"
+              <input type="checkbox" class="check" /><label class="p3 Text"
                 >Другие комнаты не нужны</label
               >
             </div>
           </div>
         </div>
+        <div
+          id="errorMessage"
+          class="hidden bg-DarkAccent border-[1px] border-[#C63F3F] absolute"
+        >
+          <p class="Text p3">Вы не выбрали ни одной комнаты.</p>
+          <p class="Text p3">
+            Пожалуйста, выберите комнаты, для которых нужен дизайн.
+          </p>
+        </div>
         <div class="w-full flex md:justify-end mt-9 md:mt-12">
           <button
             class="yellowButton w-full md:w-[212px] h-10 md:h-[60px] flex"
             type="submit"
-          ><div class="flex mx-auto md:ml-14 my-auto">
-            <p class="p3">Далее</p>
-            <div class="rightArrow h-5 w-5 ml-[18px] mt-[7px] md:visible hidden md:block"></div>
-          </div>
+          >
+            <div class="flex mx-auto md:ml-14 my-auto">
+              <p class="p3">Далее</p>
+              <div
+                class="rightArrow h-5 w-5 ml-[18px] mt-[7px] md:visible hidden md:block"
+              ></div>
+            </div>
           </button>
         </div>
       </form>

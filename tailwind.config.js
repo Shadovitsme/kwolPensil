@@ -10,6 +10,7 @@ module.exports = {
         Accent: "#E4A85E",
         BrightAccent: "#F99D2B",
         Text: "#F5F2EC",
+        Error: "#C63F3F",
       },
     },
   },

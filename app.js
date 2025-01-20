@@ -172,9 +172,19 @@ $(document).ready(function () {
         },
       });
     } else {
-      alert("fuck go back and choose room cause i have no error example");
+      showErrorMessage();
     }
   });
+
+  function showErrorMessage() {
+    const errorMessage = document.getElementById("errorMessage");
+    errorMessage.classList.remove("hidden");
+
+    // Hide the error message after 3 seconds
+    setTimeout(function () {
+      errorMessage.classList.add("hidden");
+    }, 3000);
+  }
 
   $("form#wishPage").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
