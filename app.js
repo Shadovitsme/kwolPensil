@@ -50,19 +50,19 @@ $(document).ready(function () {
     let soundless = $(this)[0][2].checked;
     let furniture = $(this)[0][4].checked;
     let hobby;
-    if (!$(this)[0][7].checked) {
+    if (!$(this)[0][6].checked) {
       hobby = $(this)[0][6].value;
     } else {
       hobby = "0";
     }
-    let replane = $(this)[0][8].checked;
+    let replane = $(this)[0][7].checked;
     let visitors;
-    if ($(this)[0][10].checked) {
+    if ($(this)[0][9].checked) {
+      visitors = $(this)[0][9].value;
+    } else if ($(this)[0][10].checked) {
       visitors = $(this)[0][10].value;
-    } else if ($(this)[0][11].checked) {
-      visitors = $(this)[0][11].value;
     } else {
-      visitors = $(this)[0][12].value;
+      visitors = $(this)[0][11].value;
     }
 
     $.ajax({
@@ -77,11 +77,15 @@ $(document).ready(function () {
         hobby: hobby,
         replane: replane,
         visitors: visitors,
+        actvitySphere: null,
+        area: null,
+        zones: null,
+        workPlaces: null,
       },
 
       success: function (data) {
         console.log(data);
-        window.location.replace("./thirdPage.html");
+        // window.location.replace("./thirdPage.html");
       },
     });
   });

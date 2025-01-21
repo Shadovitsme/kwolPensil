@@ -46,7 +46,6 @@ function addNamePhone()
         echo ($id);
 
         setcookie('userId', $id, time() + 3600);
-
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
     }
@@ -63,6 +62,10 @@ function addCommonData()
     $hobby = $_POST['hobby'];
     $replane = $_POST['replane'];
     $visitors = $_POST['visitors'];
+    $actvitySphere = $_POST['actvitySphere'];
+    $area = $_POST['area'];
+    $zones = $_POST['zones'];
+    $workPlaces = $_POST['workPlaces'];
     $sql = "UPDATE Customers
         SET familyMembers = '$familyMembers',
         Pets = '$pets',
@@ -70,7 +73,11 @@ function addCommonData()
         furniture = '$furniture',
         hobbyDescription = '$hobby',
         replan = '$replane',
-        visitors = '$visitors'
+        visitors = '$visitors',
+        'actvitySphere' = '$actvitySphere',
+        'area' = '$area',
+        'zones'= '$zones',
+        'workPlaces' = '$workPlaces'
         WHERE Id = '$id'";
 
     try {
