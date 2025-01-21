@@ -34,7 +34,6 @@ function addNamePhone()
     try {
         $connection = new PDO("sqlite:$databaseFile");
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
     } catch (PDOException $e) {
         die("Connection failed: " . $e->getMessage());
     }
@@ -43,8 +42,10 @@ function addNamePhone()
     try {
         $connection->exec($sql);
         $a = $connection->query("SELECT id FROM Customers where FirstName = '$name' AND Phone = '$phone'");
-        setcookie('userId', $a->fetchAll()[0][0], time() + 3600);
-        echo "Data inserted successfully";
+        $id = $a->fetchAll()[0][0];
+        echo ($id);
+
+        setcookie('userId', $id, time() + 3600);
 
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
