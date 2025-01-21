@@ -50,6 +50,8 @@ $(document).ready(function () {
     let soundless = $(this)[0][2].checked;
     let furniture = $(this)[0][4].checked;
     let hobby;
+    let ID = getCookie("userId");
+
     if (!$(this)[0][6].checked) {
       hobby = $(this)[0][6].value;
     } else {
@@ -70,6 +72,8 @@ $(document).ready(function () {
       type: "POST",
       data: {
         funk: "addCommonData",
+        userId: ID,
+
         familyMembers: familyMembers,
         pets: pets,
         soundless: soundless,

@@ -54,7 +54,7 @@ function addNamePhone()
 function addCommonData()
 {
     global $databaseFile;
-    $id = $_COOKIE['userId'];
+    $id = $_POST['userId'];
     $familyMembers = $_POST['familyMembers'];
     $pets = $_POST['pets'];
     $soundless = $_POST['soundless'];
