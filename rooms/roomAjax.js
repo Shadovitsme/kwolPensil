@@ -861,7 +861,6 @@ $(document).ready(function () {
     let other = $(this)[0][39].value;
     $m = 41;
     let arr = [];
-    // TODO отладить тут запись в бд
     for (let i = 0; i < getCookie("гостевой_санузел"); i++) {
       arr.push([
         `гостевой_санузел${i}`,

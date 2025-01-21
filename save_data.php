@@ -100,7 +100,7 @@ function addCommonData()
 function addRoomCount()
 {
     global $databaseFile;
-    $id = $_COOKIE['userId'];
+    $id = $_POST['userId'];
     $i = 0;
     foreach ($_POST as $room => $count) {
         if ($i > 0) {
@@ -129,7 +129,7 @@ function addRoomCount()
 function addWishes()
 {
     global $databaseFile;
-    $id = $_COOKIE['userId'];
+    $id = $_POST['userId'];
 
 
     try {
@@ -166,7 +166,7 @@ function addWishes()
 function addDetailRoom()
 {
     global $databaseFile;
-    $id = $_COOKIE['userId'];
+    $id = $_POST['userId'];
     foreach ($_POST['arr'] as $item) {
         $i = 0;
         $room = $item[0];
@@ -193,6 +193,33 @@ function addDetailRoom()
                 }
             }
             $i++;
+        }
+    }
+}
+
+function addRefs()
+{
+    global $databaseFile;
+    $id = $_POST['userId'];
+    foreach ($_POST['refArray'] as $item) {
+        foreach ($item as $prop) {
+            $thing = $prop[0];
+            $description = $prop[1];
+            try {
+                $connection = new PDO("sqlite:$databaseFile");
+                $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                echo "Connected successfully";
+            } catch (PDOException $e) {
+                die("Connection failed: " . $e->getMessage());
+            }
+            $sql = "INSERT INTO refs (userId, img, description) VALUES ('$id', '$thing','$description')";
+            try {
+                $connection->exec($sql);
+
+                echo "Data inserted successfully";
+            } catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
+            }
         }
     }
 }

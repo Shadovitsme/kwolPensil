@@ -73,7 +73,6 @@ $(document).ready(function () {
       data: {
         funk: "addCommonData",
         userId: ID,
-
         familyMembers: familyMembers,
         pets: pets,
         soundless: soundless,
@@ -97,6 +96,7 @@ $(document).ready(function () {
   // ajax page3
   $("form#page3").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
+    let ID = getCookie("userId");
     let hallway = $(this)[0][1].value;
     let childRoom = $(this)[0][4].value;
     let kitchen = $(this)[0][7].value;
@@ -169,6 +169,7 @@ $(document).ready(function () {
         type: "POST",
         data: {
           funk: "addRoomCount",
+          userId: ID,
           прихожая: hallway,
           детская: childRoom,
           кухня: kitchen,
