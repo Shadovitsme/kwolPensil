@@ -201,7 +201,7 @@ function addRefs()
 {
     global $databaseFile;
     $id = $_POST['userId'];
-    foreach ($_POST['refArray'] as $item) {
+    foreach ($_POST['picArray'] as $item) {
         foreach ($item as $prop) {
             $thing = $prop[0];
             $description = $prop[1];
