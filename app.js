@@ -17,10 +17,8 @@ $(document).ready(function () {
     let name = $(this)[0][0].value;
     let phone = $(this)[0][1].value;
     let town = $(this)[0][2].value;
-    const phoneRegex = /^[789]\d{10}$/;
 
     if ((name, phone, town)) {
-      if (phoneRegex.test(phone)) {
         $.ajax({
           url: "save_data.php",
           type: "POST",
@@ -35,9 +33,6 @@ $(document).ready(function () {
             window.location.replace("./secondPage.html");
           },
         });
-      } else {
-        alert("not a number!");
-      }
     } else {
       alert("Не все поля заполнены!!!");
     }

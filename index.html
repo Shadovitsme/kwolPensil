@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./jquery-3.7.1.min.js"></script>
-
+    <script src="./phoneMask.js"></script>
     <link rel="stylesheet" href="app.css" />
     <script src="./app.js"></script>
 
@@ -31,23 +31,22 @@
           <h class="H3 Text uppercase"> Основные данные</h>
           <form class="md:mt-8 mt-4" id="page1">
             <input
-            maxlength="30"
-
+              maxlength="30"
               type="text"
               class="input mb-6"
               name="name"
               placeholder="Введите имя"
             />
             <input
-            maxlength="30"
-
+              maxlength="30"
+              id="phone"
               class="input mb-6"
               type="number"
               name="phone"
               placeholder="Введите телефон"
             />
             <input
-            maxlength="30"
+              maxlength="30"
               class="input"
               type="text"
               name="city"
@@ -58,8 +57,12 @@
               class="yellowButton mt-[34px] md:w-[318px] md:h-[60px] flex"
               type="submit"
             >
-            <div class="flex mx-auto md:ml-14 my-auto">                <p class="p3">Перейти к брифу</p>
-              <div class="rightArrow h-5 w-5 ml-[18px] mt-[7px] md:visible hidden md:block"></div>              </div>
+              <div class="flex mx-auto md:ml-14 my-auto">
+                <p class="p3">Перейти к брифу</p>
+                <div
+                  class="rightArrow h-5 w-5 ml-[18px] mt-[7px] md:visible hidden md:block"
+                ></div>
+              </div>
             </button>
           </form>
         </div>
