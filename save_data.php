@@ -22,6 +22,9 @@ switch ($_POST['funk']) {
     case 'addDetailRoom':
         addDetailRoom();
         break;
+    case 'addRefs':
+        addRefs();
+        break;
 }
 
 
@@ -201,55 +204,22 @@ function addRefs()
 {
     global $databaseFile;
     $id = $_POST['userId'];
-    foreach ($_POST['picArray'] as $item) {
-            $uploadDir = 'uploads/';
-            if (!is_dir($uploadDir)) {
-                mkdir($uploadDir, 0755, true);
-            }
-
-        $fileTmpPath = $item[0]['tmp_name'];
-        $fileName = basename($item['name']);
-        $fileSize = $item[0]['size'];
-            $fileType = $_FILES['photo']['type'];
-            $fileNameCmps = explode(".", $fileName);
-            $fileExtension = strtolower(end($fileNameCmps));
-
-            // Sanitize file name
-            $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
-        print_r($fileTmpPath, $fileName, $fileSize, $fileType);
-            // Check if file has one of the following extensions
-            $allowedfileExtensions = array('jpg', 'gif', 'png', 'jpeg');
-            if (in_array($fileExtension, $allowedfileExtensions)) {
-                $dest_path = $uploadDir . $newFileName;
-
-                if (move_uploaded_file($fileTmpPath, $dest_path)) {
-                    echo 'File is successfully uploaded.';
-                } else {
-                    echo 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
-                }
-            } else {
-                echo 'Upload failed. Allowed file types: ' . implode(',', $allowedfileExtensions);
-        }
-    } 
-
-        foreach ($item as $prop) {
-            $thing = $prop[0];
-            $description = $prop[1];
-            try {
-                $connection = new PDO("sqlite:$databaseFile");
-                $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Connected successfully";
-            } catch (PDOException $e) {
-                die("Connection failed: " . $e->getMessage());
-            }
-            $sql = "INSERT INTO refs (userId, img, description) VALUES ('$id', '$thing','$description')";
-            try {
-                $connection->exec($sql);
-
-                echo "Data inserted successfully";
-            } catch (PDOException $e) {
-                echo "Error: " . $e->getMessage();
-            }
-        }
+    var_dump($_POST['picArray']);
+    $item = $_POST['picArray'];
+    try {
+        $connection = new PDO("sqlite:$databaseFile");
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Connected successfully";
+    } catch (PDOException $e) {
+        die("Connection failed: " . $e->getMessage());
     }
+    $sql = "INSERT INTO refs (userId, img, description) VALUES ('$id', '$item','aaaaa')";
+    try {
+        $connection->exec($sql);
+
+        echo "Data inserted successfully";
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    
 }
