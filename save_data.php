@@ -1,26 +1,7 @@
 <?php
-// Allow from any origin
 header("Access-Control-Allow-Origin: *");
-
-// Allow specific methods
-header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-
-// Allow specific headers
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
-
-// Handle preflight requests
-if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
-    exit(0);
-}
-
-// Your existing PHP code
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Handle the POST request
-    // Your existing code to handle the form submission
-    echo 'Data received';
-} else {
-    echo 'Invalid request method';
-}
 
 $databaseFile = './test.db.';  // Заменяется именем файла базы данных SQLite
 
