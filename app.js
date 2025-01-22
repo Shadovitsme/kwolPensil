@@ -83,7 +83,7 @@ $(document).ready(function () {
 
       success: function (data) {
         console.log(data);
-        // window.location.replace("./thirdPage.html");
+        window.location.replace("./thirdPage.html");
       },
     });
   });
