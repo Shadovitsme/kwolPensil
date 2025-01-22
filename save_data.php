@@ -202,6 +202,40 @@ function addRefs()
     global $databaseFile;
     $id = $_POST['userId'];
     foreach ($_POST['picArray'] as $item) {
+        if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
+            $uploadDir = 'uploads/';
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0755, true);
+            }
+
+            $fileTmpPath = $_FILES['photo']['tmp_name'];
+            $fileName = basename($_FILES['photo']['name']);
+            $fileSize = $_FILES['photo']['size'];
+            $fileType = $_FILES['photo']['type'];
+            $fileNameCmps = explode(".", $fileName);
+            $fileExtension = strtolower(end($fileNameCmps));
+
+            // Sanitize file name
+            $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+
+            // Check if file has one of the following extensions
+            $allowedfileExtensions = array('jpg', 'gif', 'png', 'jpeg');
+            if (in_array($fileExtension, $allowedfileExtensions)) {
+                $dest_path = $uploadDir . $newFileName;
+
+                if (move_uploaded_file($fileTmpPath, $dest_path)) {
+                    echo 'File is successfully uploaded.';
+                } else {
+                    echo 'There was some error moving the file to upload directory. Please make sure the upload directory is writable by web server.';
+                }
+            } else {
+                echo 'Upload failed. Allowed file types: ' . implode(',', $allowedfileExtensions);
+            }
+        } else {
+            echo 'There is some error in the file upload. Please check the following error.<br>';
+            echo 'Error:' . $_FILES['photo']['error'];
+        }
+
         foreach ($item as $prop) {
             $thing = $prop[0];
             $description = $prop[1];
