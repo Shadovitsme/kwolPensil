@@ -202,22 +202,21 @@ function addRefs()
     global $databaseFile;
     $id = $_POST['userId'];
     foreach ($_POST['picArray'] as $item) {
-        if (isset($_FILES['photo']) && $_FILES['photo']['error'] === UPLOAD_ERR_OK) {
             $uploadDir = 'uploads/';
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0755, true);
             }
 
-            $fileTmpPath = $_FILES['photo']['tmp_name'];
-            $fileName = basename($_FILES['photo']['name']);
-            $fileSize = $_FILES['photo']['size'];
+        $fileTmpPath = $item[0]['tmp_name'];
+        $fileName = basename($item['name']);
+        $fileSize = $item[0]['size'];
             $fileType = $_FILES['photo']['type'];
             $fileNameCmps = explode(".", $fileName);
             $fileExtension = strtolower(end($fileNameCmps));
 
             // Sanitize file name
             $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
-
+        print_r($fileTmpPath, $fileName, $fileSize, $fileType);
             // Check if file has one of the following extensions
             $allowedfileExtensions = array('jpg', 'gif', 'png', 'jpeg');
             if (in_array($fileExtension, $allowedfileExtensions)) {
@@ -230,11 +229,8 @@ function addRefs()
                 }
             } else {
                 echo 'Upload failed. Allowed file types: ' . implode(',', $allowedfileExtensions);
-            }
-        } else {
-            echo 'There is some error in the file upload. Please check the following error.<br>';
-            echo 'Error:' . $_FILES['photo']['error'];
         }
+    } 
 
         foreach ($item as $prop) {
             $thing = $prop[0];
