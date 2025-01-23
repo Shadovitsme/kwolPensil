@@ -697,9 +697,9 @@ $(document).ready(function () {
     $m = 44;
     let arr = [];
 
-    for (let i = 0; i < getCookie("ванная"); i++) {
+    for (let i = 0; i < getCookie("Санузел"); i++) {
       arr.push([
-        `ванная${i}`,
+        `Санузел${i}`,
         ["Унитаз", pooper],
         ["вытяжка", airAway],
         ["биде", poopWasher],
@@ -707,7 +707,7 @@ $(document).ready(function () {
         ["душевая", shower],
         ["раковина", sink],
         ["фильтр для воды", filter],
-        ["ванна", bath],
+        ["Санузел", bath],
         ["водонагреватель", waterHotter],
         ["гигиенический душ", poopShower],
         ["система защины", defender],
@@ -718,7 +718,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("ванная") - 1) {
+      if (i == getCookie("Санузел") - 1) {
         break;
       }
       pooper = $(this)[0][$m].value;
@@ -871,7 +871,7 @@ $(document).ready(function () {
         ["стиральная машина", clothWasher],
         ["раковина", sink],
         ["мебель", furniture],
-        ["ванна", bath],
+        ["Санузел", bath],
         ["фильтр для воды", filter],
         ["гигиенический душ", poopShower],
         ["водонагреватель", waterHotter],
@@ -943,7 +943,7 @@ $(document).ready(function () {
       "балкон",
       "столовая",
       "кладовая",
-      "ванная",
+      "Санузел",
       "кабинет",
       "гостевой_санузел",
     ];

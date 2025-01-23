@@ -1,7 +1,9 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 $databaseFile = './test.db.';  // Заменяется именем файла базы данных SQLite
-$id = $_COOKIE['userId'];
 
 try {
   $connection = new PDO("sqlite:$databaseFile");

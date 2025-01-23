@@ -174,7 +174,7 @@ $(document).ready(function () {
           балкон: balcone,
           столовая: dinnerRoom,
           кладовая: storageRoom,
-          ванная: bathroom,
+          Санузел: bathroom,
           кабинет: cabinet,
           гостевой_санузел: welcomeBathroom,
           другое: otherRooms,
@@ -247,7 +247,7 @@ $(document).ready(function () {
           window.location.replace("./rooms/eatingRoom.html");
         } else if (getCookie("кладовая")) {
           window.location.replace("./rooms/sclad.html");
-        } else if (getCookie("ванная")) {
+        } else if (getCookie("Санузел")) {
           window.location.replace("./rooms/bathroom.html");
         } else if (getCookie("кабинет")) {
           window.location.replace("./rooms/office.html");

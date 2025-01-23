@@ -38,7 +38,7 @@ $(document).ready(function () {
   scladCount = getCookie("кладовая");
 
   bathroomTemplate = $("div#bathroom0");
-  bathroomCount = getCookie("ванная");
+  bathroomCount = getCookie("Санузел");
 
   officeTemplate = $("div#office0");
   officeCount = getCookie("кабинет");
