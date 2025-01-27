@@ -35,8 +35,7 @@ $(document).ready(function () {
           }
           return sawYouBefore;
         })
-        .then((sawYouBefore) => {
-          console.log(sawYouBefore);
+        .done((sawYouBefore) => {
           if (sawYouBefore) {
             alert("kogo i see");
           } else {
