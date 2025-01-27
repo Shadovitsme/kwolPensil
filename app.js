@@ -232,12 +232,14 @@ $(document).ready(function () {
     let dontWannaSee = $(this)[0][7].value;
     let additional = $(this)[0][8].value;
     let deadline = $(this)[0][9].value;
+    let ID = getCookie("userId");
 
     $.ajax({
       url: "save_data.php",
       type: "POST",
       data: {
         funk: "addWishes",
+        userId: ID,
         light: light,
         condicioner: condicioner,
         warmFloor: warmFloor,
