@@ -21,6 +21,7 @@ $(document).ready(function () {
     let sawYouBefore;
 
     if ((name, phone, town)) {
+      // get all user data and find number
       $.ajax({
         url: "https://karandash.pro/brief/userResult.php",
         type: "GET",

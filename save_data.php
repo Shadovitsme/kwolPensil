@@ -204,9 +204,6 @@ function addRefs()
 {
     global $databaseFile;
     $id = $_POST['userId'];
-    // TODO добавить считывание описания
-    var_dump($_POST['picArray']);
-    $item = $_POST['picArray'];
     try {
         $connection = new PDO("sqlite:$databaseFile");
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -214,12 +211,17 @@ function addRefs()
     } catch (PDOException $e) {
         die("Connection failed: " . $e->getMessage());
     }
-    $sql = "INSERT INTO refs (userId, img, description) VALUES ('$id', '$item','aaaaa')";
-    try {
-        $connection->exec($sql);
+    foreach ($_POST['dataArr'] as $item) {
+        $pic = $item[0];
+        $description = $item[1];
+        $sql = "INSERT INTO refs (userId, img, description) VALUES ('$id', '$pic','$description')";
+        try {
+            $connection->exec($sql);
 
-        echo "Data inserted successfully";
-    } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+            echo "Data inserted successfully";
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+        }
     }
+
 }
