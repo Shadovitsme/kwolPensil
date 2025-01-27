@@ -17,21 +17,43 @@ $(document).ready(function () {
     let name = $(this)[0][0].value;
     let phone = $(this)[0][1].value;
     let town = $(this)[0][2].value;
+    let userArray;
+    let sawYouBefore;
 
     if ((name, phone, town)) {
-        $.ajax({
-          url: "save_data.php",
-          type: "POST",
-          data: {
-            funk: "addNamePhone",
-            name: name,
-            phone: phone,
-            town: town,
-          },
-          success: function (data) {
-            console.log(data);
-            window.location.replace("./secondPage.html");
-          },
+      $.ajax({
+        url: "https://karandash.pro/brief/userResult.php",
+        type: "GET",
+      })
+        .then(function (data) {
+          userArray = Object.values(JSON.parse(data));
+          if (userArray.find((element) => element["Phone"] == phone)) {
+            sawYouBefore = true;
+          } else {
+            sawYouBefore = false;
+          }
+          return sawYouBefore;
+        })
+        .then((sawYouBefore) => {
+          console.log(sawYouBefore);
+          if (sawYouBefore) {
+            alert("kogo i see");
+          } else {
+            $.ajax({
+              url: "save_data.php",
+              type: "POST",
+              data: {
+                funk: "addNamePhone",
+                name: name,
+                phone: phone,
+                town: town,
+              },
+              success: function (data) {
+                console.log(data);
+                window.location.replace("./secondPage.html");
+              },
+            });
+          }
         });
     } else {
       alert("Не все поля заполнены!!!");
