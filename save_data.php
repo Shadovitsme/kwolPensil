@@ -152,10 +152,11 @@ function addWishes()
     $dontWannaSee = $_POST['dontWannaSee'];
     $deadline = $_POST['deadline'];
     $additional = $_POST['additional'];
-    $budget = $_POST['budget'];
+    $floor = $_POST['floor'];
 
-    $sql = "INSERT INTO wishes (userId, light, warmFloor, ceiling, eachRoomBudget, conditioner, wannaSee, dontWannaSee, deadline,additional,style) VALUES ('$id', '$light
-    ', '$warmFloor', '$ceiling', '$budget', '$condicioner', '$wannaSee', '$dontWannaSee', '$deadline', '$additional', '$style' )";
+
+    $sql = "INSERT INTO wishes (userId, light, warmFloor, ceiling, floor, conditioner, wannaSee, dontWannaSee, deadline,additional,style) VALUES ('$id', '$light
+    ', '$warmFloor', '$ceiling', '$floor', '$condicioner', '$wannaSee', '$dontWannaSee', '$deadline', '$additional', '$style' )";
 
     try {
         $connection->exec($sql);
