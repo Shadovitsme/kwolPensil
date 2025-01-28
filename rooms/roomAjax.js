@@ -1,4 +1,22 @@
 $(document).ready(function () {
+  function ajaxAddDetailRoom(navigateVariable, arr) {
+    let ID = getCookie("userId");
+    $.ajax({
+      url: "../save_data.php",
+      type: "POST",
+      data: {
+        userId: ID,
+        funk: "addDetailRoom",
+        arr,
+      },
+
+      success: function (data) {
+        console.log(data);
+        navigate(navigateVariable);
+      },
+    });
+  }
+
   $("form#hallway").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
     let wodrop = $(this)[0][1].value;
@@ -57,18 +75,8 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
 
-      success: function (data) {
-        navigate(0);
-      },
-    });
+    ajaxAddDetailRoom(0, arr);
   });
 
   $("form#childRoom").on("submit", function (e) {
@@ -131,19 +139,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        console.log(data);
-        navigate(1);
-      },
-    });
+    ajaxAddDetailRoom(1, arr);
   });
 
   $("form#kitchen").on("submit", function (e) {
@@ -236,19 +232,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        console.log(data);
-        navigate(2);
-      },
-    });
+    ajaxAddDetailRoom(2, arr);
   });
 
   $("form#welcomeRoom").on("submit", function (e) {
@@ -309,19 +293,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        console.log(data);
-        navigate(3);
-      },
-    });
+    ajaxAddDetailRoom(3, arr);
   });
 
   $("form#bedroom").on("submit", function (e) {
@@ -382,19 +354,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        console.log(data);
-        navigate(4);
-      },
-    });
+    ajaxAddDetailRoom(4, arr);
   });
 
   $("form#dressingRoom").on("submit", function (e) {
@@ -452,19 +412,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        console.log(data);
-        navigate(5);
-      },
-    });
+    ajaxAddDetailRoom(5, arr);
   });
 
   $("form#balcony").on("submit", function (e) {
@@ -525,19 +473,7 @@ $(document).ready(function () {
       description = $(this)[0][m].value;
       m++;
     }
-    console.log(arr);
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        navigate(6);
-      },
-    });
+    ajaxAddDetailRoom(6, arr);
   });
 
   $("form#eatingRoom").on("submit", function (e) {
@@ -598,19 +534,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        console.log(data);
-        navigate(7);
-      },
-    });
+    ajaxAddDetailRoom(7, arr);
   });
 
   $("form#sclad").on("submit", function (e) {
@@ -659,19 +583,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        console.log(data);
-        navigate(8);
-      },
-    });
+    ajaxAddDetailRoom(8, arr);
   });
 
   $("form#bathroom").on("submit", function (e) {
@@ -756,19 +668,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        console.log(data);
-        navigate(9);
-      },
-    });
+    ajaxAddDetailRoom(9, arr);
   });
 
   $("form#office").on("submit", function (e) {
@@ -825,19 +725,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    $.ajax({
-      url: "../save_data.php",
-      type: "POST",
-      data: {
-        funk: "addDetailRoom",
-        arr,
-      },
-
-      success: function (data) {
-        console.log(data);
-        navigate(10);
-      },
-    });
+    ajaxAddDetailRoom(10, arr);
   });
 
   $("form#welcomeBath").on("submit", function (e) {
@@ -918,10 +806,12 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
+    let ID = getCookie("userId");
     $.ajax({
       url: "../save_data.php",
       type: "POST",
       data: {
+        userId: ID,
         funk: "addDetailRoom",
         arr,
       },

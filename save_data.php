@@ -174,6 +174,7 @@ function addDetailRoom()
     foreach ($_POST['arr'] as $item) {
         $i = 0;
         $room = $item[0];
+        echo 'hie';
         foreach ($item as $prop) {
             if ($i > 0) {
                 if ($prop[1] && $prop[0]) {
