@@ -2,6 +2,8 @@
 
 $databaseFile = './test.db.';  // Заменяется именем файла базы данных SQLite
 $id = $_COOKIE['userId'];
+$userId = $_GET['userId'];
+
 
 try {
   $connection = new PDO("sqlite:$databaseFile");
@@ -10,7 +12,7 @@ try {
   die("Connection failed: " . $e->getMessage());
 }
 try {
-  $a = $connection->query("SELECT * FROM rooms");
+  $a = $connection->query("SELECT * FROM rooms where userId = '$userId'");
   $l = ($a->fetchAll());
   echo json_encode($l);
 } catch (PDOException $e) {
