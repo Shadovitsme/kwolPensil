@@ -1,8 +1,13 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header("Access-Control-Allow-Origin: *");
+header("Content-Type: application/json; charset=UTF-8");
+
 
 $databaseFile = './test.db.';  // Заменяется именем файла базы данных SQLite
-$id = $_COOKIE['userId'];
-$userId = $_GET['userId'];
+$id = $_GET['userId'];
 
 
 try {
@@ -11,10 +16,11 @@ try {
 } catch (PDOException $e) {
   die("Connection failed: " . $e->getMessage());
 }
+
 try {
-  $a = $connection->query("SELECT * FROM rooms where userId = '$userId'");
-  $l = ($a->fetchAll());
-  echo json_encode($l);
+  $requestQuery = $connection->query("SELECT * FROM rooms where userId = '$id'");
+  $requestResponseToUser = ($requestQuery->fetchAll());
+  echo json_encode($requestResponseToUser);
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage();
 }

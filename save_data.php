@@ -106,7 +106,7 @@ function addRoomCount()
     $id = $_POST['userId'];
     $i = 0;
     foreach ($_POST as $room => $count) {
-        if ($i > 0) {
+        if ($i > 1) {
             if ($count) {
                 try {
                     $connection = new PDO("sqlite:$databaseFile");
