@@ -1,6 +1,6 @@
 $(document).ready(function () {
   function ajaxAddDetailRoom(navigateVariable, arr) {
-    let ID = getCookie("userId");
+    let ID = localStorage.getItem("userId");
     $.ajax({
       url: "../save_data.php",
       type: "POST",
@@ -34,7 +34,7 @@ $(document).ready(function () {
 
     let arr = [];
 
-    for (let i = 0; i < getCookie("прихожая"); i++) {
+    for (let i = 0; i < localStorage.getItem("прихожая"); i++) {
       arr.push([
         `прихожая${i}`,
         ["шкаф_для_одежды", wodrop],
@@ -49,7 +49,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("прихожая") - 1) {
+      if (i == localStorage.getItem("прихожая") - 1) {
         break;
       }
       wodrop = $(this)[0][$m].value;
@@ -97,7 +97,7 @@ $(document).ready(function () {
 
     let arr = [];
 
-    for (let i = 0; i < getCookie("детская"); i++) {
+    for (let i = 0; i < localStorage.getItem("детская"); i++) {
       arr.push([
         `детская${i}`,
         ["детская мебель", pedestal],
@@ -113,7 +113,7 @@ $(document).ready(function () {
         ["другое", other],
       ]);
       console.log(arr);
-      if (i == getCookie("детская") - 1) {
+      if (i == localStorage.getItem("детская") - 1) {
         break;
       }
       pedestal = $(this)[0][$m].value;
@@ -167,7 +167,7 @@ $(document).ready(function () {
     $m = 50;
     let arr = [];
 
-    for (let i = 0; i < getCookie("кухня"); i++) {
+    for (let i = 0; i < localStorage.getItem("кухня"); i++) {
       arr.push([
         `кухня${i}`,
         ["водонагреватель", waterHotter],
@@ -190,7 +190,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("кухня") - 1) {
+      if (i == localStorage.getItem("кухня") - 1) {
         break;
       }
       waterHotter = $(this)[0][$m].value;
@@ -252,7 +252,7 @@ $(document).ready(function () {
 
     let arr = [];
 
-    for (let i = 0; i < getCookie("гостиная"); i++) {
+    for (let i = 0; i < localStorage.getItem("гостиная"); i++) {
       arr.push([
         `гостиная${i}`,
         ["диван", sofa],
@@ -267,7 +267,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("гостиная") - 1) {
+      if (i == localStorage.getItem("гостиная") - 1) {
         break;
       }
       sofa = $(this)[0][$m].value;
@@ -313,7 +313,7 @@ $(document).ready(function () {
 
     let arr = [];
 
-    for (let i = 0; i < getCookie("спальня"); i++) {
+    for (let i = 0; i < localStorage.getItem("спальня"); i++) {
       arr.push([
         `cпальня${i}`,
         ["тумбочки", pedestal],
@@ -328,7 +328,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("спальня") - 1) {
+      if (i == localStorage.getItem("спальня") - 1) {
         break;
       }
       pedestal = $(this)[0][$m].value;
@@ -373,7 +373,7 @@ $(document).ready(function () {
 
     let arr = [];
 
-    for (let i = 0; i < getCookie("гардеробная"); i++) {
+    for (let i = 0; i < localStorage.getItem("гардеробная"); i++) {
       arr.push([
         `гардеробная${i}`,
         ["полки и ящики", shielf],
@@ -388,7 +388,7 @@ $(document).ready(function () {
         ["другое", other],
       ]);
       console.log(arr);
-      if (i == getCookie("гардеробная") - 1) {
+      if (i == localStorage.getItem("гардеробная") - 1) {
         break;
       }
       shielf = $(this)[0][$m].value;
@@ -440,13 +440,13 @@ $(document).ready(function () {
 
     let description = $(this)[0][3].value;
 
-    for (let i = 0; i < getCookie("балкон"); i++) {
+    for (let i = 0; i < localStorage.getItem("балкон"); i++) {
       arr.push([
         `балкон${i}`,
         ["тип балкона", type],
         ["Описание", description],
       ]);
-      if (i == getCookie("балкон") - 1) {
+      if (i == localStorage.getItem("балкон") - 1) {
         break;
       }
 
@@ -493,7 +493,7 @@ $(document).ready(function () {
 
     let arr = [];
 
-    for (let i = 0; i < getCookie("столовая"); i++) {
+    for (let i = 0; i < localStorage.getItem("столовая"); i++) {
       arr.push([
         `столовая${i}`,
         ["стол", table],
@@ -508,7 +508,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("столовая") - 1) {
+      if (i == localStorage.getItem("столовая") - 1) {
         break;
       }
       table = $(this)[0][$m].value;
@@ -551,7 +551,7 @@ $(document).ready(function () {
 
     let arr = [];
 
-    for (let i = 0; i < getCookie("кладовая"); i++) {
+    for (let i = 0; i < localStorage.getItem("кладовая"); i++) {
       arr.push([
         `кладовая${i}`,
         ["полки", shelf],
@@ -563,7 +563,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("кладовая") - 1) {
+      if (i == localStorage.getItem("кладовая") - 1) {
         break;
       }
       shelf = $(this)[0][$m].value;
@@ -609,7 +609,7 @@ $(document).ready(function () {
     $m = 44;
     let arr = [];
 
-    for (let i = 0; i < getCookie("Санузел"); i++) {
+    for (let i = 0; i < localStorage.getItem("Санузел"); i++) {
       arr.push([
         `Санузел${i}`,
         ["Унитаз", pooper],
@@ -630,7 +630,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("Санузел") - 1) {
+      if (i == localStorage.getItem("Санузел") - 1) {
         break;
       }
       pooper = $(this)[0][$m].value;
@@ -687,7 +687,7 @@ $(document).ready(function () {
 
     let arr = [];
 
-    for (let i = 0; i < getCookie("кабинет"); i++) {
+    for (let i = 0; i < localStorage.getItem("кабинет"); i++) {
       arr.push([
         `кабинет${i}`,
         ["Рабочик стол", table],
@@ -701,7 +701,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("кабинет") - 1) {
+      if (i == localStorage.getItem("кабинет") - 1) {
         break;
       }
       table = $(this)[0][$m].value;
@@ -749,7 +749,7 @@ $(document).ready(function () {
     let other = $(this)[0][39].value;
     $m = 41;
     let arr = [];
-    for (let i = 0; i < getCookie("гостевой_санузел"); i++) {
+    for (let i = 0; i < localStorage.getItem("гостевой_санузел"); i++) {
       // TODO переделать полы и все такое чтоб при сосании из бд выглядело благозвучно
       arr.push([
         `гостевой_санузел${i}`,
@@ -770,7 +770,7 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      if (i == getCookie("гостевой_санузел") - 1) {
+      if (i == localStorage.getItem("гостевой_санузел") - 1) {
         break;
       }
       pooper = $(this)[0][$m].value;
@@ -807,7 +807,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    let ID = getCookie("userId");
+    let ID = localStorage.getItem("userId");
     $.ajax({
       url: "../save_data.php",
       type: "POST",
@@ -854,21 +854,12 @@ $(document).ready(function () {
 
     let len = arrRooms.length + 1;
     for (let index = num; index < len; index++) {
-      if (getCookie(arrRooms[index])) {
+      if (localStorage.getItem(arrRooms[index])) {
         window.location.replace(pathArray[index]);
         break;
       }
       window.location.replace("https://karandash.pro/referencePage");
     }
   }
-  function getCookie(name) {
-    let matches = document.cookie.match(
-      new RegExp(
-        "(?:^|; )" +
-          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-          "=([^;]*)"
-      )
-    );
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
+
 });

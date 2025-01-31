@@ -25,4 +25,4 @@
 -- FOREIGN KEY (userId) 
 -- REFERENCES Customers (id) );
 
-SELECT * FROM wishes 
+SELECT * FROM Customers

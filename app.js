@@ -1,16 +1,5 @@
 // Ваш скрипт на JavaScript
 $(document).ready(function () {
-  function getCookie(name) {
-    let matches = document.cookie.match(
-      new RegExp(
-        "(?:^|; )" +
-          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-          "=([^;]*)"
-      )
-    );
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
-
   // ajax page 1
   $("form#page1").on("submit", function (e) {
     e.preventDefault();
@@ -50,6 +39,7 @@ $(document).ready(function () {
               },
               success: function (data) {
                 console.log(data);
+                localStorage.setItem("userId", data);
                 window.location.replace("./secondPage.html");
               },
             });
@@ -67,7 +57,7 @@ $(document).ready(function () {
     let soundless = $(this)[0][2].checked;
     let furniture = $(this)[0][4].checked;
     let hobby;
-    let ID = getCookie("userId");
+    let ID = localStorage.getItem("userId");
 
     if (!$(this)[0][6].checked) {
       hobby = $(this)[0][6].value;
@@ -113,7 +103,7 @@ $(document).ready(function () {
   // ajax page3
   $("form#page3").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
-    let ID = getCookie("userId");
+    let ID = localStorage.getItem("userId");
     let hallway = $(this)[0][1].value;
     let childRoom = $(this)[0][4].value;
     let kitchen = $(this)[0][7].value;
@@ -202,6 +192,24 @@ $(document).ready(function () {
           другое: otherRooms,
         },
         success: function (data) {
+          if (hallway !== "0") localStorage.setItem("прихожая", hallway);
+          if (childRoom !== "0") localStorage.setItem("детская", childRoom);
+          if (kitchen !== "0") localStorage.setItem("кухня", kitchen);
+          if (welcomeroom !== "0")
+            localStorage.setItem("гостиная", welcomeroom);
+          if (bedroom !== "0") localStorage.setItem("спальня", bedroom);
+          if (clotheRoom !== "0")
+            localStorage.setItem("гардеробная", clotheRoom);
+          if (balcone !== "0") localStorage.setItem("балкон", balcone);
+          if (dinnerRoom !== "0") localStorage.setItem("столовая", dinnerRoom);
+          if (storageRoom !== "0")
+            localStorage.setItem("кладовая", storageRoom);
+          if (bathroom !== "0") localStorage.setItem("Санузел", bathroom);
+          if (cabinet !== "0") localStorage.setItem("кабинет", cabinet);
+          if (welcomeBathroom !== "0")
+            localStorage.setItem("гостевой_санузел", welcomeBathroom);
+          if (otherRooms !== "0") localStorage.setItem("другое", otherRooms);
+
           window.location.replace("./wishesPage.html");
         },
       });
@@ -232,7 +240,7 @@ $(document).ready(function () {
     let wannaSee = $(this)[0][7].value;
     let dontWannaSee = $(this)[0][8].value;
     let additional = $(this)[0][9].value;
-    let ID = getCookie("userId");
+    let ID = localStorage.getItem("userId");
     $.ajax({
       url: "save_data.php",
       type: "POST",
@@ -253,29 +261,29 @@ $(document).ready(function () {
 
       success: function (data) {
         console.log(data);
-        if (getCookie("прихожая")) {
+        if (localStorage.getItem("прихожая") != "0") {
           window.location.replace("./rooms/hallWay.html");
-        } else if (getCookie("детская")) {
+        } else if (localStorage.getItem("детская") != "0") {
           window.location.replace("./rooms/childRoom.html");
-        } else if (getCookie("кухня")) {
+        } else if (localStorage.getItem("кухня") != "0") {
           window.location.replace("./rooms/kitchen.html");
-        } else if (getCookie("гостиная")) {
+        } else if (localStorage.getItem("гостиная") != "0") {
           window.location.replace("./rooms/welcomeRoom.html");
-        } else if (getCookie("спальня")) {
+        } else if (localStorage.getItem("спальня") != "0") {
           window.location.replace("./rooms/bedroom.html");
-        } else if (getCookie("гардеробная")) {
+        } else if (localStorage.getItem("гардеробная") != "0") {
           window.location.replace("./rooms/dressingRoom.html");
-        } else if (getCookie("балкон")) {
+        } else if (localStorage.getItem("балкон") != "0") {
           window.location.replace("./rooms/balcony.html");
-        } else if (getCookie("столовая")) {
+        } else if (localStorage.getItem("столовая") != "0") {
           window.location.replace("./rooms/eatingRoom.html");
-        } else if (getCookie("кладовая")) {
+        } else if (localStorage.getItem("кладовая") != "0") {
           window.location.replace("./rooms/sclad.html");
-        } else if (getCookie("Санузел")) {
+        } else if (localStorage.getItem("Санузел") != "0") {
           window.location.replace("./rooms/bathroom.html");
-        } else if (getCookie("кабинет")) {
+        } else if (localStorage.getItem("кабинет") != "0") {
           window.location.replace("./rooms/office.html");
-        } else if (getCookie("гостевой_санузел")) {
+        } else if (localStorage.getItem("гостевой_санузел") != "0") {
           window.location.replace("./rooms/welcomeBath.html");
         } else {
           window.location.replace("/");

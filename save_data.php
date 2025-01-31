@@ -142,7 +142,7 @@ function addWishes()
     } catch (PDOException $e) {
         die("Connection failed: " . $e->getMessage());
     }
-
+ 
     $light = $_POST['light'];
     $condicioner = $_POST['condicioner'];
     $warmFloor = $_POST['warmFloor'];
@@ -206,24 +206,25 @@ function addRefs()
 {
     global $databaseFile;
     $id = $_POST['userId'];
-    try {
-        $connection = new PDO("sqlite:$databaseFile");
-        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
-    } catch (PDOException $e) {
-        die("Connection failed: " . $e->getMessage());
-    }
-    foreach ($_POST['dataArr'] as $item) {
-        $pic = $item[0];
-        $description = $item[1];
-        $sql = "INSERT INTO refs (userId, img, description) VALUES ('$id', '$pic','$description')";
-        try {
-            $connection->exec($sql);
+    var_dump($_POST);
+    // try {
+    //     $connection = new PDO("sqlite:$databaseFile");
+    //     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //     // echo "Connected successfully";
+    // } catch (PDOException $e) {
+    //     die("Connection failed: " . $e->getMessage());
+    // }
+    // foreach ($_POST['dataArr'] as $item) {
+    //     $pic = $item[0];
+    //     $description = $item[1];
+    //     $sql = "INSERT INTO refs (userId, img, description) VALUES ('$id', '$pic','$description')";
+    //     try {
+    //         $connection->exec($sql);
 
-            echo "Data inserted successfully";
-        } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
-        }
-    }
+    //         echo "Data inserted successfully";
+    //     } catch (PDOException $e) {
+    //         echo "Error: " . $e->getMessage();
+    //     }
+    // }
 
 }

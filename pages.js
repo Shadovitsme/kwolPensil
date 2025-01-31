@@ -1,50 +1,41 @@
 $(document).ready(function () {
-  function getCookie(name) {
-    let matches = document.cookie.match(
-      new RegExp(
-        "(?:^|; )" +
-          name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") +
-          "=([^;]*)"
-      )
-    );
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
+
 
   kitchenTemplate = $("div#kitchen0");
-  kitchenCount = getCookie("кухня");
+  kitchenCount = localStorage.getItem("кухня");
 
   hallwayTemplate = $("div#hallway0");
-  hallwayCount = getCookie("прихожая");
+  hallwayCount = localStorage.getItem("прихожая");
 
   childRoomTemplate = $("div#childRoom0");
-  childRoomCount = getCookie("детская");
+  childRoomCount = localStorage.getItem("детская");
 
   welcomeRoomTemplate = $("div#welcomeRoom0");
-  welcomeRoomCount = getCookie("гостиная");
+  welcomeRoomCount = localStorage.getItem("гостиная");
 
   bedroomTemplate = $("div#bedroom0");
-  bedroomCount = getCookie("спальня");
+  bedroomCount = localStorage.getItem("спальня");
 
   dressingRoomTemplate = $("div#dressingRoom0");
-  dressingRoomCount = getCookie("гардеробная");
+  dressingRoomCount = localStorage.getItem("гардеробная");
 
   balconyTemplate = $("div#balcony0");
-  balconyCount = getCookie("балкон");
+  balconyCount = localStorage.getItem("балкон");
 
   eatingRoomTemplate = $("div#eatingRoom0");
-  eatingRoomCount = getCookie("столовая");
+  eatingRoomCount = localStorage.getItem("столовая");
 
   scladTemplate = $("div#sclad0");
-  scladCount = getCookie("кладовая");
+  scladCount = localStorage.getItem("кладовая");
 
   bathroomTemplate = $("div#bathroom0");
-  bathroomCount = getCookie("Санузел");
+  bathroomCount = localStorage.getItem("Санузел");
 
   officeTemplate = $("div#office0");
-  officeCount = getCookie("кабинет");
+  officeCount = localStorage.getItem("кабинет");
 
   welcomeBathTemplate = $("div#welcomeBath0");
-  welcomeBathCount = getCookie("гостевой_санузел");
+  welcomeBathCount = localStorage.getItem("гостевой_санузел");
 
   divider = $("<hr>", { class: "bg-white my-5 max-w-[1920px]" });
 
