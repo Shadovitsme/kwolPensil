@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 var_dump($_FILES);
 
-$uploadDir = '/home/ukki/Documents/bigPensil/kwolkarandash/clientsRefs/';
+$uploadDir = './clientsRefs/';
 $uploadFile = $uploadDir . basename($_FILES['photo']['name']);
 
 if (move_uploaded_file($_FILES['photo']['tmp_name'], $uploadFile)) {
