@@ -4,6 +4,8 @@ $(document).ready(function () {
   $("input").attr("maxlength", 50);
   $("textarea").attr("maxlength", 800);
 
+  const defaultStyle = "mb-6 input";
+  const errorStyle = "inputError mb-6 ";
 
   $("form#page1").on("submit", function (e) {
     e.preventDefault();
@@ -13,8 +15,27 @@ $(document).ready(function () {
     let userArray;
     let sawYouBefore;
 
-    if ((name, phone, town)) {
-      // get all user data and find number
+    if (!(name, phone, town) || phone.length < 11) {
+      if (!name) {
+        $(this[0]).addClass(errorStyle).removeClass(defaultStyle);
+      } else {
+        $(this[0]).addClass(defaultStyle).removeClass(errorStyle);
+      }
+      if (!town) {
+        $(this[2]).addClass(errorStyle).removeClass(defaultStyle);
+      } else {
+        $(this[2]).addClass(defaultStyle).removeClass(errorStyle);
+      }
+      if (phone.length < 11) {
+        $(this[1]).addClass(errorStyle).removeClass(defaultStyle);
+      } else {
+        $(this[1]).addClass(defaultStyle).removeClass(errorStyle);
+      }
+    } else {
+      $(this[0]).addClass(defaultStyle).removeClass(errorStyle);
+      $(this[1]).addClass(defaultStyle).removeClass(errorStyle);
+      $(this[2]).addClass(defaultStyle).removeClass(errorStyle);
+
       $.ajax({
         url: "https://karandash.pro/brief/userResult.php",
         type: "GET",
@@ -49,8 +70,6 @@ $(document).ready(function () {
             });
           }
         });
-    } else {
-      alert("Не все поля заполнены!!!");
     }
   });
   // ajax page2
