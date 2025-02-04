@@ -34,6 +34,7 @@ function addNamePhone()
     $name = $_POST['name']; // получаем данные из формы
     $phone = $_POST['phone'];
     $town = $_POST['town'];
+    $date = date('d/m/y');
     try {
         $connection = new PDO("sqlite:$databaseFile");
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -41,7 +42,7 @@ function addNamePhone()
         die("Connection failed: " . $e->getMessage());
     }
 
-    $sql = "INSERT INTO Customers (FirstName, Phone, Town) VALUES ('$name', '$phone','$town')";
+    $sql = "INSERT INTO Customers (FirstName, Phone, Town,date) VALUES ('$name', '$phone','$town','$date')";
     try {
         $connection->exec($sql);
         $a = $connection->query("SELECT id FROM Customers where FirstName = '$name' AND Phone = '$phone'");
@@ -142,7 +143,7 @@ function addWishes()
     } catch (PDOException $e) {
         die("Connection failed: " . $e->getMessage());
     }
- 
+
     $light = $_POST['light'];
     $condicioner = $_POST['condicioner'];
     $warmFloor = $_POST['warmFloor'];
@@ -226,5 +227,4 @@ function addRefs()
             echo "Error: " . $e->getMessage();
         }
     }
-
 }
