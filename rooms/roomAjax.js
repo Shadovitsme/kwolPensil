@@ -1,4 +1,9 @@
 $(document).ready(function () {
+
+  $("input").attr("maxlength", 50);
+  $("textarea").attr("maxlength", 800);
+
+
   function ajaxAddDetailRoom(navigateVariable, arr) {
     let ID = localStorage.getItem("userId");
     $.ajax({

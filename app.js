@@ -1,6 +1,10 @@
 // Ваш скрипт на JavaScript
 $(document).ready(function () {
   // ajax page 1
+  $("input").attr("maxlength", 50);
+  $("textarea").attr("maxlength", 800);
+
+
   $("form#page1").on("submit", function (e) {
     e.preventDefault();
     let name = $(this)[0][0].value;
