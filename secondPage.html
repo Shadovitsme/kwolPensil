@@ -9,7 +9,7 @@
 
   <link rel="stylesheet" href="app.css" />
   <script src="./app.js"></script>
-  <title>Document</title>
+  <title>Дизайн интерьера - Студия "Карандаш"</title>
 </head>
 
   <body class="flex px-[22px] md:px-[100px] md:pb-28">
@@ -20,7 +20,7 @@
       <p class="p4 Text mb-2">
         Какое количество членов семьи собирается проживать?
       </p>
-      <input class="input mb-4 md:mb-10" type="number" placeholder="Укажите число"></input>
+      <input class="input mb-4 md:mb-10" type="number" oninput="this.value = this.value.slice(0, 50)" placeholder="Укажите число"></input>
       <p class="p4 Text mb-2">
         Есть ли у вас домашние животные? Если да, то сколько?      </p>
       <input class="input mb-5 md:mb-10" type="text" placeholder="Укажите информацию"></input>
