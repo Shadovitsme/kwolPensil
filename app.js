@@ -75,26 +75,37 @@ $(document).ready(function () {
   // ajax page2
   $("form#page2").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
-    let familyMembers = $(this)[0][0].value; // предотвращаем стандартное поведение формы
+    let familyMembers = $(this)[0][0].value;
     let pets = $(this)[0][1].value;
     let soundless = $(this)[0][2].checked;
     let furniture = $(this)[0][4].checked;
     let hobby;
     let ID = localStorage.getItem("userId");
+    localStorage.setItem("familyMembers", familyMembers);
+    localStorage.setItem("pets", pets);
+    localStorage.setItem("soundless", soundless);
+    localStorage.setItem("furniture", furniture);
 
     if (!$(this)[0][6].checked) {
       hobby = $(this)[0][6].value;
     } else {
       hobby = "0";
     }
+    localStorage.setItem("hobby", hobby);
+
     let replane = $(this)[0][7].checked;
+    localStorage.setItem("replane", replane);
+
     let visitors;
     if ($(this)[0][9].checked) {
       visitors = $(this)[0][9].value;
+      localStorage.setItem("visitors", 9);
     } else if ($(this)[0][10].checked) {
       visitors = $(this)[0][10].value;
+      localStorage.setItem("visitors", 10);
     } else {
       visitors = $(this)[0][11].value;
+      localStorage.setItem("visitors", 11);
     }
 
     $.ajax({

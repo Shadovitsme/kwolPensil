@@ -3,6 +3,7 @@
 -- DROP  TABLE rooms;
 -- DROP  TABLE detailRoom;
 -- DROP  TABLE refs;
+-- DROP  TABLE userTrail;
 
 
 -- CREATE TABLE Customers ( Id INTEGER PRIMARY KEY AUTOINCREMENT, FirstName VARCHAR(20), Phone VARCHAR(20),Town VARCHAR(30),familyMembers Text(500),Pets text(500), soundless boolean, furniture boolean, hobbyDescription text(500), replan boolean, visitors VARCHAR(200),actvitySphere VARCHAR(200), area float, zones VARCHAR(200), workPlaces INTEGER, date VARCHAR(140));
@@ -25,4 +26,8 @@
 -- FOREIGN KEY (userId) 
 -- REFERENCES Customers (id) );
 
--- SELECT * FROM Customers
+-- CREATE TABLE userTrail (userId INTEGER, mainData INTEGER(1), chooseRoom INTEGER(1), room VARCHAR(100), CONSTRAINT fk_userId 
+-- FOREIGN KEY (userId) 
+-- REFERENCES Customers (id) );
+
+SELECT * FROM Customers
