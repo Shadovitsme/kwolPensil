@@ -12,7 +12,7 @@ try {
   die("Connection failed: " . $e->getMessage());
 }
 try {
-  $a = $connection->query("SELECT * FROM Customers");
+  $a = $connection->query("SELECT * FROM Customers order by date");
   $l = ($a->fetchAll());
   echo json_encode($l);
 

@@ -41,13 +41,14 @@ function addNamePhone()
     } catch (PDOException $e) {
         die("Connection failed: " . $e->getMessage());
     }
-
     $sql = "INSERT INTO Customers (FirstName, Phone, Town,date) VALUES ('$name', '$phone','$town','$date')";
     try {
         $connection->exec($sql);
         $a = $connection->query("SELECT id FROM Customers where FirstName = '$name' AND Phone = '$phone'");
         $id = $a->fetchAll()[0][0];
         echo ($id);
+        $trailSql = "INSERT INTO userTrail (userId) VALUES ('$id')";
+        $connection->exec($trailSql);
 
         setcookie('userId', $id, time() + 3600);
     } catch (PDOException $e) {
@@ -83,7 +84,9 @@ function addCommonData()
         'zones'= '$zones',
         'workPlaces' = '$workPlaces'
         WHERE Id = '$id'";
-
+    $trailSql = "UPDATE userTrail
+        SET mainData = '1'
+        WHERE userId = '$id'";
     try {
         $connection = new PDO("sqlite:$databaseFile");
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -94,6 +97,7 @@ function addCommonData()
 
     try {
         $connection->exec($sql);
+        $connection->exec($trailSql);
 
         echo "Data inserted successfully";
     } catch (PDOException $e) {
@@ -117,8 +121,12 @@ function addRoomCount()
                     die("Connection failed: " . $e->getMessage());
                 }
                 $sql = "INSERT INTO rooms (userId, room, count) VALUES ('$id', '$room', '$count')";
+                $trailSql = "UPDATE userTrail
+                SET chooseRoom = '1'
+                WHERE userId = '$id'";
                 try {
                     $connection->exec($sql);
+                    $connection->exec($trailSql);
                     setcookie($room, $count, time() + 3600);
                     echo "Data inserted successfully";
                 } catch (PDOException $e) {
