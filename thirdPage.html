@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="app.css" />
     <script src="./app.js"></script>
     <script src="./back.js"></script>
+    <script src="./pageFillers/fillThirdPage.js"></script>
     <title>Дизайн интерьера - Студия "Карандаш"</title>
   </head>
 
@@ -18,11 +19,13 @@
         class="hidden bg-[#111111] border-[1px] border-[#C63F3F] absolute bottom-[84px] right-0 rounded-[5px] w-full md:w-[635px] px-7 py-8"
       >
         <div class="flex">
-          <div class="md:visible md:block hidden alert w-[42px] h-[42px] my-auto "></div>
+          <div
+            class="md:visible md:block hidden alert w-[42px] h-[42px] my-auto"
+          ></div>
 
           <div class="w-full md:w-[497px] md:ml-10">
             <p class="Text p3 pb-2">Вы не выбрали ни одной комнаты.</p>
-            <p class="Text p3 ">
+            <p class="Text p3">
               Пожалуйста, выберите комнаты, для которых нужен дизайн.
             </p>
           </div>
@@ -359,9 +362,9 @@
           </p>
         </div>
         <div class="w-full flex md:justify-end mt-9 md:mt-12">
-          <a href="/secondPage.html">          <button class="bg-white" type="button" id="back">back</button>
+          <a href="/secondPage.html">
+            <button class="bg-white" type="button" id="back">back</button>
           </a>
-
           <button
             class="yellowButton w-full md:w-[212px] h-10 md:h-[60px] flex"
             type="submit"

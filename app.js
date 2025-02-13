@@ -226,23 +226,23 @@ $(document).ready(function () {
           другое: otherRooms,
         },
         success: function (data) {
-          if (hallway !== "0") localStorage.setItem("прихожая", hallway);
-          if (childRoom !== "0") localStorage.setItem("детская", childRoom);
-          if (kitchen !== "0") localStorage.setItem("кухня", kitchen);
-          if (welcomeroom !== "0")
-            localStorage.setItem("гостиная", welcomeroom);
-          if (bedroom !== "0") localStorage.setItem("спальня", bedroom);
-          if (clotheRoom !== "0")
-            localStorage.setItem("гардеробная", clotheRoom);
-          if (balcone !== "0") localStorage.setItem("балкон", balcone);
-          if (dinnerRoom !== "0") localStorage.setItem("столовая", dinnerRoom);
-          if (storageRoom !== "0")
-            localStorage.setItem("кладовая", storageRoom);
-          if (bathroom !== "0") localStorage.setItem("Санузел", bathroom);
-          if (cabinet !== "0") localStorage.setItem("кабинет", cabinet);
-          if (welcomeBathroom !== "0")
-            localStorage.setItem("гостевой_санузел", welcomeBathroom);
-          if (otherRooms !== "0") localStorage.setItem("другое", otherRooms);
+          localStorage.setItem("прихожая", hallway);
+          localStorage.setItem("детская", childRoom);
+          localStorage.setItem("кухня", kitchen);
+
+          localStorage.setItem("гостиная", welcomeroom);
+          localStorage.setItem("спальня", bedroom);
+
+          localStorage.setItem("гардеробная", clotheRoom);
+          localStorage.setItem("балкон", balcone);
+          localStorage.setItem("столовая", dinnerRoom);
+
+          localStorage.setItem("кладовая", storageRoom);
+          localStorage.setItem("Санузел", bathroom);
+          localStorage.setItem("кабинет", cabinet);
+
+          localStorage.setItem("гостевой_санузел", welcomeBathroom);
+          localStorage.setItem("другое", otherRooms);
 
           window.location.replace("./wishesPage.html");
         },
