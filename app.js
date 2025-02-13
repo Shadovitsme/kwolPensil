@@ -265,15 +265,35 @@ $(document).ready(function () {
   $("form#wishPage").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
     let light = $(this)[0][0].value;
+    localStorage.setItem("light", light);
+
     let warmFloor = $(this)[0][1].value;
+    localStorage.setItem("warmFloor", warmFloor);
+
     let ceiling = $(this)[0][2].value;
+    localStorage.setItem("ceiling", ceiling);
+
     let floor = $(this)[0][3].value;
+    localStorage.setItem("floor", floor);
+
     let deadline = $(this)[0][4].value;
+    localStorage.setItem("deadline", deadline);
+
     let condicioner = $(this)[0][5].value;
+    localStorage.setItem("condicioner", condicioner);
+
     let style = $(this)[0][6].value;
+    localStorage.setItem("style", style);
+
     let wannaSee = $(this)[0][7].value;
+    localStorage.setItem("wannaSee", wannaSee);
+
     let dontWannaSee = $(this)[0][8].value;
+    localStorage.setItem("dontWannaSee", dontWannaSee);
+
     let additional = $(this)[0][9].value;
+    localStorage.setItem("additional", additional);
+
     let ID = localStorage.getItem("userId");
     $.ajax({
       url: "save_data.php",
