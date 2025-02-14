@@ -110,7 +110,7 @@ $(document).ready(function () {
     $m = 26;
 
     let arr = [];
-
+    // TODO похоже можно переименовать это чудо на нормальное а не копию прихожей но пока имеем что имеем
     for (let i = 0; i < localStorage.getItem("детская"); i++) {
       arr.push([
         `детская${i}`,
@@ -126,7 +126,19 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      console.log(arr);
+
+      localStorage.setItem("детская" + i + "pedestal", pedestal);
+      localStorage.setItem("детская" + i + "wardrobe", wardrobe);
+      localStorage.setItem("детская" + i + "mirror", mirror);
+      localStorage.setItem("детская" + i + "topLight", topLight);
+      localStorage.setItem("детская" + i + "nightLight", nightLight);
+      localStorage.setItem("детская" + i + "warmFloor", warmFloor);
+      localStorage.setItem("детская" + i + "condicioner", condicioner);
+      localStorage.setItem("детская" + i + "floor", floor);
+      localStorage.setItem("детская" + i + "walls", walls);
+      localStorage.setItem("детская" + i + "seiling", seiling);
+      localStorage.setItem("детская" + i + "other", other);
+
       if (i == localStorage.getItem("детская") - 1) {
         break;
       }
@@ -204,6 +216,25 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
+      localStorage.setItem("кухня" + i + "waterHotter", waterHotter);
+      localStorage.setItem("кухня" + i + "dishWasher", dishWasher);
+      localStorage.setItem("кухня" + i + "filter", filter);
+      localStorage.setItem("кухня" + i + "smallBar", smallBar);
+      localStorage.setItem("кухня" + i + "multiboiler", multiboiler);
+      localStorage.setItem("кухня" + i + "oven", oven);
+      localStorage.setItem("кухня" + i + "refrigerator", refrigerator);
+      localStorage.setItem("кухня" + i + "trashSreder", trashSreder);
+      localStorage.setItem("кухня" + i + "lighter", lighter);
+      localStorage.setItem("кухня" + i + "steamboiler", steamboiler);
+      localStorage.setItem("кухня" + i + "sink", sink);
+      localStorage.setItem("кухня" + i + "defenser", defenser);
+      localStorage.setItem("кухня" + i + "airAway", airAway);
+      localStorage.setItem("кухня" + i + "warmFloor", warmFloor);
+      localStorage.setItem("кухня" + i + "floor", floor);
+      localStorage.setItem("кухня" + i + "walls", walls);
+      localStorage.setItem("кухня" + i + "seiling", seiling);
+      localStorage.setItem("кухня" + i + "other", other);
+
       if (i == localStorage.getItem("кухня") - 1) {
         break;
       }
@@ -907,3 +938,11 @@ $(document).ready(function () {
     }
   }
 });
+function setLocalstorageDetailRoomData(
+  roomname,
+  count,
+  varibaleName,
+  variableVal
+) {
+  localStorage.setItem(roomname + count + varibaleName, variableVal);
+}
