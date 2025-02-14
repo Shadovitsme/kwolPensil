@@ -1,8 +1,6 @@
 $(document).ready(function () {
-
   $("input").attr("maxlength", 50);
   $("textarea").attr("maxlength", 800);
-
 
   function ajaxAddDetailRoom(navigateVariable, arr) {
     let ID = localStorage.getItem("userId");
@@ -614,6 +612,7 @@ $(document).ready(function () {
     $m = 44;
     let arr = [];
 
+    // TODO набор штук в санузле не по фигме, поправить
     for (let i = 0; i < localStorage.getItem("Санузел"); i++) {
       arr.push([
         `Санузел${i}`,
@@ -624,7 +623,7 @@ $(document).ready(function () {
         ["душевая", shower],
         ["раковина", sink],
         ["фильтр для воды", filter],
-        ["Санузел", bath],
+        ["Ванна", bath],
         ["водонагреватель", waterHotter],
         ["гигиенический душ", poopShower],
         ["система защины", defender],
@@ -635,6 +634,23 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
+      localStorage.setItem("Санузел" + i + "pooper", pooper);
+      localStorage.setItem("Санузел" + i + "airAway", airAway);
+      localStorage.setItem("Санузел" + i + "poopWasher", poopWasher);
+      localStorage.setItem("Санузел" + i + "clothWasher", clothWasher);
+      localStorage.setItem("Санузел" + i + "shower", shower);
+      localStorage.setItem("Санузел" + i + "sink", sink);
+      localStorage.setItem("Санузел" + i + "filter", filter);
+      localStorage.setItem("Санузел" + i + "bath", bath);
+      localStorage.setItem("Санузел" + i + "waterHotter", waterHotter);
+      localStorage.setItem("Санузел" + i + "poopShower", poopShower);
+      localStorage.setItem("Санузел" + i + "defender", defender);
+      localStorage.setItem("Санузел" + i + "condicioner", condicioner);
+      localStorage.setItem("Санузел" + i + "floor", floor);
+      localStorage.setItem("Санузел" + i + "walls", walls);
+      localStorage.setItem("Санузел" + i + "seiling", seiling);
+      localStorage.setItem("Санузел" + i + "other", other);
+
       if (i == localStorage.getItem("Санузел") - 1) {
         break;
       }
@@ -866,5 +882,4 @@ $(document).ready(function () {
       window.location.replace("https://karandash.pro/referencePage");
     }
   }
-
 });
