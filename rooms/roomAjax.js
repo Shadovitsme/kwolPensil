@@ -52,6 +52,17 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
+      localStorage.setItem("прихожая" + i + "wodrop", wodrop);
+      localStorage.setItem("прихожая" + i + "warmFloor", warmFloor);
+      localStorage.setItem("прихожая" + i + "mirror", mirror);
+      localStorage.setItem("прихожая" + i + "sitting", sitting);
+      localStorage.setItem("прихожая" + i + "shoes", shoes);
+      localStorage.setItem("прихожая" + i + "shelf", shelf);
+      localStorage.setItem("прихожая" + i + "condicioner", condicioner);
+      localStorage.setItem("прихожая" + i + "floor", floor);
+      localStorage.setItem("прихожая" + i + "walls", walls);
+      localStorage.setItem("прихожая" + i + "seiling", seiling);
+      localStorage.setItem("прихожая" + i + "other", other);
       if (i == localStorage.getItem("прихожая") - 1) {
         break;
       }
