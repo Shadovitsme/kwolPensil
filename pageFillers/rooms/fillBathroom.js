@@ -1,3 +1,4 @@
+import universalRoomFiller from "./universalRoomFiller.js";
 $(document).ready(function () {
   const roomName = "Санузел";
   const formInput = $("form#bathroom")[0];
@@ -29,25 +30,5 @@ $(document).ready(function () {
       : 0;
   }
 
-  let indexCounter = 1;
-
-  for (let i = 0; i < localStorage.getItem(roomName); i++) {
-    for (let j = 0; j < numberCategoryCount; j++) {
-      formInput[indexCounter].value = checkLocalstorageData(
-        roomName + i + categoryArray[j]
-      );
-      indexCounter += 3;
-    }
-    formInput[indexCounter].value = checkLocalstorageData(
-      roomName + i + categoryArray[numberCategoryCount]
-    );
-    indexCounter += 2;
-    for (let r = numberCategoryCount + 1; r < categoryArray.length; r++) {
-      formInput[indexCounter].value = localStorage.getItem(
-        roomName + i + categoryArray[r]
-      );
-      indexCounter++;
-    }
-    indexCounter++;
-  }
+  universalRoomFiller(roomName, numberCategoryCount, categoryArray, formInput);
 });
