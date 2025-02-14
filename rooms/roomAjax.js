@@ -342,6 +342,19 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
+      localStorage.setItem("спальня" + i + "pedestal", pedestal);
+      localStorage.setItem("спальня" + i + "wardrobe", wardrobe);
+      localStorage.setItem("спальня" + i + "mirror", mirror);
+      localStorage.setItem("спальня" + i + "topLight", topLight);
+      localStorage.setItem("спальня" + i + "nightLight", nightLight);
+      localStorage.setItem("спальня" + i + "warmFloor", warmFloor);
+      localStorage.setItem("спальня" + i + "warmFloor", warmFloor);
+      localStorage.setItem("спальня" + i + "condicioner", condicioner);
+      localStorage.setItem("спальня" + i + "floor", floor);
+      localStorage.setItem("спальня" + i + "walls", walls);
+      localStorage.setItem("спальня" + i + "seiling", seiling);
+      localStorage.setItem("спальня" + i + "other", other);
+
       if (i == localStorage.getItem("спальня") - 1) {
         break;
       }
