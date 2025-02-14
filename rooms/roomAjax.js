@@ -216,24 +216,27 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      localStorage.setItem("кухня" + i + "waterHotter", waterHotter);
-      localStorage.setItem("кухня" + i + "dishWasher", dishWasher);
-      localStorage.setItem("кухня" + i + "filter", filter);
-      localStorage.setItem("кухня" + i + "smallBar", smallBar);
-      localStorage.setItem("кухня" + i + "multiboiler", multiboiler);
-      localStorage.setItem("кухня" + i + "oven", oven);
-      localStorage.setItem("кухня" + i + "refrigerator", refrigerator);
-      localStorage.setItem("кухня" + i + "trashSreder", trashSreder);
-      localStorage.setItem("кухня" + i + "lighter", lighter);
-      localStorage.setItem("кухня" + i + "steamboiler", steamboiler);
-      localStorage.setItem("кухня" + i + "sink", sink);
-      localStorage.setItem("кухня" + i + "defenser", defenser);
-      localStorage.setItem("кухня" + i + "airAway", airAway);
-      localStorage.setItem("кухня" + i + "warmFloor", warmFloor);
-      localStorage.setItem("кухня" + i + "floor", floor);
-      localStorage.setItem("кухня" + i + "walls", walls);
-      localStorage.setItem("кухня" + i + "seiling", seiling);
-      localStorage.setItem("кухня" + i + "other", other);
+      let roomName = "кухня" + i;
+
+      localStorage.setItem(roomName + "waterHotter", waterHotter);
+      localStorage.setItem(roomName + "dishWasher", dishWasher);
+      localStorage.setItem(roomName + "smallBar", smallBar);
+      localStorage.setItem(roomName + "multiboiler", multiboiler);
+      localStorage.setItem(roomName + "oven", oven);
+      localStorage.setItem(roomName + "refrigerator", refrigerator);
+      localStorage.setItem(roomName + "trashSreder", trashSreder);
+      localStorage.setItem(roomName + "lighter", lighter);
+      localStorage.setItem(roomName + "steamboiler", steamboiler);
+      localStorage.setItem(roomName + "sink", sink);
+      localStorage.setItem(roomName + "microwave", microwave);
+      localStorage.setItem(roomName + "defenser", defenser);
+      localStorage.setItem(roomName + "airAway", airAway);
+      localStorage.setItem(roomName + "warmFloor", warmFloor);
+      localStorage.setItem(roomName + "floor", floor);
+      localStorage.setItem(roomName + "walls", walls);
+      localStorage.setItem(roomName + "seiling", seiling);
+      localStorage.setItem(roomName + "walls", walls);
+      localStorage.setItem(roomName + "other", other);
 
       if (i == localStorage.getItem("кухня") - 1) {
         break;
@@ -277,7 +280,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    ajaxAddDetailRoom(2, arr);
+    // ajaxAddDetailRoom(2, arr);
   });
 
   $("form#welcomeRoom").on("submit", function (e) {
@@ -938,11 +941,3 @@ $(document).ready(function () {
     }
   }
 });
-function setLocalstorageDetailRoomData(
-  roomname,
-  count,
-  varibaleName,
-  variableVal
-) {
-  localStorage.setItem(roomname + count + varibaleName, variableVal);
-}
