@@ -483,7 +483,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    // ajaxAddDetailRoom(5, arr);
+    ajaxAddDetailRoom(5, arr);
   });
 
   $("form#balcony").on("submit", function (e) {
@@ -579,6 +579,20 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
+
+      let roomName = "столовая" + i;
+      localStorage.setItem(roomName + "table", table);
+      localStorage.setItem(roomName + "chairs", chairs);
+      localStorage.setItem(roomName + "topLight", topLight);
+      localStorage.setItem(roomName + "tableLight", tableLight);
+      localStorage.setItem(roomName + "barTable", barTable);
+      localStorage.setItem(roomName + "warmFloor", warmFloor);
+      localStorage.setItem(roomName + "condicioner", condicioner);
+      localStorage.setItem(roomName + "floor", floor);
+      localStorage.setItem(roomName + "walls", walls);
+      localStorage.setItem(roomName + "seiling", seiling);
+      localStorage.setItem(roomName + "other", other);
+
       if (i == localStorage.getItem("столовая") - 1) {
         break;
       }
