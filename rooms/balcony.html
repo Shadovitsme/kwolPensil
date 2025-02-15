@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
@@ -10,60 +9,65 @@
     <script src="../pages.js"></script>
     <script src="./roomAjax.js"></script>
     <script src="../app.js"></script>
+    <script src="../pageFillers/rooms/balconyFiller.js"></script>
 
     <title>Дизайн интерьера - Студия "Карандаш"</title>
   </head>
 
   <body class="flex px-[22px] md:px-[100px] md:pb-28">
-  <div class="md:mx-auto w-full max-w-[1920px]">
+    <div class="md:mx-auto w-full max-w-[1920px]">
       <h1 class="H1 Text mb-[50px] md:mb-10 uppercase">Балкон</h1>
       <form id="balcony" class="w-full">
         <div id="balcony">
-        <div id="balcony0">
-          <p class="H6 Accent mb-2">Выберите тип балкона</p>
-          <div id="radioBalcony0" class=" md:flex mb-10">
-            <div class="mr-5">
-              <input
-                class="radio"
-                type="radio"
-                name="howMuchVisitors"
-                value="Несколько раз в неделю"
-                checked="true"
-              />
-              <label class="p3 Text">Остекленный полностью</label>
+          <div id="balcony0">
+            <p class="H6 Accent mb-2">Выберите тип балкона</p>
+            <div id="radioBalcony0" class="md:flex mb-10">
+              <div class="mr-5">
+                <input
+                  class="radio"
+                  type="radio"
+                  name="howMuchVisitors"
+                  value="Несколько раз в неделю"
+                  checked="true"
+                />
+                <label class="p3 Text">Остекленный полностью</label>
+              </div>
+              <div class="mr-5">
+                <input
+                  class="radio"
+                  type="radio"
+                  name="howMuchVisitors"
+                  value="Несколько раз в месяц"
+                />
+                <label class="p3 Text">Открытый</label>
+              </div>
+              <div>
+                <input
+                  class="radio"
+                  type="radio"
+                  name="howMuchVisitors"
+                  value="Несколько раз в год"
+                />
+                <label class="p3 Text">Устройство зимнего сада</label>
+              </div>
             </div>
-            <div class="mr-5">
-              <input
-                class="radio"
-                type="radio"
-                name="howMuchVisitors"
-                value="Несколько раз в месяц"
-              />
-              <label class="p3 Text">Открытый</label>
-            </div>
-            <div>
-              <input
-                class="radio"
-                type="radio"
-                name="howMuchVisitors"
-                value="Несколько раз в год"
-              />
-              <label class="p3 Text">Устройство зимнего сада</label>
-            </div>
+            <p class="p4 Text mb-2">Другое</p>
+            <textarea
+              class="textarea h-[140px] md:w-[772px]"
+              placeholder="Если есть другие пожелания, опишите их здесь"
+            ></textarea>
           </div>
-          <p class="p4 Text mb-2">Другое</p>
-          <textarea
-            class="textarea h-[140px] md:w-[772px]"
-            placeholder="Если есть другие пожелания, опишите их здесь"
-          ></textarea>
         </div>
-      </div>
         <div class="w-full md:mt-[75px] mt-5 flex md:justify-end">
-          <button class="yellowButton md:w-[208px] h-10 md:h-[60px] flex" type="submit">
+          <button
+            class="yellowButton md:w-[208px] h-10 md:h-[60px] flex"
+            type="submit"
+          >
             <div class="flex mx-auto md:ml-14 my-auto">
-            <p class="p3 mb-1">Далее</p>
-            <div class="rightArrow h-5 w-5 ml-[18px] mt-[7px] md:visible hidden md:block"></div>
-          </div>
+              <p class="p3 mb-1">Далее</p>
+              <div
+                class="rightArrow h-5 w-5 ml-[18px] mt-[7px] md:visible hidden md:block"
+              ></div>
             </div>
           </button>
         </div>

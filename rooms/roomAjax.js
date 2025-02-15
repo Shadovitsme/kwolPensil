@@ -532,11 +532,13 @@ $(document).ready(function () {
         ["тип балкона", type],
         ["Описание", description],
       ]);
+
+      localStorage.setItem("балкон" + i + "type", type);
+      localStorage.setItem("балкон" + i + "description", description);
+
       if (i == localStorage.getItem("балкон") - 1) {
         break;
       }
-
-      m = 4;
 
       one = $(this)[0][m];
       m++;
@@ -559,7 +561,7 @@ $(document).ready(function () {
       description = $(this)[0][m].value;
       m++;
     }
-    ajaxAddDetailRoom(6, arr);
+    // ajaxAddDetailRoom(6, arr);
   });
 
   $("form#eatingRoom").on("submit", function (e) {
