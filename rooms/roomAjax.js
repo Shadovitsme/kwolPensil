@@ -448,7 +448,17 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      console.log(arr);
+      let roomName = "гардеробная" + i;
+      localStorage.setItem(roomName + "shielf", shielf);
+      localStorage.setItem(roomName + "mirror", mirror);
+      localStorage.setItem(roomName + "shoes", shoes);
+      localStorage.setItem(roomName + "topLight", topLight);
+      localStorage.setItem(roomName + "wardrobeLight", wardrobeLight);
+      localStorage.setItem(roomName + "condicioner", condicioner);
+      localStorage.setItem(roomName + "floor", floor);
+      localStorage.setItem(roomName + "walls", walls);
+      localStorage.setItem(roomName + "seiling", seiling);
+      localStorage.setItem(roomName + "other", other);
       if (i == localStorage.getItem("гардеробная") - 1) {
         break;
       }
@@ -473,7 +483,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    ajaxAddDetailRoom(5, arr);
+    // ajaxAddDetailRoom(5, arr);
   });
 
   $("form#balcony").on("submit", function (e) {
