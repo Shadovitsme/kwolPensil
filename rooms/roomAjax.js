@@ -20,7 +20,6 @@ $(document).ready(function () {
     });
   }
 
-
   $("form#hallway").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
     let wodrop = $(this)[0][1].value;
@@ -357,7 +356,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    // ajaxAddDetailRoom(3, arr);
+    ajaxAddDetailRoom(3, arr);
   });
 
   $("form#bedroom").on("submit", function (e) {
@@ -664,6 +663,17 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
+
+      let roomName = "кладовая" + i;
+      localStorage.setItem(roomName + "shelf", shelf);
+      localStorage.setItem(roomName + "storage", storage);
+      localStorage.setItem(roomName + "airAway", airAway);
+      localStorage.setItem(roomName + "condicioner", condicioner);
+      localStorage.setItem(roomName + "floor", floor);
+      localStorage.setItem(roomName + "walls", walls);
+      localStorage.setItem(roomName + "seiling", seiling);
+      localStorage.setItem(roomName + "other", other);
+
       if (i == localStorage.getItem("кладовая") - 1) {
         break;
       }
@@ -684,7 +694,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    ajaxAddDetailRoom(8, arr);
+    // ajaxAddDetailRoom(8, arr);
   });
 
   $("form#bathroom").on("submit", function (e) {
@@ -971,9 +981,12 @@ $(document).ready(function () {
       "./welcomeBath.html",
     ];
 
-    let len = arrRooms.length + 1;
+    let len = arrRooms.length;
     for (let index = num; index < len; index++) {
-      if (localStorage.getItem(arrRooms[index])) {
+      if (
+        Number(localStorage.getItem(arrRooms[index])) !== 0 &&
+        localStorage.getItem(arrRooms[index]) !== undefined
+      ) {
         window.location.replace(pathArray[index]);
         break;
       }
