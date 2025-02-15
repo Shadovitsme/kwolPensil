@@ -280,7 +280,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    // ajaxAddDetailRoom(2, arr);
+    ajaxAddDetailRoom(2, arr);
   });
 
   $("form#welcomeRoom").on("submit", function (e) {
@@ -561,7 +561,7 @@ $(document).ready(function () {
       description = $(this)[0][m].value;
       m++;
     }
-    // ajaxAddDetailRoom(6, arr);
+    ajaxAddDetailRoom(6, arr);
   });
 
   $("form#eatingRoom").on("submit", function (e) {
