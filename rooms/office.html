@@ -9,11 +9,13 @@
     <script src="../pages.js"></script>
     <script src="./roomAjax.js"></script>
     <script src="../app.js"></script>
+    <script type="module" src="../pageFillers/rooms/officeFiller.js"></script>
 
     <title>Дизайн интерьера - Студия "Карандаш"</title>
   </head>
 
-  <body class="flex md:pb-28">    <div class="mx-auto max-w-[1920px]">
+  <body class="flex md:pb-28">
+    <div class="mx-auto max-w-[1920px]">
       <h1 class="H1 Text mb-10 uppercase">Кабинет</h1>
       <form id="office" class="w-full">
         <div id="office">
@@ -206,12 +208,16 @@
             </div>
           </div>
         </div>
- <div class="w-full mt-5  md:mt-10  flex justify-end">
-          <button class="yellowButton md:w-[208px] h-10 md:h-[60px] flex" type="submit">
+        <div class="w-full mt-5 md:mt-10 flex justify-end">
+          <button
+            class="yellowButton md:w-[208px] h-10 md:h-[60px] flex"
+            type="submit"
+          >
             <div class="flex mx-auto md:ml-14 my-auto">
-            <p class="p3 mb-1">Далее</p>
-            <div class="rightArrow h-5 w-5 ml-4 mt-1 md:visible hidden md:block"></div>
-          </div>
+              <p class="p3 mb-1">Далее</p>
+              <div
+                class="rightArrow h-5 w-5 ml-4 mt-1 md:visible hidden md:block"
+              ></div>
             </div>
           </button>
         </div>

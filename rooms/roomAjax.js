@@ -694,7 +694,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    // ajaxAddDetailRoom(8, arr);
+    ajaxAddDetailRoom(8, arr);
   });
 
   $("form#bathroom").on("submit", function (e) {
@@ -830,6 +830,19 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
+
+      let roomName = "кабинет" + i;
+      localStorage.setItem(roomName + "table", table);
+      localStorage.setItem(roomName + "chair", chair);
+      localStorage.setItem(roomName + "bookShielf", bookShielf);
+      localStorage.setItem(roomName + "docsShielf", docsShielf);
+      localStorage.setItem(roomName + "light", light);
+      localStorage.setItem(roomName + "topLight", topLight);
+      localStorage.setItem(roomName + "floor", floor);
+      localStorage.setItem(roomName + "walls", walls);
+      localStorage.setItem(roomName + "seiling", seiling);
+      localStorage.setItem(roomName + "other", other);
+
       if (i == localStorage.getItem("кабинет") - 1) {
         break;
       }
@@ -854,7 +867,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    ajaxAddDetailRoom(10, arr);
+    // ajaxAddDetailRoom(10, arr);
   });
 
   $("form#welcomeBath").on("submit", function (e) {
