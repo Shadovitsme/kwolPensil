@@ -867,7 +867,7 @@ $(document).ready(function () {
       other = $(this)[0][$m].value;
       $m += 2;
     }
-    // ajaxAddDetailRoom(10, arr);
+    ajaxAddDetailRoom(10, arr);
   });
 
   $("form#welcomeBath").on("submit", function (e) {
@@ -912,6 +912,26 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
+
+      let roomName = "гостевой_санузел" + i;
+
+      localStorage.setItem(roomName + "pooper", pooper);
+      localStorage.setItem(roomName + "airAway", airAway);
+      localStorage.setItem(roomName + "poopWasher", poopWasher);
+      localStorage.setItem(roomName + "shower", shower);
+      localStorage.setItem(roomName + "clothWasher", clothWasher);
+      localStorage.setItem(roomName + "sink", sink);
+      localStorage.setItem(roomName + "furniture", furniture);
+      localStorage.setItem(roomName + "bath", bath);
+      localStorage.setItem(roomName + "filter", filter);
+      localStorage.setItem(roomName + "poopShower", poopShower);
+      localStorage.setItem(roomName + "waterHotter", waterHotter);
+      localStorage.setItem(roomName + "warmFloor", warmFloor);
+      localStorage.setItem(roomName + "floor", floor);
+      localStorage.setItem(roomName + "walls", walls);
+      localStorage.setItem(roomName + "seiling", seiling);
+      localStorage.setItem(roomName + "other", other);
+
       if (i == localStorage.getItem("гостевой_санузел") - 1) {
         break;
       }
