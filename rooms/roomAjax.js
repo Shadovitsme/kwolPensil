@@ -110,7 +110,6 @@ $(document).ready(function () {
     $m = 26;
 
     let arr = [];
-    // TODO похоже можно переименовать это чудо на нормальное а не копию прихожей но пока имеем что имеем
     for (let i = 0; i < localStorage.getItem("детская"); i++) {
       arr.push([
         `детская${i}`,

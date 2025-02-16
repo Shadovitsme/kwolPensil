@@ -37,7 +37,7 @@ $(document).ready(function () {
   welcomeBathTemplate = $("div#welcomeBath0");
   welcomeBathCount = localStorage.getItem("гостевой_санузел");
 
-  divider = $("<hr>", { class: "bg-white my-5 max-w-[1920px]" });
+  divider = $("<hr>", { class: "bg-white my-5 w-full max-w-[1920px]" });
 
   // kitchen
   for (var i = 1; i < kitchenCount; i++)
@@ -97,7 +97,7 @@ $(document).ready(function () {
       console.log(element[0]);
       element.attr("name", `howMuchVisitors${i}`);
     });
-    balconyTemplate.parent().append(divider.clone()).append(balcony);
+    balconyTemplate.parent().append(balcony);
   }
 
   // eatingRoom

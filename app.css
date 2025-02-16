@@ -157,7 +157,7 @@ body {
   border-radius: 5px;
   padding-block: 12px;
   padding-left: 16px;
-  height: 48px;
+  height: fit-content
 }
 
 .alert {
