@@ -50,25 +50,25 @@ $(document).ready(function () {
           return sawYouBefore;
         })
         .done((sawYouBefore) => {
-          if (sawYouBefore) {
-            alert("kogo i see");
-          } else {
-            $.ajax({
-              url: "save_data.php",
-              type: "POST",
-              data: {
-                funk: "addNamePhone",
-                name: name,
-                phone: phone,
-                town: town,
-              },
-              success: function (data) {
-                console.log(data);
-                localStorage.setItem("userId", data);
-                window.location.replace("./secondPage.html");
-              },
-            });
-          }
+          // if (sawYouBefore) {
+          //   alert("kogo i see");
+          // } else {
+          $.ajax({
+            url: "save_data.php",
+            type: "POST",
+            data: {
+              funk: "addNamePhone",
+              name: name,
+              phone: phone,
+              town: town,
+            },
+            success: function (data) {
+              console.log(data);
+              localStorage.setItem("userId", data);
+              window.location.replace("./secondPage.html");
+            },
+          });
+          // }
         });
     }
   });
