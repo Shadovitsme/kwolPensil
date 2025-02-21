@@ -893,7 +893,6 @@ $(document).ready(function () {
     $m = 41;
     let arr = [];
     for (let i = 0; i < localStorage.getItem("гостевой_санузел"); i++) {
-      // TODO переделать полы и все такое чтоб при сосании из бд выглядело благозвучно
       arr.push([
         `гостевой_санузел${i}`,
         ["Унитаз", pooper],
@@ -1002,17 +1001,17 @@ $(document).ready(function () {
       "гостевой_санузел",
     ];
     let pathArray = [
-      "./childRoom.html",
-      "./kitchen.html",
-      "./welcomeRoom.html",
-      "./bedroom.html",
-      "./dressingRoom.html",
-      "./balcony.html",
-      "./eatingRoom.html",
-      "./sclad.html",
-      "./bathroom.html",
-      "./office.html",
-      "./welcomeBath.html",
+      "/childRoom.html",
+      "/kitchen.html",
+      "/welcomeRoom.html",
+      "/bedroom.html",
+      "/dressingRoom.html",
+      "/balcony.html",
+      "/eatingRoom.html",
+      "/sclad.html",
+      "/bathroom.html",
+      "/office.html",
+      "/welcomeBath.html",
     ];
 
     let len = arrRooms.length;
@@ -1021,7 +1020,12 @@ $(document).ready(function () {
         Number(localStorage.getItem(arrRooms[index])) !== 0 &&
         localStorage.getItem(arrRooms[index]) !== undefined
       ) {
-        window.location.replace(pathArray[index]);
+        localStorage.setItem(
+          "backLink",
+          "https://karandash.pro/brief/rooms" + pathArray[index]
+        );
+
+        window.location.replace("." + pathArray[index]);
         break;
       }
       window.location.replace("https://karandash.pro/referencePage");
