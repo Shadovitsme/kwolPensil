@@ -91,35 +91,15 @@ $(document).ready(function () {
 
       .append(dressingRoomTemplate.clone().attr("id", `dressingRoom${i}`));
 
-  // balcone
-  for (var i = 1; i < balconyCount; i++) {
-    balcony = balconyTemplate.clone().attr("id", `balcony${i}`);
-    let arr = [];
-    arr.push(
-      balcony
-        .children($("div#radioBalcony0").attr("id", `radioBalcony${i}`))
-        .children()
-        .children($("input.radio"))
-    );
-    arr.forEach((element) => {
-      console.log(element[0]);
-      element.attr("name", `howMuchVisitors${i}`);
-    });
-
-    balconyTemplate
-      .parent()
-      .append(`<h1 class="H1 Text mb-10 mt-10 uppercase">Балкон ${i}</h1>`)
-      .append(balcony);
-  }
-
   // eatingRoom
-  for (var i = 1; i < eatingRoomCount; i++)
+
+  for (var i = 1; i < eatingRoomCount; i++) {
     eatingRoomTemplate
       .parent()
       .append(divider.clone())
       .append(`<h1 class="H1 Text mb-10 uppercase">Столовая ${i}</h1>`)
-
       .append(eatingRoomTemplate.clone().attr("id", `eatingRoom${i}`));
+  }
 
   // sklad
   for (var i = 1; i < scladCount; i++)
