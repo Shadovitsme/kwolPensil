@@ -1001,7 +1001,6 @@ $(document).ready(function () {
       "гостевой_санузел",
     ];
     let pathArray = [
-      "hallway.html",
       "childRoom.html",
       "kitchen.html",
       "welcomeRoom.html",
