@@ -1001,30 +1001,33 @@ $(document).ready(function () {
       "гостевой_санузел",
     ];
     let pathArray = [
-      "/childRoom.html",
-      "/kitchen.html",
-      "/welcomeRoom.html",
-      "/bedroom.html",
-      "/dressingRoom.html",
-      "/balcony.html",
-      "/eatingRoom.html",
-      "/sclad.html",
-      "/bathroom.html",
-      "/office.html",
-      "/welcomeBath.html",
+      "childRoom.html",
+      "kitchen.html",
+      "welcomeRoom.html",
+      "bedroom.html",
+      "dressingRoom.html",
+      "balcony.html",
+      "eatingRoom.html",
+      "sclad.html",
+      "bathroom.html",
+      "office.html",
+      "welcomeBath.html",
     ];
 
     let len = arrRooms.length;
     for (let index = num; index < len; index++) {
+      let serializedData = new URLSearchParams(pathArray[index]).toString();
+      localStorage.setItem("backLink", window.location.href);
       if (
         Number(localStorage.getItem(arrRooms[index])) !== 0 &&
         localStorage.getItem(arrRooms[index]) !== undefined
       ) {
-        localStorage.setItem("backLink", window.location.href);
-        window.location.replace("." + pathArray[index]);
-        break;
+        window.location.replace("./" + pathArray[index]);
+        return 0;
       }
-      window.location.replace("https://karandash.pro/referencePage");
+      window.location.replace(
+        `https://karandash.pro/referencePage?${serializedData}`
+      );
     }
   }
 });
