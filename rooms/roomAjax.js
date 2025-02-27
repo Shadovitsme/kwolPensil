@@ -1020,11 +1020,7 @@ $(document).ready(function () {
         Number(localStorage.getItem(arrRooms[index])) !== 0 &&
         localStorage.getItem(arrRooms[index]) !== undefined
       ) {
-        localStorage.setItem(
-          "backLink",
-          "https://karandash.pro/brief/rooms" + pathArray[index]
-        );
-
+        localStorage.setItem("backLink", window.location.href);
         window.location.replace("." + pathArray[index]);
         break;
       }
