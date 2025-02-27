@@ -981,7 +981,12 @@ $(document).ready(function () {
 
       success: function (data) {
         console.log(data);
-        window.location.replace("https://karandash.pro/referencePage");
+        let currentUrl = window.location.href;
+        let lastSegment = currentUrl.substring(currentUrl.lastIndexOf("/") + 1);
+        let serializedData = new URLSearchParams(lastSegment).toString();
+        window.location.replace(
+          `https://karandash.pro/referencePage?${serializedData}`
+        );
       },
     });
   });
