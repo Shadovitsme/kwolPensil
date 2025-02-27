@@ -1001,6 +1001,7 @@ $(document).ready(function () {
       "гостевой_санузел",
     ];
     let pathArray = [
+      "hallway.html",
       "childRoom.html",
       "kitchen.html",
       "welcomeRoom.html",
@@ -1016,8 +1017,9 @@ $(document).ready(function () {
 
     let len = arrRooms.length;
     for (let index = num; index < len; index++) {
-      let serializedData = new URLSearchParams(pathArray[index]).toString();
-      localStorage.setItem("backLink", window.location.href);
+      let currentUrl = window.location.href;
+      let lastSegment = currentUrl.substring(currentUrl.lastIndexOf("/") + 1);
+      let serializedData = new URLSearchParams(lastSegment).toString();
       if (
         Number(localStorage.getItem(arrRooms[index])) !== 0 &&
         localStorage.getItem(arrRooms[index]) !== undefined
