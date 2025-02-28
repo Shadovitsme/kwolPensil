@@ -4,21 +4,23 @@ function checkLocalstorageData(storageKey) {
     : 0;
 }
 $(document).ready(function () {
-  const formInput = $("form#balcony")[0];
   const roomName = "балкон";
-
-  let m = 0;
-
+  let type;
+  let radioItem;
   for (let i = 0; i < localStorage.getItem(roomName); i++) {
-    let type = localStorage.getItem("балкон" + i + "type");
+    let item = $(`#balcony${i}`);
+    type = localStorage.getItem("балкон" + i + "type");
+    radioItem = $(`#radioBalcony${i}`);
+    radioItem.find('input[type="radio"]').each(function () {
+      if (type == undefined) {
+        this.checked == true;
+        return 0;
+      }
+      this.checked = this.value == type;
+    });
 
-    formInput[m].checked = type == formInput[m].value;
-    m++;
-    two = formInput[m].checked = type == formInput[m].value;
-    m++;
-    three = formInput[m].checked = type == formInput[m].value;
-    m++;
-    formInput[m].value = localStorage.getItem("балкон" + i + "description");
-    m++;
+    item.find("textarea").each(function () {
+      this.value = localStorage.getItem("балкон" + i + "description");
+    });
   }
 });
