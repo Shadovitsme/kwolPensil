@@ -4,7 +4,7 @@ header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 $databaseFile = './test.db.';  // Заменяется именем файла базы данных SQLite
-
+ 
 try {
   $connection = new PDO("sqlite:$databaseFile");
   $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

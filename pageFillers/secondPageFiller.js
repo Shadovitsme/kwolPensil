@@ -23,6 +23,24 @@ $(document).ready(function () {
   formInput[7].checked = replane;
   formInput[8].checked = !replane;
 
-  let visitors = localStorage.getItem("visitors");
+  let visitors;
+
+  switch (localStorage.getItem("visitors")) {
+    case "Несколько раз в неделю":
+      visitors = 9;
+      break;
+    case "Несколько раз в месяц":
+      visitors = 10;
+
+      break;
+    case "Несколько раз в год":
+      visitors = 11;
+
+      break;
+
+    default:
+      break;
+  }
+
   formInput[visitors].checked = true;
 });

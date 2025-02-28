@@ -1,10 +1,9 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
+header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization');
 
 $databaseFile = './test.db.';  // Заменяется именем файла базы данных SQLite
-
 
 switch ($_POST['funk']) {
     case 'addNamePhone':
@@ -27,11 +26,10 @@ switch ($_POST['funk']) {
         break;
 }
 
-
 function addNamePhone()
 {
     global $databaseFile;
-    $name = $_POST['name']; // получаем данные из формы
+    $name = $_POST['name'];  // получаем данные из формы
     $phone = $_POST['phone'];
     $town = $_POST['town'];
     $date = date('d/m/y');
@@ -39,7 +37,7 @@ function addNamePhone()
         $connection = new PDO("sqlite:$databaseFile");
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     } catch (PDOException $e) {
-        die("Connection failed: " . $e->getMessage());
+        die('Connection failed: ' . $e->getMessage());
     }
     $sql = "INSERT INTO Customers (FirstName, Phone, Town,date) VALUES ('$name', '$phone','$town','$date')";
     try {
@@ -47,12 +45,10 @@ function addNamePhone()
         $a = $connection->query("SELECT id FROM Customers where FirstName = '$name' AND Phone = '$phone'");
         $id = $a->fetchAll()[0][0];
         echo ($id);
-        $trailSql = "INSERT INTO userTrail (userId) VALUES ('$id')";
-        $connection->exec($trailSql);
 
         setcookie('userId', $id, time() + 3600);
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        echo 'Error: ' . $e->getMessage();
     }
 }
 
@@ -84,24 +80,21 @@ function addCommonData()
         'zones'= '$zones',
         'workPlaces' = '$workPlaces'
         WHERE Id = '$id'";
-    $trailSql = "UPDATE userTrail
-        SET mainData = '1'
-        WHERE userId = '$id'";
+
     try {
         $connection = new PDO("sqlite:$databaseFile");
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
+        echo 'Connected successfully';
     } catch (PDOException $e) {
-        die("Connection failed: " . $e->getMessage());
+        die('Connection failed: ' . $e->getMessage());
     }
 
     try {
         $connection->exec($sql);
-        $connection->exec($trailSql);
 
-        echo "Data inserted successfully";
+        echo 'Data inserted successfully';
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        echo 'Error: ' . $e->getMessage();
     }
 }
 
@@ -116,21 +109,18 @@ function addRoomCount()
                 try {
                     $connection = new PDO("sqlite:$databaseFile");
                     $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    echo "Connected successfully";
+                    echo 'Connected successfully';
                 } catch (PDOException $e) {
-                    die("Connection failed: " . $e->getMessage());
+                    die('Connection failed: ' . $e->getMessage());
                 }
                 $sql = "INSERT INTO rooms (userId, room, count) VALUES ('$id', '$room', '$count')";
-                $trailSql = "UPDATE userTrail
-                SET chooseRoom = '1'
-                WHERE userId = '$id'";
+
                 try {
                     $connection->exec($sql);
-                    $connection->exec($trailSql);
                     setcookie($room, $count, time() + 3600);
-                    echo "Data inserted successfully";
+                    echo 'Data inserted successfully';
                 } catch (PDOException $e) {
-                    echo "Error: " . $e->getMessage();
+                    echo 'Error: ' . $e->getMessage();
                 }
             }
         }
@@ -143,13 +133,12 @@ function addWishes()
     global $databaseFile;
     $id = $_POST['userId'];
 
-
     try {
         $connection = new PDO("sqlite:$databaseFile");
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "Connected successfully";
+        echo 'Connected successfully';
     } catch (PDOException $e) {
-        die("Connection failed: " . $e->getMessage());
+        die('Connection failed: ' . $e->getMessage());
     }
 
     $light = $_POST['light'];
@@ -163,16 +152,15 @@ function addWishes()
     $additional = $_POST['additional'];
     $floor = $_POST['floor'];
 
-
     $sql = "INSERT INTO wishes (userId, light, warmFloor, ceiling, floor, conditioner, wannaSee, dontWannaSee, deadline,additional,style) VALUES ('$id', '$light
     ', '$warmFloor', '$ceiling', '$floor', '$condicioner', '$wannaSee', '$dontWannaSee', '$deadline', '$additional', '$style' )";
 
     try {
         $connection->exec($sql);
 
-        echo "Data inserted successfully";
+        echo 'Data inserted successfully';
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        echo 'Error: ' . $e->getMessage();
     }
 }
 
@@ -192,17 +180,17 @@ function addDetailRoom()
                     try {
                         $connection = new PDO("sqlite:$databaseFile");
                         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                        echo "Connected successfully";
+                        echo 'Connected successfully';
                     } catch (PDOException $e) {
-                        die("Connection failed: " . $e->getMessage());
+                        die('Connection failed: ' . $e->getMessage());
                     }
                     $sql = "INSERT INTO detailRoom (userId, room, property,description) VALUES ('$id', '$room', '$thing','$description')";
                     try {
                         $connection->exec($sql);
 
-                        echo "Data inserted successfully";
+                        echo 'Data inserted successfully';
                     } catch (PDOException $e) {
-                        echo "Error: " . $e->getMessage();
+                        echo 'Error: ' . $e->getMessage();
                     }
                 }
             }
@@ -221,7 +209,7 @@ function addRefs()
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // echo "Connected successfully";
     } catch (PDOException $e) {
-        die("Connection failed: " . $e->getMessage());
+        die('Connection failed: ' . $e->getMessage());
     }
     foreach ($_POST['dataArr'] as $item) {
         $pic = $item[0];
@@ -230,9 +218,9 @@ function addRefs()
         try {
             $connection->exec($sql);
 
-            echo "Data inserted successfully";
+            echo 'Data inserted successfully';
         } catch (PDOException $e) {
-            echo "Error: " . $e->getMessage();
+            echo 'Error: ' . $e->getMessage();
         }
     }
 }
