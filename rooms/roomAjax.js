@@ -52,17 +52,17 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      localStorage.setItem("прихожая" + i + "wodrop", wodrop);
-      localStorage.setItem("прихожая" + i + "warmFloor", warmFloor);
-      localStorage.setItem("прихожая" + i + "mirror", mirror);
-      localStorage.setItem("прихожая" + i + "sitting", sitting);
-      localStorage.setItem("прихожая" + i + "shoes", shoes);
-      localStorage.setItem("прихожая" + i + "shelf", shelf);
-      localStorage.setItem("прихожая" + i + "condicioner", condicioner);
-      localStorage.setItem("прихожая" + i + "floor", floor);
-      localStorage.setItem("прихожая" + i + "walls", walls);
-      localStorage.setItem("прихожая" + i + "seiling", seiling);
-      localStorage.setItem("прихожая" + i + "other", other);
+      localStorage.setItem("прихожая" + i + "шкаф_для_одежды", wodrop);
+      localStorage.setItem("прихожая" + i + "теплый_пол", warmFloor);
+      localStorage.setItem("прихожая" + i + "зеркало", mirror);
+      localStorage.setItem("прихожая" + i + "сиденье", sitting);
+      localStorage.setItem("прихожая" + i + "обувница", shoes);
+      localStorage.setItem("прихожая" + i + "полки", shelf);
+      localStorage.setItem("прихожая" + i + "кондиционер", condicioner);
+      localStorage.setItem("прихожая" + i + "полы", floor);
+      localStorage.setItem("прихожая" + i + "walстеныls", walls);
+      localStorage.setItem("прихожая" + i + "потолки", seiling);
+      localStorage.setItem("прихожая" + i + "другое", other);
       if (i == localStorage.getItem("прихожая") - 1) {
         break;
       }
@@ -126,17 +126,23 @@ $(document).ready(function () {
         ["другое", other],
       ]);
 
-      localStorage.setItem("детская" + i + "pedestal", pedestal);
-      localStorage.setItem("детская" + i + "wardrobe", wardrobe);
-      localStorage.setItem("детская" + i + "mirror", mirror);
-      localStorage.setItem("детская" + i + "topLight", topLight);
-      localStorage.setItem("детская" + i + "nightLight", nightLight);
-      localStorage.setItem("детская" + i + "warmFloor", warmFloor);
-      localStorage.setItem("детская" + i + "condicioner", condicioner);
-      localStorage.setItem("детская" + i + "floor", floor);
-      localStorage.setItem("детская" + i + "walls", walls);
-      localStorage.setItem("детская" + i + "seiling", seiling);
-      localStorage.setItem("детская" + i + "other", other);
+      localStorage.setItem("детская" + i + "детская мебель", pedestal);
+      localStorage.setItem("детская" + i + "игровая зона", wardrobe);
+      localStorage.setItem(
+        "детская" + i + "организация места для игрушек",
+        mirror
+      );
+      localStorage.setItem(
+        "детская" + i + "подсветка/ночник/мягкий свет",
+        topLight
+      );
+      localStorage.setItem("детская" + i + "системы защиты", nightLight);
+      localStorage.setItem("детская" + i + "теплый пол", warmFloor);
+      localStorage.setItem("детская" + i + "кондиционер", condicioner);
+      localStorage.setItem("детская" + i + "полы", floor);
+      localStorage.setItem("детская" + i + "стены", walls);
+      localStorage.setItem("детская" + i + "потолки", seiling);
+      localStorage.setItem("детская" + i + "другое", other);
 
       if (i == localStorage.getItem("детская") - 1) {
         break;
@@ -217,25 +223,25 @@ $(document).ready(function () {
       ]);
       let roomName = "кухня" + i;
 
-      localStorage.setItem(roomName + "waterHotter", waterHotter);
-      localStorage.setItem(roomName + "dishWasher", dishWasher);
-      localStorage.setItem(roomName + "smallBar", smallBar);
-      localStorage.setItem(roomName + "multiboiler", multiboiler);
-      localStorage.setItem(roomName + "oven", oven);
-      localStorage.setItem(roomName + "refrigerator", refrigerator);
-      localStorage.setItem(roomName + "trashSreder", trashSreder);
-      localStorage.setItem(roomName + "lighter", lighter);
-      localStorage.setItem(roomName + "steamboiler", steamboiler);
-      localStorage.setItem(roomName + "sink", sink);
-      localStorage.setItem(roomName + "microwave", microwave);
-      localStorage.setItem(roomName + "defenser", defenser);
-      localStorage.setItem(roomName + "airAway", airAway);
-      localStorage.setItem(roomName + "warmFloor", warmFloor);
-      localStorage.setItem(roomName + "floor", floor);
-      localStorage.setItem(roomName + "walls", walls);
-      localStorage.setItem(roomName + "seiling", seiling);
-      localStorage.setItem(roomName + "walls", walls);
-      localStorage.setItem(roomName + "other", other);
+      localStorage.setItem(roomName + "водонагреватель", waterHotter);
+      localStorage.setItem(roomName + "посудомойка", dishWasher);
+      localStorage.setItem(roomName + "фильтр", filter);
+      localStorage.setItem(roomName + "мини бар", smallBar);
+      localStorage.setItem(roomName + "мультиварка", multiboiler);
+      localStorage.setItem(roomName + "духовка", oven);
+      localStorage.setItem(roomName + "холодильник", refrigerator);
+      localStorage.setItem(roomName + "измельчитель отходов", trashSreder);
+      localStorage.setItem(roomName + "подсветка", lighter);
+      localStorage.setItem(roomName + "пароварка", steamboiler);
+      localStorage.setItem(roomName + "мойка", sink);
+      localStorage.setItem(roomName + "микроволновка", microwave);
+      localStorage.setItem(roomName + "защита от протечек", defenser);
+      localStorage.setItem(roomName + "вытяжка", airAway);
+      localStorage.setItem(roomName + "теплый_пол", warmFloor);
+      localStorage.setItem(roomName + "полы", floor);
+      localStorage.setItem(roomName + "стены", walls);
+      localStorage.setItem(roomName + "потолки", seiling);
+      localStorage.setItem(roomName + "другое", other);
 
       if (i == localStorage.getItem("кухня") - 1) {
         break;
@@ -317,17 +323,17 @@ $(document).ready(function () {
 
       let roomName = "гостиная" + i;
 
-      localStorage.setItem(roomName + "sofa", sofa);
-      localStorage.setItem(roomName + "tv", tv);
-      localStorage.setItem(roomName + "smallTable", smallTable);
-      localStorage.setItem(roomName + "bookShielf", bookShielf);
-      localStorage.setItem(roomName + "centralLight", centralLight);
-      localStorage.setItem(roomName + "wallLight", wallLight);
-      localStorage.setItem(roomName + "condicioner", condicioner);
-      localStorage.setItem(roomName + "floor", floor);
-      localStorage.setItem(roomName + "walls", walls);
-      localStorage.setItem(roomName + "seiling", seiling);
-      localStorage.setItem(roomName + "other", other);
+      localStorage.setItem(roomName + "диван", sofa);
+      localStorage.setItem(roomName + "тв", tv);
+      localStorage.setItem(roomName + "журнал столик", smallTable);
+      localStorage.setItem(roomName + "стеллажи для книг и декора", bookShielf);
+      localStorage.setItem(roomName + "центральное освещение", centralLight);
+      localStorage.setItem(roomName + "настенные светильники", wallLight);
+      localStorage.setItem(roomName + "кондиционер", condicioner);
+      localStorage.setItem(roomName + "полы", floor);
+      localStorage.setItem(roomName + "стены", walls);
+      localStorage.setItem(roomName + "seiпотолкиling", seiling);
+      localStorage.setItem(roomName + "другое", other);
 
       if (i == localStorage.getItem("гостиная") - 1) {
         break;
@@ -390,18 +396,17 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      localStorage.setItem("спальня" + i + "pedestal", pedestal);
-      localStorage.setItem("спальня" + i + "wardrobe", wardrobe);
-      localStorage.setItem("спальня" + i + "mirror", mirror);
-      localStorage.setItem("спальня" + i + "topLight", topLight);
-      localStorage.setItem("спальня" + i + "nightLight", nightLight);
-      localStorage.setItem("спальня" + i + "warmFloor", warmFloor);
-      localStorage.setItem("спальня" + i + "warmFloor", warmFloor);
-      localStorage.setItem("спальня" + i + "condicioner", condicioner);
-      localStorage.setItem("спальня" + i + "floor", floor);
-      localStorage.setItem("спальня" + i + "walls", walls);
-      localStorage.setItem("спальня" + i + "seiling", seiling);
-      localStorage.setItem("спальня" + i + "other", other);
+      localStorage.setItem("спальня" + i + "тумбочки", pedestal);
+      localStorage.setItem("спальня" + i + "гардероб или шкаф", wardrobe);
+      localStorage.setItem("спальня" + i + "зеркало", mirror);
+      localStorage.setItem("спальня" + i + "центральное освещение", topLight);
+      localStorage.setItem("спальня" + i + "ночники", nightLight);
+      localStorage.setItem("спальня" + i + "теплый пол", warmFloor);
+      localStorage.setItem("спальня" + i + "кондиционер", condicioner);
+      localStorage.setItem("спальня" + i + "полы", floor);
+      localStorage.setItem("спальня" + i + "стены", walls);
+      localStorage.setItem("спальня" + i + "потолки", seiling);
+      localStorage.setItem("спальня" + i + "другое", other);
 
       if (i == localStorage.getItem("спальня") - 1) {
         break;
@@ -463,16 +468,16 @@ $(document).ready(function () {
         ["другое", other],
       ]);
       let roomName = "гардеробная" + i;
-      localStorage.setItem(roomName + "shielf", shielf);
-      localStorage.setItem(roomName + "mirror", mirror);
-      localStorage.setItem(roomName + "shoes", shoes);
-      localStorage.setItem(roomName + "topLight", topLight);
-      localStorage.setItem(roomName + "wardrobeLight", wardrobeLight);
-      localStorage.setItem(roomName + "condicioner", condicioner);
-      localStorage.setItem(roomName + "floor", floor);
-      localStorage.setItem(roomName + "walls", walls);
-      localStorage.setItem(roomName + "seiling", seiling);
-      localStorage.setItem(roomName + "other", other);
+      localStorage.setItem(roomName + "полки и ящики", shielf);
+      localStorage.setItem(roomName + "зеркало", mirror);
+      localStorage.setItem(roomName + "организация обуви", shoes);
+      localStorage.setItem(roomName + "ценральное освещение", topLight);
+      localStorage.setItem(roomName + "подсветка в шкафах", wardrobeLight);
+      localStorage.setItem(roomName + "кондиционер", condicioner);
+      localStorage.setItem(roomName + "полы", floor);
+      localStorage.setItem(roomName + "стены", walls);
+      localStorage.setItem(roomName + "потолки", seiling);
+      localStorage.setItem(roomName + "другое", other);
       if (i == localStorage.getItem("гардеробная") - 1) {
         break;
       }
@@ -532,8 +537,8 @@ $(document).ready(function () {
         ["Описание", description],
       ]);
 
-      localStorage.setItem("балкон" + i + "type", type);
-      localStorage.setItem("балкон" + i + "description", description);
+      localStorage.setItem("балкон" + i + "тип балкона", type);
+      localStorage.setItem("балкон" + i + "Описание", description);
 
       if (i == localStorage.getItem("балкон") - 1) {
         break;
@@ -597,17 +602,17 @@ $(document).ready(function () {
       ]);
 
       let roomName = "столовая" + i;
-      localStorage.setItem(roomName + "table", table);
-      localStorage.setItem(roomName + "chairs", chairs);
-      localStorage.setItem(roomName + "topLight", topLight);
-      localStorage.setItem(roomName + "tableLight", tableLight);
-      localStorage.setItem(roomName + "barTable", barTable);
-      localStorage.setItem(roomName + "warmFloor", warmFloor);
-      localStorage.setItem(roomName + "condicioner", condicioner);
-      localStorage.setItem(roomName + "floor", floor);
-      localStorage.setItem(roomName + "walls", walls);
-      localStorage.setItem(roomName + "seiling", seiling);
-      localStorage.setItem(roomName + "other", other);
+      localStorage.setItem(roomName + "стол", table);
+      localStorage.setItem(roomName + "стулья", chairs);
+      localStorage.setItem(roomName + "центральное освещение", topLight);
+      localStorage.setItem(roomName + "подсветка стола", tableLight);
+      localStorage.setItem(roomName + "барная стойка", barTable);
+      localStorage.setItem(roomName + "теплый пол", warmFloor);
+      localStorage.setItem(roomName + "кондиционер", condicioner);
+      localStorage.setItem(roomName + "полы", floor);
+      localStorage.setItem(roomName + "стены", walls);
+      localStorage.setItem(roomName + "потолки", seiling);
+      localStorage.setItem(roomName + "другое", other);
 
       if (i == localStorage.getItem("столовая") - 1) {
         break;
@@ -666,14 +671,14 @@ $(document).ready(function () {
       ]);
 
       let roomName = "кладовая" + i;
-      localStorage.setItem(roomName + "shelf", shelf);
-      localStorage.setItem(roomName + "storage", storage);
-      localStorage.setItem(roomName + "airAway", airAway);
-      localStorage.setItem(roomName + "condicioner", condicioner);
-      localStorage.setItem(roomName + "floor", floor);
-      localStorage.setItem(roomName + "walls", walls);
-      localStorage.setItem(roomName + "seiling", seiling);
-      localStorage.setItem(roomName + "other", other);
+      localStorage.setItem(roomName + "полки", shelf);
+      localStorage.setItem(roomName + "хранение", storage);
+      localStorage.setItem(roomName + "вентиляция", airAway);
+      localStorage.setItem(roomName + "кондиционирование", condicioner);
+      localStorage.setItem(roomName + "полы", floor);
+      localStorage.setItem(roomName + "стены", walls);
+      localStorage.setItem(roomName + "потолки", seiling);
+      localStorage.setItem(roomName + "другое", other);
 
       if (i == localStorage.getItem("кладовая") - 1) {
         break;
@@ -735,7 +740,7 @@ $(document).ready(function () {
         ["Ванна", bath],
         ["водонагреватель", waterHotter],
         ["гигиенический душ", poopShower],
-        ["система защины", defender],
+        ["система защиты", defender],
         ["кондиционер", condicioner],
         ["теплый_пол", warmFloor],
         ["полы", floor],
@@ -743,22 +748,23 @@ $(document).ready(function () {
         ["потолки", seiling],
         ["другое", other],
       ]);
-      localStorage.setItem("Санузел" + i + "pooper", pooper);
-      localStorage.setItem("Санузел" + i + "airAway", airAway);
-      localStorage.setItem("Санузел" + i + "poopWasher", poopWasher);
-      localStorage.setItem("Санузел" + i + "clothWasher", clothWasher);
-      localStorage.setItem("Санузел" + i + "shower", shower);
-      localStorage.setItem("Санузел" + i + "sink", sink);
-      localStorage.setItem("Санузел" + i + "filter", filter);
-      localStorage.setItem("Санузел" + i + "bath", bath);
-      localStorage.setItem("Санузел" + i + "waterHotter", waterHotter);
-      localStorage.setItem("Санузел" + i + "poopShower", poopShower);
-      localStorage.setItem("Санузел" + i + "defender", defender);
-      localStorage.setItem("Санузел" + i + "condicioner", condicioner);
-      localStorage.setItem("Санузел" + i + "floor", floor);
-      localStorage.setItem("Санузел" + i + "walls", walls);
-      localStorage.setItem("Санузел" + i + "seiling", seiling);
-      localStorage.setItem("Санузел" + i + "other", other);
+      localStorage.setItem("Санузел" + i + "Унитаз", pooper);
+      localStorage.setItem("Санузел" + i + "вытяжка", airAway);
+      localStorage.setItem("Санузел" + i + "биде", poopWasher);
+      localStorage.setItem("Санузел" + i + "стиральная машина", clothWasher);
+      localStorage.setItem("Санузел" + i + "душевая", shower);
+      localStorage.setItem("Санузел" + i + "раковина", sink);
+      localStorage.setItem("Санузел" + i + "фильтр для воды", filter);
+      localStorage.setItem("Санузел" + i + "Ванна", bath);
+      localStorage.setItem("Санузел" + i + "водонагреватель", waterHotter);
+      localStorage.setItem("Санузел" + i + "гигиенический душ", poopShower);
+      localStorage.setItem("Санузел" + i + "система защиты", defender);
+      localStorage.setItem("Санузел" + i + "кондиционер", condicioner);
+      localStorage.setItem("Санузел" + i + "теплый_пол", warmFloor);
+      localStorage.setItem("Санузел" + i + "полы", floor);
+      localStorage.setItem("Санузел" + i + "стены", walls);
+      localStorage.setItem("Санузел" + i + "потолки", seiling);
+      localStorage.setItem("Санузел" + i + "другое", other);
 
       if (i == localStorage.getItem("Санузел") - 1) {
         break;
@@ -833,16 +839,16 @@ $(document).ready(function () {
       ]);
 
       let roomName = "кабинет" + i;
-      localStorage.setItem(roomName + "table", table);
-      localStorage.setItem(roomName + "chair", chair);
-      localStorage.setItem(roomName + "bookShielf", bookShielf);
-      localStorage.setItem(roomName + "docsShielf", docsShielf);
-      localStorage.setItem(roomName + "light", light);
-      localStorage.setItem(roomName + "topLight", topLight);
-      localStorage.setItem(roomName + "floor", floor);
-      localStorage.setItem(roomName + "walls", walls);
-      localStorage.setItem(roomName + "seiling", seiling);
-      localStorage.setItem(roomName + "other", other);
+      localStorage.setItem(roomName + "Рабочик стол", table);
+      localStorage.setItem(roomName + "кресло", chair);
+      localStorage.setItem(roomName + "книжные полки", bookShielf);
+      localStorage.setItem(roomName + "полки для документов", docsShielf);
+      localStorage.setItem(roomName + "лампа", light);
+      localStorage.setItem(roomName + "центральный свет", topLight);
+      localStorage.setItem(roomName + "полы", floor);
+      localStorage.setItem(roomName + "стены", walls);
+      localStorage.setItem(roomName + "потолки", seiling);
+      localStorage.setItem(roomName + "другое", other);
 
       if (i == localStorage.getItem("кабинет") - 1) {
         break;
@@ -915,22 +921,22 @@ $(document).ready(function () {
 
       let roomName = "гостевой_санузел" + i;
 
-      localStorage.setItem(roomName + "pooper", pooper);
-      localStorage.setItem(roomName + "airAway", airAway);
-      localStorage.setItem(roomName + "poopWasher", poopWasher);
-      localStorage.setItem(roomName + "shower", shower);
-      localStorage.setItem(roomName + "clothWasher", clothWasher);
-      localStorage.setItem(roomName + "sink", sink);
-      localStorage.setItem(roomName + "furniture", furniture);
-      localStorage.setItem(roomName + "bath", bath);
-      localStorage.setItem(roomName + "filter", filter);
-      localStorage.setItem(roomName + "poopShower", poopShower);
-      localStorage.setItem(roomName + "waterHotter", waterHotter);
-      localStorage.setItem(roomName + "warmFloor", warmFloor);
-      localStorage.setItem(roomName + "floor", floor);
-      localStorage.setItem(roomName + "walls", walls);
-      localStorage.setItem(roomName + "seiling", seiling);
-      localStorage.setItem(roomName + "other", other);
+      localStorage.setItem(roomName + "Унитаз", pooper);
+      localStorage.setItem(roomName + "полотенцесушитель", airAway);
+      localStorage.setItem(roomName + "биде", poopWasher);
+      localStorage.setItem(roomName + "душевая", shower);
+      localStorage.setItem(roomName + "стиральная машина", clothWasher);
+      localStorage.setItem(roomName + "раковина", sink);
+      localStorage.setItem(roomName + "мебель", furniture);
+      localStorage.setItem(roomName + "Санузел", bath);
+      localStorage.setItem(roomName + "фильтр для воды", filter);
+      localStorage.setItem(roomName + "гигиенический душ", poopShower);
+      localStorage.setItem(roomName + "водонагреватель", waterHotter);
+      localStorage.setItem(roomName + "теплый_пол", warmFloor);
+      localStorage.setItem(roomName + "полы", floor);
+      localStorage.setItem(roomName + "стены", walls);
+      localStorage.setItem(roomName + "sпотолкиeiling", seiling);
+      localStorage.setItem(roomName + "другое", other);
 
       if (i == localStorage.getItem("гостевой_санузел") - 1) {
         break;

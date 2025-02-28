@@ -3,16 +3,16 @@ $(document).ready(function () {
   const roomName = "гардеробная";
   const formInput = $("form#dressingRoom")[0];
   const categoryArray = [
-    "shielf",
-    "mirror",
-    "shoes",
-    "topLight",
-    "wardrobeLight",
-    "condicioner",
-    "floor",
-    "walls",
-    "seiling",
-    "other",
+    "полки и ящики",
+    "зеркало",
+    "организация обуви",
+    "ценральное освещение",
+    "подсветка в шкафах",
+    "кондиционер",
+    "полы",
+    "стены",
+    "потолки",
+    "другое",
   ];
   //   кол-во категорий до пожеланий по напольному покрытию
   const numberCategoryCount = 5;

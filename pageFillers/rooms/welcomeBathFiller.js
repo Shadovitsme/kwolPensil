@@ -3,22 +3,22 @@ $(document).ready(function () {
   const roomName = "гостевой_санузел";
   const formInput = $("form#welcomeBath")[0];
   const categoryArray = [
-    "pooper",
-    "airAway",
-    "poopWasher",
-    "shower",
-    "clothWasher",
-    "sink",
-    "furniture",
-    "bath",
-    "filter",
-    "poopShower",
-    "waterHotter",
-    "warmFloor",
-    "floor",
-    "walls",
-    "seiling",
-    "other",
+    "Унитаз",
+    "полотенцесушитель",
+    "биде",
+    "душевая",
+    "стиральная машина",
+    "раковина",
+    "мебель",
+    "Санузел",
+    "фильтр для воды",
+    "гигиенический душ",
+    "водонагреватель",
+    "теплый_пол",
+    "полы",
+    "стены",
+    "потолки",
+    "другое",
   ];
   //   кол-во категорий до пожеланий по напольному покрытию
   const numberCategoryCount = 11;

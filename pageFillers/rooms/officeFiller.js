@@ -3,16 +3,16 @@ $(document).ready(function () {
   const roomName = "кабинет";
   const formInput = $("form#office")[0];
   const categoryArray = [
-    "table",
-    "chair",
-    "bookShielf",
-    "docsShielf",
-    "light",
-    "topLight",
-    "floor",
-    "walls",
-    "seiling",
-    "other",
+    "Рабочик стол",
+    "кресло",
+    "книжные полки",
+    "полки для документов",
+    "лампа",
+    "центральный свет",
+    "полы",
+    "стены",
+    "потолки",
+    "другое",
   ];
   //   кол-во категорий до пожеланий по напольному покрытию
   const numberCategoryCount = 5;

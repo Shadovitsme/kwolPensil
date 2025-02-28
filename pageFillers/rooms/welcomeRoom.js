@@ -3,17 +3,17 @@ $(document).ready(function () {
   const roomName = "гостиная";
   const formInput = $("form#welcomeRoom")[0];
   const categoryArray = [
-    "sofa",
-    "tv",
-    "smallTable",
-    "bookShielf",
-    "centralLight",
-    "wallLight",
-    "condicioner",
-    "floor",
-    "walls",
-    "seiling",
-    "other",
+    "диван",
+    "тв",
+    "журнал столик",
+    "стеллажи для книг и декора",
+    "центральное освещение",
+    "настенные светильники",
+    "кондиционер",
+    "полы",
+    "стены",
+    "потолки",
+    "другое",
   ];
   //   кол-во категорий до пожеланий по напольному покрытию
   const numberCategoryCount = 6;

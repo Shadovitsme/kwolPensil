@@ -9,7 +9,7 @@ $(document).ready(function () {
   let radioItem;
   for (let i = 0; i < localStorage.getItem(roomName); i++) {
     let item = $(`#balcony${i}`);
-    type = localStorage.getItem("балкон" + i + "type");
+    type = localStorage.getItem("балкон" + i + "тип балкона");
     radioItem = $(`#radioBalcony${i}`);
     radioItem.find('input[type="radio"]').each(function () {
       if (type == undefined) {
@@ -20,7 +20,7 @@ $(document).ready(function () {
     });
 
     item.find("textarea").each(function () {
-      this.value = localStorage.getItem("балкон" + i + "description");
+      this.value = localStorage.getItem("балкон" + i + "Описание");
     });
   }
 });

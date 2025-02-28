@@ -3,17 +3,17 @@ $(document).ready(function () {
   const roomName = "детская";
   const formInput = $("form#childRoom")[0];
   const categoryArray = [
-    "pedestal",
-    "wardrobe",
-    "mirror",
-    "topLight",
-    "nightLight",
-    "warmFloor",
-    "condicioner",
-    "floor",
-    "walls",
-    "seiling",
-    "other",
+    "детская мебель",
+    "игровая зона",
+    "организация места для игрушек",
+    "подсветка/ночник/мягкий свет",
+    "системы защиты",
+    "теплый пол",
+    "кондиционер",
+    "полы",
+    "стены",
+    "потолки",
+    "другое",
   ];
   //   кол-во категорий до пожеланий по напольному покрытию
   const numberCategoryCount = 6;
