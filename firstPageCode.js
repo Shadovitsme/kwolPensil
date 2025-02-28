@@ -40,8 +40,8 @@ $(document).ready(function () {
       })
         .then(function (data) {
           let userArray = Object.values(JSON.parse(data));
-          addToLocalStorage(userArray[0]);
           let sawYouBefore = userArray[0]["Phone"] == phone;
+          sawYouBefore ? addToLocalStorage(userArray[0]) : "";
           return sawYouBefore;
         })
         .done((sawYouBefore) => {
@@ -59,12 +59,10 @@ $(document).ready(function () {
               success: function (data) {
                 console.log(data);
                 localStorage.setItem("userId", data);
+                window.location.replace("./secondPage.html");
               },
             });
           }
-        })
-        .then(function () {
-          // window.location.replace("./secondPage.html");
         });
     }
   });
@@ -80,18 +78,33 @@ function addToLocalStorage(userData) {
   localStorage.setItem("soundless", userData["soundless"]);
   localStorage.setItem("visitors", userData["visitors"]);
 
-  userData["rooms"].forEach((element) => {
-    localStorage.setItem(element["room"], element["count"]);
-  });
-  Object.keys(userData["wishes"][0]).forEach((key) => {
-    if (!Number(key) && Number(key) != 0) {
-      localStorage.setItem(key, userData["wishes"][0][key]);
-    }
-  });
-  userData["detailRoom"].forEach((element) => {
-    localStorage.setItem(
-      element["room"] + element["property"],
-      element["description"]
-    );
-  });
+  if (userData["rooms"] && Array.isArray(userData["rooms"])) {
+    userData["rooms"].forEach((element) => {
+      localStorage.setItem(element["room"], element["count"]);
+    });
+  }
+
+  if (
+    userData["wishes"] &&
+    Array.isArray(userData["wishes"]) &&
+    userData["wishes"][0]
+  ) {
+    Object.keys(userData["wishes"][0]).forEach((key) => {
+      if (!Number(key) && Number(key) != 0) {
+        localStorage.setItem(key, userData["wishes"][0][key]);
+      }
+    });
+  }
+
+  if (userData["detailRoom"] && Array.isArray(userData["detailRoom"])) {
+    userData["detailRoom"].forEach((element) => {
+      localStorage.setItem(
+        element["room"] + element["property"],
+        element["description"]
+      );
+    });
+  }
+
+  console.log("a");
+  window.location.replace([userData["location"]]);
 }

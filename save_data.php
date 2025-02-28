@@ -52,6 +52,32 @@ function addNamePhone()
     }
 }
 
+function setLocation($id)
+{
+    global $databaseFile;
+
+    $location = $_POST['location'];
+    $sql = "UPDATE Customers
+        SET 
+        'location' = '$location'
+        WHERE Id = '$id'";
+    try {
+        $connection = new PDO("sqlite:$databaseFile");
+        $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo 'Connected successfully';
+    } catch (PDOException $e) {
+        die('Connection failed: ' . $e->getMessage());
+    }
+
+    try {
+        $connection->exec($sql);
+
+        echo 'Data inserted successfully';
+    } catch (PDOException $e) {
+        echo 'Error: ' . $e->getMessage();
+    }
+}
+
 function addCommonData()
 {
     global $databaseFile;
@@ -67,6 +93,7 @@ function addCommonData()
     $area = $_POST['area'];
     $zones = $_POST['zones'];
     $workPlaces = $_POST['workPlaces'];
+    $location = $_POST['location'];
     $sql = "UPDATE Customers
         SET familyMembers = '$familyMembers',
         Pets = '$pets',
@@ -78,7 +105,8 @@ function addCommonData()
         'actvitySphere' = '$actvitySphere',
         'area' = '$area',
         'zones'= '$zones',
-        'workPlaces' = '$workPlaces'
+        'workPlaces' = '$workPlaces',
+        'location' = '$location'
         WHERE Id = '$id'";
 
     try {
@@ -126,6 +154,7 @@ function addRoomCount()
         }
         $i++;
     }
+    setLocation($id);
 }
 
 function addWishes()
@@ -162,12 +191,15 @@ function addWishes()
     } catch (PDOException $e) {
         echo 'Error: ' . $e->getMessage();
     }
+    setLocation($id);
 }
 
 function addDetailRoom()
 {
     global $databaseFile;
     $id = $_POST['userId'];
+    setLocation($id);
+
     foreach ($_POST['arr'] as $item) {
         $i = 0;
         $room = $item[0];
@@ -204,6 +236,8 @@ function addRefs()
     global $databaseFile;
     $id = $_POST['userId'];
     var_dump($_POST);
+    setLocation($id);
+
     try {
         $connection = new PDO("sqlite:$databaseFile");
         $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

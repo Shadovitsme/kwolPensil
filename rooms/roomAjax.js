@@ -3,6 +3,8 @@ $(document).ready(function () {
   $("textarea").attr("maxlength", 800);
 
   function ajaxAddDetailRoom(navigateVariable, arr) {
+    let location = window.location.href;
+
     let ID = localStorage.getItem("userId");
     $.ajax({
       url: "../save_data.php",
@@ -11,6 +13,7 @@ $(document).ready(function () {
         userId: ID,
         funk: "addDetailRoom",
         arr,
+        location: location,
       },
 
       success: function (data) {
@@ -110,6 +113,7 @@ $(document).ready(function () {
     $m = 26;
 
     let arr = [];
+
     for (let i = 0; i < localStorage.getItem("детская"); i++) {
       arr.push([
         `детская${i}`,

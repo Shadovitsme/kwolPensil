@@ -33,6 +33,7 @@ $(document).ready(function () {
       visitors = $(this)[0][11].value;
     }
     localStorage.setItem("visitors", visitors);
+    let location = window.location.href;
 
     $.ajax({
       url: "save_data.php",
@@ -51,6 +52,7 @@ $(document).ready(function () {
         area: null,
         zones: null,
         workPlaces: null,
+        location: location,
       },
 
       success: function (data) {
@@ -77,6 +79,8 @@ $(document).ready(function () {
     let cabinet = $(this)[0][31].value;
     let welcomeBathroom = $(this)[0][34].value;
     let otherRooms = $(this)[0][36].value;
+    let location = window.location.href; 
+
     if (
       (hallway !== null &&
         hallway !== undefined &&
@@ -150,6 +154,7 @@ $(document).ready(function () {
           кабинет: cabinet,
           гостевой_санузел: welcomeBathroom,
           другое: otherRooms,
+          location: location,
         },
         success: function (data) {
           localStorage.setItem("прихожая", hallway);
@@ -219,6 +224,7 @@ $(document).ready(function () {
 
     let additional = $(this)[0][9].value;
     localStorage.setItem("additional", additional);
+    let location = window.location.href; 
 
     let ID = localStorage.getItem("userId");
     $.ajax({
@@ -237,6 +243,7 @@ $(document).ready(function () {
         wannaSee: wannaSee,
         dontWannaSee: dontWannaSee,
         additional: additional,
+        location: location,
       },
 
       success: function (data) {
