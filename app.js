@@ -79,7 +79,7 @@ $(document).ready(function () {
     let cabinet = $(this)[0][31].value;
     let welcomeBathroom = $(this)[0][34].value;
     let otherRooms = $(this)[0][36].value;
-    let location = window.location.href; 
+    let location = window.location.href;
 
     if (
       (hallway !== null &&
@@ -224,7 +224,7 @@ $(document).ready(function () {
 
     let additional = $(this)[0][9].value;
     localStorage.setItem("additional", additional);
-    let location = window.location.href; 
+    let location = window.location.href;
 
     let ID = localStorage.getItem("userId");
     $.ajax({
@@ -279,20 +279,35 @@ $(document).ready(function () {
     });
   });
 
-  $("button[name='plusButton']").click(function (e) {
+  $("button[name='plusButton']").click(function () {
     var $input = $(this).parent().find("input");
     var count = parseInt($input.val()) + 1;
     count = count >= 5 ? 5 : count;
+
     $input.val(count);
+    if (count > 0) {
+      $($("button[name='minusButton']")).prop("disabled", false);
+    }
+    if (count >= 5) {
+      $(this).prop("disabled", true);
+    }
     $input.change();
+
     return false;
   });
 
   $("button[name='minusButton']").click(function () {
     var $input = $(this).parent().find("input");
     var count = parseInt($input.val()) - 1;
+
     count = count <= 0 ? 0 : count;
     $input.val(count);
+    if (count == 0) {
+      $(this).prop("disabled", true);
+    }
+    if (count < 5) {
+      $($("button[name='plusButton']")).prop("disabled", false);
+    }
     $input.change();
     return false;
   });

@@ -177,6 +177,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 /* input medium */
 .input {
+  font-size: 20px;
   background-color: var(--DarkAccent);
   padding: 20px;
   height: 68px;
@@ -186,6 +187,7 @@ input[type="number"]::-webkit-outer-spin-button {
   vertical-align: top;
 }
 .textarea {
+  font-size: 20px;
   background-color: var(--DarkAccent);
   padding: 20px;
   height: 140px;
@@ -375,10 +377,13 @@ input[type="number"]::-webkit-outer-spin-button {
 
   .input {
     height: 58px;
+    padding-top: 16px;
+font-size: 16px;
   }
 
   .textarea {
     height: 120px;
+    font-size: 16px;
   }
 
   .input::placeholder {
@@ -472,6 +477,11 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 @media screen and (max-width: 1024px) {
+
+  body{
+    padding-top: 40px;
+  }
+
   .inputError {
     border-color: #c63f3f;
     border-width: 1px;

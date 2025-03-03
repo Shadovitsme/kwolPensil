@@ -2,6 +2,7 @@ $(document).ready(function () {
   // ajax page 1
   $("input").attr("maxlength", 50);
   $("textarea").attr("maxlength", 800);
+  localStorage.clear();
 
   const defaultStyle = "mb-6 input";
   const errorStyle = "inputError mb-6 ";
