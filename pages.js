@@ -35,7 +35,9 @@ $(document).ready(function () {
   welcomeBathTemplate = $("div#welcomeBath0");
   welcomeBathCount = localStorage.getItem("гостевой санузел");
 
-  divider = $("<hr>", { class: "bg-white my-5 w-full max-w-[1920px]" });
+  divider = $("<hr>", {
+    class: "bg-white mt-[64px] mb-[96px] w-full max-w-[1720px]",
+  });
 
   // kitchen
   for (var i = 1; i < kitchenCount; i++)

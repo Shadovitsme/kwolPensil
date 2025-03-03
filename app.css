@@ -218,6 +218,8 @@ input[type="number"]::-webkit-outer-spin-button {
   color: var(--Text);
   border-radius: 5px;
   vertical-align: top;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .textarea::placeholder {
