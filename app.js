@@ -169,10 +169,10 @@ $(document).ready(function () {
           localStorage.setItem("столовая", dinnerRoom);
 
           localStorage.setItem("кладовая", storageRoom);
-          localStorage.setItem("Санузел", bathroom);
+          localStorage.setItem("санузел", bathroom);
           localStorage.setItem("кабинет", cabinet);
 
-          localStorage.setItem("гостевой_санузел", welcomeBathroom);
+          localStorage.setItem("гостевой санузел", welcomeBathroom);
           localStorage.setItem("другое", otherRooms);
 
           window.location.replace("./wishesPage.html");

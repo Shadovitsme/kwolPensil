@@ -16,12 +16,13 @@
       type="module"
       src="../pageFillers/rooms/childRoomFiller.js"
     ></script>
+    <script src="../selectFirstRoomNameInPage.js"></script>
     <title>Дизайн интерьера - Студия "Карандаш"</title>
   </head>
 
   <body class="flex md:pb-28 md:px-[100px] px-5">
     <div class="md:mx-auto w-full max-w-[1720px]">
-      <h1 class="H1 Text mb-10 uppercase">Детская</h1>
+      <h1 class="H1 Text mb-10 uppercase" name="firstItem">Детская</h1>
       <form id="childRoom" class="w-full">
         <div id="childRoom">
           <div id="childRoom0" class="w-full lg:flex">
@@ -29,8 +30,7 @@
               <div
                 class="md:flex md:h-[58px] mb-[32px] md:static relative h-[143px]"
               >
-                <div
-class="labelWrapper"                >
+                <div class="labelWrapper">
                   <p class="p3 Text my-auto">Детская мебель</p>
                 </div>
                 <div
@@ -41,9 +41,9 @@ class="labelWrapper"                >
                     type="button"
                     class="disabled:opacity-50 h-[48px] w-[48px] shrink-0 my-auto minusButton"
                   ></button>
-                <input
-                  onchange="checkCountInput(event)"
-                  type="number"
+                  <input
+                    onchange="checkCountInput(event)"
+                    type="number"
                     class="input text-center h-14 my-auto lg:w-[52px] mx-3"
                     value="0"
                   />
@@ -57,8 +57,7 @@ class="labelWrapper"                >
               <div
                 class="md:flex md:h-[58px] mb-[32px] md:static relative h-[143px]"
               >
-                <div
-class="labelWrapper"                >
+                <div class="labelWrapper">
                   <p class="p3 Text my-auto">Игровая зона</p>
                 </div>
                 <div
@@ -69,9 +68,9 @@ class="labelWrapper"                >
                     type="button"
                     class="disabled:opacity-50 h-[48px] w-[48px] shrink-0 my-auto minusButton"
                   ></button>
-                <input
-                  onchange="checkCountInput(event)"
-                  type="number"
+                  <input
+                    onchange="checkCountInput(event)"
+                    type="number"
                     class="input text-center h-14 my-auto lg:w-[52px] mx-3"
                     value="0"
                   />
@@ -85,8 +84,7 @@ class="labelWrapper"                >
               <div
                 class="md:flex md:h-[58px] mb-[32px] md:static relative h-[143px]"
               >
-                <div
-class="labelWrapper"                >
+                <div class="labelWrapper">
                   <p class="p3 Text my-auto">Организация места для игрушек</p>
                 </div>
                 <div
@@ -97,9 +95,9 @@ class="labelWrapper"                >
                     type="button"
                     class="disabled:opacity-50 h-[48px] w-[48px] shrink-0 my-auto minusButton"
                   ></button>
-                <input
-                  onchange="checkCountInput(event)"
-                  type="number"
+                  <input
+                    onchange="checkCountInput(event)"
+                    type="number"
                     class="input text-center h-14 my-auto lg:w-[52px] mx-3"
                     value="0"
                   />
@@ -113,8 +111,7 @@ class="labelWrapper"                >
               <div
                 class="md:flex md:h-[58px] mb-[32px] md:static relative h-[143px]"
               >
-                <div
-class="labelWrapper"                >
+                <div class="labelWrapper">
                   <p class="p3 Text my-auto">Подсветка (ночник, мягкий свет)</p>
                 </div>
                 <div
@@ -125,9 +122,9 @@ class="labelWrapper"                >
                     type="button"
                     class="disabled:opacity-50 h-[48px] w-[48px] shrink-0 my-auto minusButton"
                   ></button>
-                <input
-                  onchange="checkCountInput(event)"
-                  type="number"
+                  <input
+                    onchange="checkCountInput(event)"
+                    type="number"
                     class="input text-center h-14 my-auto lg:w-[52px] mx-3"
                     value="0"
                   />
@@ -141,8 +138,7 @@ class="labelWrapper"                >
               <div
                 class="md:flex md:h-[58px] mb-[32px] md:static relative h-[143px]"
               >
-                <div
-class="labelWrapper"                >
+                <div class="labelWrapper">
                   <p class="p3 Text my-auto">Системы защиты</p>
                 </div>
                 <div
@@ -153,9 +149,9 @@ class="labelWrapper"                >
                     type="button"
                     class="disabled:opacity-50 h-[48px] w-[48px] shrink-0 my-auto minusButton"
                   ></button>
-                <input
-                  onchange="checkCountInput(event)"
-                  type="number"
+                  <input
+                    onchange="checkCountInput(event)"
+                    type="number"
                     class="input text-center h-14 my-auto lg:w-[52px] mx-3"
                     value="0"
                   />
@@ -169,8 +165,7 @@ class="labelWrapper"                >
               <div
                 class="md:flex md:h-[58px] mb-[32px] md:static relative h-[143px]"
               >
-                <div
-class="labelWrapper"                >
+                <div class="labelWrapper">
                   <p class="p3 Text my-auto">Теплый пол</p>
                 </div>
                 <div
@@ -181,9 +176,9 @@ class="labelWrapper"                >
                     type="button"
                     class="disabled:opacity-50 h-[48px] w-[48px] shrink-0 my-auto minusButton"
                   ></button>
-                <input
-                  onchange="checkCountInput(event)"
-                  type="number"
+                  <input
+                    onchange="checkCountInput(event)"
+                    type="number"
                     class="input text-center h-14 my-auto lg:w-[52px] mx-3"
                     value="0"
                   />
@@ -197,8 +192,7 @@ class="labelWrapper"                >
               <div
                 class="md:flex md:h-[58px] mb-[32px] md:static relative h-[143px]"
               >
-                <div
-class="labelWrapper"                >
+                <div class="labelWrapper">
                   <p class="p3 Text my-auto">Кондиционирование</p>
                 </div>
                 <div
@@ -209,9 +203,9 @@ class="labelWrapper"                >
                     type="button"
                     class="disabled:opacity-50 h-[48px] w-[48px] shrink-0 my-auto minusButton"
                   ></button>
-                <input
-                  onchange="checkCountInput(event)"
-                  type="number"
+                  <input
+                    onchange="checkCountInput(event)"
+                    type="number"
                     class="input text-center h-14 my-auto lg:w-[52px] mx-3"
                     value="0"
                   />
@@ -252,7 +246,8 @@ class="labelWrapper"                >
             onclick="backButtonScript(1)"
             type="button"
             class="yellowButton w-full hidden md:w-[212px] items-center justify-center h-10 md:h-[60px] md:flex"
-          ><img
+          >
+            <img
               class="my-auto mr-2.5 md:block hidden rotate-180"
               src="../images/Vector.svg"
             />

@@ -18,7 +18,7 @@ $(document).ready(function () {
 
     balconyTemplate
       .parent()
-      .append(`<h1 class="H1 Text mb-10 mt-10 uppercase">Балкон ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 mt-10 uppercase">Балкон ${i + 1}</h1>`)
       .append(newBalcony);
   }
 });

@@ -33,7 +33,7 @@ $(document).ready(function () {
   officeCount = localStorage.getItem("кабинет");
 
   welcomeBathTemplate = $("div#welcomeBath0");
-  welcomeBathCount = localStorage.getItem("гостевой_санузел");
+  welcomeBathCount = localStorage.getItem("гостевой санузел");
 
   divider = $("<hr>", { class: "bg-white my-5 w-full max-w-[1920px]" });
 
@@ -42,7 +42,7 @@ $(document).ready(function () {
     kitchenTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Кухня ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 uppercase">Кухня ${i + 1}</h1>`)
 
       .append(kitchenTemplate.clone().attr("id", `kitchen${i}`));
 
@@ -51,7 +51,7 @@ $(document).ready(function () {
     hallwayTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Прихожая ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 uppercase">Прихожая ${i + 1}</h1>`)
       .append(hallwayTemplate.clone().attr("id", `hallway${i}`));
   }
 
@@ -60,7 +60,7 @@ $(document).ready(function () {
     childRoomTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Детская ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 uppercase">Детская ${i + 1}</h1>`)
 
       .append(childRoomTemplate.clone().attr("id", `childRoom${i}`));
 
@@ -69,7 +69,7 @@ $(document).ready(function () {
     welcomeRoomTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Гостиная ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 uppercase">Гостиная ${i + 1}</h1>`)
 
       .append(welcomeRoomTemplate.clone().attr("id", `welcomeRoom${i}`));
 
@@ -78,7 +78,7 @@ $(document).ready(function () {
     bedroomTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Спальня ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 uppercase">Спальня ${i + 1}</h1>`)
 
       .append(bedroomTemplate.clone().attr("id", `bedroom${i}`));
 
@@ -87,7 +87,7 @@ $(document).ready(function () {
     dressingRoomTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Гардеробная ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 uppercase">Гардеробная ${i + 1}</h1>`)
 
       .append(dressingRoomTemplate.clone().attr("id", `dressingRoom${i}`));
 
@@ -97,7 +97,7 @@ $(document).ready(function () {
     eatingRoomTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Столовая ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 uppercase">Столовая ${i + 1}</h1>`)
       .append(eatingRoomTemplate.clone().attr("id", `eatingRoom${i}`));
   }
 
@@ -106,7 +106,7 @@ $(document).ready(function () {
     scladTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Кладовая ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 uppercase">Кладовая ${i + 1}</h1>`)
 
       .append(scladTemplate.clone().attr("id", `sclad${i}`));
 
@@ -115,7 +115,7 @@ $(document).ready(function () {
     bathroomTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Санузел ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 uppercase">Санузел ${i + 1}</h1>`)
 
       .append(bathroomTemplate.clone().attr("id", `bathroom${i}`));
 
@@ -124,7 +124,7 @@ $(document).ready(function () {
     officeTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Кабинет ${i}</h1>`)
+      .append(`<h1 class="H1 Text mb-10 uppercase">Кабинет ${i + 1}</h1>`)
 
       .append(officeTemplate.clone().attr("id", `office${i}`));
 
@@ -133,7 +133,9 @@ $(document).ready(function () {
     welcomeBathTemplate
       .parent()
       .append(divider.clone())
-      .append(`<h1 class="H1 Text mb-10 uppercase">Гостевой санузел ${i}</h1>`)
+      .append(
+        `<h1 class="H1 Text mb-10 uppercase">Гостевой санузел ${i + 1}</h1>`
+      )
 
       .append(welcomeBathTemplate.clone().attr("id", `welcomeBath${i}`));
 });
