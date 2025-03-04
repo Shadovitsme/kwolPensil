@@ -1,7 +1,7 @@
 // Ваш скрипт на JavaScript
 $(document).ready(function () {
   $("input").attr("maxlength", 50);
-  $("textarea").attr("maxlength", 800);
+  $("textarea").attr("maxlength", 298);
   // ajax page2
   $("form#page2").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
