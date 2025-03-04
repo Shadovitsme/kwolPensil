@@ -1,7 +1,7 @@
 // Ваш скрипт на JavaScript
 $(document).ready(function () {
   $("input").attr("maxlength", 50);
-  $("textarea").attr("maxlength", 298);
+  $("textarea").attr("maxlength", 260);
   // ajax page2
   $("form#page2").on("submit", function (e) {
     e.preventDefault(); // предотвращаем стандартное поведение формы
@@ -288,10 +288,10 @@ $(document).ready(function () {
 
     $input.val(count);
     if (count > 0) {
-      $($("button[name='minusButton']")).prop("disabled", false);
+      $input.siblings("button[name='minusButton']").prop("disabled", false);
     }
     if (count >= 5) {
-      $(this).prop("disabled", true);
+      $input.siblings("button[name='plusButton']").prop("disabled", true);
     }
     $input.change();
 
@@ -305,10 +305,10 @@ $(document).ready(function () {
     count = count <= 0 ? 0 : count;
     $input.val(count);
     if (count == 0) {
-      $(this).prop("disabled", true);
+      $input.siblings("button[name='minusButton']").prop("disabled", true);
     }
     if (count < 5) {
-      $($("button[name='plusButton']")).prop("disabled", false);
+      $input.siblings("button[name='plusButton']").prop("disabled", false);
     }
     $input.change();
     return false;
